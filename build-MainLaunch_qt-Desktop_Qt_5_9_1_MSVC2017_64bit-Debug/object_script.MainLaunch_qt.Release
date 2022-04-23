@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\logindialog.o
+./release\lighthousedemo.o
+./release\opengl_widget.o
+./release\mesh.o
+./release\qrc_ui_style.o
+./release\qrc_glsl_file.o
+./release\moc_mainwindow.o
+./release\moc_logindialog.o
+./release\moc_lighthousedemo.o
+./release\moc_opengl_widget.o
+);
