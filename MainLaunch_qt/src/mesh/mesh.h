@@ -17,13 +17,13 @@ struct Texture {
 class Mesh {
 public:
     // mesh data
-    vector<Vertex>          vertices;
-    vector<unsigned int>    indices;
-    vector<Texture>         textures;
+    vector<Vertex>          m_vVertices;
+    vector<unsigned int>    m_vIndices;
+    vector<Texture>         m_vTextures;
 
     void Draw(QOpenGLShaderProgram &shader);
     Mesh(QOpenGLFunctions_3_3_Core *glFuns,
-         vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures);
+         vector<Vertex> vVertices, vector<unsigned int> vIndices, vector<Texture> vTextures);
 private:
     // render data
     unsigned int VAO, VBO, EBO;
