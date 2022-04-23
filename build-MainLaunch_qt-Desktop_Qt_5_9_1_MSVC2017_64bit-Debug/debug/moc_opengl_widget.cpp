@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_OpenGL_Widget_t {
     QByteArrayData data[3];
-    char stringdata0[26];
+    char stringdata0[25];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,11 @@ struct qt_meta_stringdata_OpenGL_Widget_t {
 static const qt_meta_stringdata_OpenGL_Widget_t qt_meta_stringdata_OpenGL_Widget = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "OpenGL_Widget"
-QT_MOC_LITERAL(1, 14, 10), // "On_timeout"
-QT_MOC_LITERAL(2, 25, 0) // ""
+QT_MOC_LITERAL(1, 14, 9), // "OnTimeout"
+QT_MOC_LITERAL(2, 24, 0) // ""
 
     },
-    "OpenGL_Widget\0On_timeout\0"
+    "OpenGL_Widget\0OnTimeout\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +68,7 @@ void OpenGL_Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         OpenGL_Widget *_t = static_cast<OpenGL_Widget *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->On_timeout(); break;
+        case 0: _t->OnTimeout(); break;
         default: ;
         }
     }

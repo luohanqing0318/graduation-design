@@ -52,4 +52,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     ui_style.qrc \
-    glsl_file.qrc
+    glsl_file.qrc \
+    other_resources.qrc
+
+DISTFILES +=
