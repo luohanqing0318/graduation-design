@@ -58,5 +58,6 @@ void Mesh::Draw(QOpenGLShaderProgram &shader)
 
       }
       m_glFuns->glBindVertexArray(VAO);
-      m_glFuns->glDrawArrays(GL_TRIANGLES, 0, 36);
+      //m_glFuns->glDrawArrays(GL_TRIANGLES, 0, m_vVertices.size());
+      m_glFuns->glDrawElements(GL_TRIANGLES, m_vIndices.size(), GL_UNSIGNED_INT, 0);
 }

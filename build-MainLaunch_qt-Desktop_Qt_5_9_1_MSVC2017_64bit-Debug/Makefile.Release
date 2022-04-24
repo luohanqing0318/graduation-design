@@ -14,10 +14,10 @@ CXX           = cl
 DEFINES       = -DUNICODE -DWIN32 -DWIN64 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG
 CFLAGS        = -nologo -Zc:wchar_t -FS -Zc:strictStrings -O2 -MD -W3 -w44456 -w44457 -w44458 $(DEFINES)
 CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc $(DEFINES)
-INCPATH       = -I..\MainLaunch_qt -I. -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtANGLE -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtCore -Irelease -I. -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\win32-msvc 
+INCPATH       = -I..\MainLaunch_qt -I. -I..\..\third-lib\assimp-5.0.1\include -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtANGLE -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtCore -Irelease -I. -I..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\win32-msvc 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:F:\Qt5.9.1\5.9.1\msvc2017_64\lib F:\Qt5.9.1\5.9.1\msvc2017_64\lib\qtmain.lib /LIBPATH:C:\utils\my_sql\my_sql\lib /LIBPATH:C:\utils\postgresql\pgsql\lib shell32.lib F:\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Widgets.lib F:\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Gui.lib F:\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Core.lib 
+LIBS          = /LIBPATH:F:\Qt5.9.1\5.9.1\msvc2017_64\lib F:\Qt5.9.1\5.9.1\msvc2017_64\lib\qtmain.lib /LIBPATH:C:\utils\my_sql\my_sql\lib /LIBPATH:C:\utils\postgresql\pgsql\lib shell32.lib /LIBPATH:"F:\GitHub Desktop\third-lib\assimp-5.0.1\lib" "F:\GitHub Desktop\third-lib\assimp-5.0.1\lib\assimp-vc140-mt.lib" F:\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Widgets.lib F:\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Gui.lib F:\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Core.lib 
 QMAKE         = F:\Qt5.9.1\5.9.1\msvc2017_64\bin\qmake.exe
 IDC           = idc
 IDL           = midl /NOLOGO
@@ -50,9 +50,11 @@ SOURCES       = ..\MainLaunch_qt\main.cpp \
 		..\MainLaunch_qt\src\login\logindialog.cpp \
 		..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp \
 		..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp \
-		..\MainLaunch_qt\src\mesh\mesh.cpp release\qrc_ui_style.cpp \
+		..\MainLaunch_qt\src\mesh\mesh.cpp \
+		..\MainLaunch_qt\src\model\model.cpp release\qrc_ui_style.cpp \
 		release\qrc_glsl_file.cpp \
 		release\qrc_other_resources.cpp \
+		release\qrc_obj_resources.cpp \
 		release\moc_mainwindow.cpp \
 		release\moc_logindialog.cpp \
 		release\moc_lighthousedemo.cpp \
@@ -63,9 +65,11 @@ OBJECTS       = release\main.obj \
 		release\lighthousedemo.obj \
 		release\opengl_widget.obj \
 		release\mesh.obj \
+		release\model.obj \
 		release\qrc_ui_style.obj \
 		release\qrc_glsl_file.obj \
 		release\qrc_other_resources.obj \
+		release\qrc_obj_resources.obj \
 		release\moc_mainwindow.obj \
 		release\moc_logindialog.obj \
 		release\moc_lighthousedemo.obj \
@@ -76,12 +80,14 @@ DIST          =  ..\MainLaunch_qt\mainwindow.h \
 		..\MainLaunch_qt\src\lighthouse\lighthousedemo.h \
 		..\MainLaunch_qt\src\lighthouse\opengl_widget.h \
 		..\MainLaunch_qt\src\camera\camera.h \
-		..\MainLaunch_qt\src\mesh\mesh.h ..\MainLaunch_qt\main.cpp \
+		..\MainLaunch_qt\src\mesh\mesh.h \
+		..\MainLaunch_qt\src\model\model.h ..\MainLaunch_qt\main.cpp \
 		..\MainLaunch_qt\mainwindow.cpp \
 		..\MainLaunch_qt\src\login\logindialog.cpp \
 		..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp \
 		..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp \
-		..\MainLaunch_qt\src\mesh\mesh.cpp
+		..\MainLaunch_qt\src\mesh\mesh.cpp \
+		..\MainLaunch_qt\src\model\model.cpp
 QMAKE_TARGET  = MainLaunch_qt
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = MainLaunch_qt.exe
@@ -171,6 +177,26 @@ DESTDIR_TARGET = release\MainLaunch_qt.exe
 	$<
 <<
 
+{..\MainLaunch_qt\src\model}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\MainLaunch_qt\src\model}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\MainLaunch_qt\src\model}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\MainLaunch_qt\src\model}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
 {..\MainLaunch_qt}.cpp{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
 	$<
@@ -218,7 +244,7 @@ all: Makefile.Release  $(DESTDIR_TARGET)
 
 $(DESTDIR_TARGET): ui_mainwindow.h ui_logindialog.h ui_lighthousedemo.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-release\main.obj release\mainwindow.obj release\logindialog.obj release\lighthousedemo.obj release\opengl_widget.obj release\mesh.obj release\qrc_ui_style.obj release\qrc_glsl_file.obj release\qrc_other_resources.obj release\moc_mainwindow.obj release\moc_logindialog.obj release\moc_lighthousedemo.obj release\moc_opengl_widget.obj
+release\main.obj release\mainwindow.obj release\logindialog.obj release\lighthousedemo.obj release\opengl_widget.obj release\mesh.obj release\model.obj release\qrc_ui_style.obj release\qrc_glsl_file.obj release\qrc_other_resources.obj release\qrc_obj_resources.obj release\moc_mainwindow.obj release\moc_logindialog.obj release\moc_lighthousedemo.obj release\moc_opengl_widget.obj
 $(LIBS)
 <<
 
@@ -228,10 +254,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) MainLaunch_qt.zip $(SOURCES) $(DIST) ..\MainLaunch_qt\MainLaunch_qt.pro ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\common\angle.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\qconfig.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_purchasing.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_script.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_script_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scripttools.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qt.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\resources.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\moc.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\uic.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\lex.prf ..\MainLaunch_qt\MainLaunch_qt.pro ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\qtmain.prl ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Widgets.prl ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Gui.prl ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Core.prl   ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\data\dummy.cpp ..\MainLaunch_qt\mainwindow.h ..\MainLaunch_qt\src\login\logindialog.h ..\MainLaunch_qt\src\lighthouse\lighthousedemo.h ..\MainLaunch_qt\src\lighthouse\opengl_widget.h ..\MainLaunch_qt\src\camera\camera.h ..\MainLaunch_qt\src\mesh\mesh.h ..\MainLaunch_qt\main.cpp ..\MainLaunch_qt\mainwindow.cpp ..\MainLaunch_qt\src\login\logindialog.cpp ..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp ..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp ..\MainLaunch_qt\src\mesh\mesh.cpp ..\MainLaunch_qt\mainwindow.ui ..\MainLaunch_qt\src\login\logindialog.ui ..\MainLaunch_qt\src\lighthouse\lighthousedemo.ui    
+	$(ZIP) MainLaunch_qt.zip $(SOURCES) $(DIST) ..\MainLaunch_qt\MainLaunch_qt.pro ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\common\angle.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\qconfig.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_purchasing.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_script.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_script_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scripttools.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qt.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\resources.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\moc.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\uic.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\lex.prf ..\MainLaunch_qt\MainLaunch_qt.pro ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\MainLaunch_qt\obj\obj_resources.qrc ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\qtmain.prl ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Widgets.prl ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Gui.prl ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Core.prl   ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\MainLaunch_qt\obj\obj_resources.qrc ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\data\dummy.cpp ..\MainLaunch_qt\mainwindow.h ..\MainLaunch_qt\src\login\logindialog.h ..\MainLaunch_qt\src\lighthouse\lighthousedemo.h ..\MainLaunch_qt\src\lighthouse\opengl_widget.h ..\MainLaunch_qt\src\camera\camera.h ..\MainLaunch_qt\src\mesh\mesh.h ..\MainLaunch_qt\src\model\model.h ..\MainLaunch_qt\main.cpp ..\MainLaunch_qt\mainwindow.cpp ..\MainLaunch_qt\src\login\logindialog.cpp ..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp ..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp ..\MainLaunch_qt\src\mesh\mesh.cpp ..\MainLaunch_qt\src\model\model.cpp ..\MainLaunch_qt\mainwindow.ui ..\MainLaunch_qt\src\login\logindialog.ui ..\MainLaunch_qt\src\lighthouse\lighthousedemo.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\logindialog.obj release\lighthousedemo.obj release\opengl_widget.obj release\mesh.obj release\qrc_ui_style.obj release\qrc_glsl_file.obj release\qrc_other_resources.obj release\moc_mainwindow.obj release\moc_logindialog.obj release\moc_lighthousedemo.obj release\moc_opengl_widget.obj
+	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\logindialog.obj release\lighthousedemo.obj release\opengl_widget.obj release\mesh.obj release\model.obj release\qrc_ui_style.obj release\qrc_glsl_file.obj release\qrc_other_resources.obj release\qrc_obj_resources.obj release\moc_mainwindow.obj release\moc_logindialog.obj release\moc_lighthousedemo.obj release\moc_opengl_widget.obj
 	-$(DEL_FILE) release\MainLaunch_qt.exp
 
 distclean: clean 
@@ -249,9 +275,9 @@ benchmark: first
 
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
-compiler_rcc_make_all: release\qrc_ui_style.cpp release\qrc_glsl_file.cpp release\qrc_other_resources.cpp
+compiler_rcc_make_all: release\qrc_ui_style.cpp release\qrc_glsl_file.cpp release\qrc_other_resources.cpp release\qrc_obj_resources.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) release\qrc_ui_style.cpp release\qrc_glsl_file.cpp release\qrc_other_resources.cpp
+	-$(DEL_FILE) release\qrc_ui_style.cpp release\qrc_glsl_file.cpp release\qrc_other_resources.cpp release\qrc_obj_resources.cpp
 release\qrc_ui_style.cpp: ..\MainLaunch_qt\ui_style.qrc \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\bin\rcc.exe \
 		..\MainLaunch_qt\Ubuntu.qss \
@@ -275,6 +301,12 @@ release\qrc_other_resources.cpp: ..\MainLaunch_qt\other_resources.qrc \
 		..\MainLaunch_qt\images\wall.jpg \
 		..\MainLaunch_qt\images\container2_specular.png
 	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\rcc.exe -name other_resources ..\MainLaunch_qt\other_resources.qrc -o release\qrc_other_resources.cpp
+
+release\qrc_obj_resources.cpp: ..\MainLaunch_qt\obj\obj_resources.qrc \
+		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\bin\rcc.exe \
+		..\MainLaunch_qt\obj\untitled.mtl \
+		..\MainLaunch_qt\obj\untitled.obj
+	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\rcc.exe -name obj_resources ..\MainLaunch_qt\obj\obj_resources.qrc -o release\qrc_obj_resources.cpp
 
 compiler_moc_predefs_make_all: release\moc_predefs.h
 compiler_moc_predefs_clean:
@@ -391,7 +423,7 @@ release\moc_mainwindow.cpp: ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets
 		..\MainLaunch_qt\mainwindow.h \
 		release\moc_predefs.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe
-	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\mainwindow.h -o release\moc_mainwindow.cpp
+	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -I"F:/GitHub Desktop/third-lib/assimp-5.0.1/include" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\mainwindow.h -o release\moc_mainwindow.cpp
 
 release\moc_logindialog.cpp: ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets\QDialog \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets\qdialog.h \
@@ -497,7 +529,7 @@ release\moc_logindialog.cpp: ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidget
 		..\MainLaunch_qt\src\login\logindialog.h \
 		release\moc_predefs.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe
-	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\src\login\logindialog.h -o release\moc_logindialog.cpp
+	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -I"F:/GitHub Desktop/third-lib/assimp-5.0.1/include" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\src\login\logindialog.h -o release\moc_logindialog.cpp
 
 release\moc_lighthousedemo.cpp: ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets\QMainWindow \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets\qmainwindow.h \
@@ -605,7 +637,7 @@ release\moc_lighthousedemo.cpp: ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWid
 		..\MainLaunch_qt\src\lighthouse\lighthousedemo.h \
 		release\moc_predefs.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe
-	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\src\lighthouse\lighthousedemo.h -o release\moc_lighthousedemo.cpp
+	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -I"F:/GitHub Desktop/third-lib/assimp-5.0.1/include" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\src\lighthouse\lighthousedemo.h -o release\moc_lighthousedemo.cpp
 
 release\moc_opengl_widget.cpp: ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets\QOpenGLWidget \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidgets\qopenglwidget.h \
@@ -744,11 +776,43 @@ release\moc_opengl_widget.cpp: ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtWidg
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\QWheelEvent \
 		..\MainLaunch_qt\src\camera\camera.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\QMatrix4x4 \
+		..\MainLaunch_qt\src\model\model.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Importer.hpp \
+		..\..\third-lib\assimp-5.0.1\include\assimp\types.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\defs.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\config.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\MathFunctions.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\scene.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\texture.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pushpack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\poppack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\mesh.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\aabb.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\light.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\camera.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\anim.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\metadata.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pstdint.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\postprocess.h \
 		..\MainLaunch_qt\src\mesh\mesh.h \
 		..\MainLaunch_qt\src\lighthouse\opengl_widget.h \
 		release\moc_predefs.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe
-	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\src\lighthouse\opengl_widget.h -o release\moc_opengl_widget.cpp
+	F:\Qt5.9.1\5.9.1\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -IF:/Qt5.9.1/5.9.1/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -I"F:/GitHub Desktop/third-lib/assimp-5.0.1/include" -IF:/Qt5.9.1/5.9.1/msvc2017_64/include -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtWidgets -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtGui -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtANGLE -IF:/Qt5.9.1/5.9.1/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\src\lighthouse\opengl_widget.h -o release\moc_opengl_widget.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1370,6 +1434,38 @@ release\lighthousedemo.obj: ..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp .
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\QWheelEvent \
 		../MainLaunch_qt/src/camera/camera.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\QMatrix4x4 \
+		../MainLaunch_qt/src/model/model.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Importer.hpp \
+		..\..\third-lib\assimp-5.0.1\include\assimp\types.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\defs.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\config.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\MathFunctions.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\scene.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\texture.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pushpack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\poppack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\mesh.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\aabb.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\light.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\camera.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\anim.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\metadata.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pstdint.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\postprocess.h \
 		../MainLaunch_qt/src/mesh/mesh.h
 
 release\opengl_widget.obj: ..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp ../MainLaunch_qt/src/lighthouse/opengl_widget.h \
@@ -1510,9 +1606,92 @@ release\opengl_widget.obj: ..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp ../
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\QWheelEvent \
 		../MainLaunch_qt/src/camera/camera.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\QMatrix4x4 \
+		../MainLaunch_qt/src/model/model.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Importer.hpp \
+		..\..\third-lib\assimp-5.0.1\include\assimp\types.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\defs.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\config.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\MathFunctions.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\scene.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\texture.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pushpack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\poppack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\mesh.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\aabb.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\light.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\camera.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\anim.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\metadata.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pstdint.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\postprocess.h \
 		../MainLaunch_qt/src/mesh/mesh.h
 
-release\mesh.obj: ..\MainLaunch_qt\src\mesh\mesh.cpp ../MainLaunch_qt/src/mesh/mesh.h \
+release\mesh.obj: ..\MainLaunch_qt\src\mesh\mesh.cpp ..\..\third-lib\assimp-5.0.1\include\assimp\mesh.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\types.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\defs.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\config.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\MathFunctions.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\aabb.h
+
+release\model.obj: ..\MainLaunch_qt\src\model\model.cpp ../MainLaunch_qt/src/model/model.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Importer.hpp \
+		..\..\third-lib\assimp-5.0.1\include\assimp\types.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\defs.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\config.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector2.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\vector3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\color4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\quaternion.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix3x3.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\matrix4x4.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\MathFunctions.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\scene.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\texture.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pushpack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\poppack1.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\mesh.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\aabb.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\light.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\camera.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\material.inl \
+		..\..\third-lib\assimp-5.0.1\include\assimp\anim.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\metadata.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\Compiler\pstdint.h \
+		..\..\third-lib\assimp-5.0.1\include\assimp\postprocess.h \
+		../MainLaunch_qt/src/mesh/mesh.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\QOpenGLShaderProgram \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\qopenglshaderprogram.h \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\include\QtGui\qtguiglobal.h \
@@ -1611,6 +1790,8 @@ release\qrc_ui_style.obj: release\qrc_ui_style.cpp
 release\qrc_glsl_file.obj: release\qrc_glsl_file.cpp 
 
 release\qrc_other_resources.obj: release\qrc_other_resources.cpp 
+
+release\qrc_obj_resources.obj: release\qrc_obj_resources.cpp 
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 

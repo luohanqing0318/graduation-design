@@ -1,5 +1,6 @@
 #include <QOpenGLShaderProgram>
 #include <QOpenGLFunctions_3_3_Core>
+#include <QOpenGLTexture>
 #include <string>
 #include <vector>
 using namespace std;
@@ -29,5 +30,6 @@ private:
     unsigned int VAO, VBO, EBO;
 private:
     void SetupMesh();
-private: QOpenGLFunctions_3_3_Core *m_glFuns;
+private:
+    QOpenGLFunctions_3_3_Core *m_glFuns;
 };

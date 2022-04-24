@@ -30,7 +30,8 @@ SOURCES += \
     src/login/logindialog.cpp \
     src/lighthouse/lighthousedemo.cpp \
     src/lighthouse/opengl_widget.cpp \
-    src/mesh/mesh.cpp
+    src/mesh/mesh.cpp \
+    src/model/model.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
     src/lighthouse/lighthousedemo.h \
     src/lighthouse/opengl_widget.h \
     src/camera/camera.h \
-    src/mesh/mesh.h
+    src/mesh/mesh.h \
+    src/model/model.h
 
 FORMS += \
         mainwindow.ui \
@@ -53,6 +55,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     ui_style.qrc \
     glsl_file.qrc \
-    other_resources.qrc
+    other_resources.qrc \
+    obj/obj_resources.qrc
 
 DISTFILES +=
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../third-lib/assimp-5.0.1/lib/ -lassimp-vc140-mt
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../third-lib/assimp-5.0.1/lib/ -lassimp-vc140-mtd
+
+INCLUDEPATH += $$PWD/../../third-lib/assimp-5.0.1/include
+DEPENDPATH += $$PWD/../../third-lib/assimp-5.0.1/include
