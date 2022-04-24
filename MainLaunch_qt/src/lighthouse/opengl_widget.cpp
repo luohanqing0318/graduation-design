@@ -95,7 +95,7 @@ void OpenGL_Widget::initializeGL()
       success=m_light_shaderProgram.link();
       if(!success) qDebug()<<"ERR:"<<m_light_shaderProgram.log();
 
-      m_mesh=ProcessMesh();
+      m_mesh = ProcessMesh();
 
 
 }
@@ -120,14 +120,14 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.bind();
        m_shaderprogram.setUniformValue("projection_matrix", projection);
        m_shaderprogram.setUniformValue("view_matrix", view);
-       model.rotate(time, 1.0f, 5.0f, 0.5f);
+       model.rotate(time, 5.0f, 5.0f, 0.5f);
 
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
 
        // light properties, note that all light colors are set at full intensity
        m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
        m_shaderprogram.setUniformValue("light.diffuse", 0.9f, 0.9f, 0.9f);
-       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
+       m_shaderprogram.setUniformValue("light.specular", 5.0f, 5.0f, 5.0f);
        // material properties
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
        m_shaderprogram.setUniformValue("light.direction", -0.2f, -1.0f, -0.3f);
@@ -214,11 +214,11 @@ Mesh *OpenGL_Widget::ProcessMesh()
         }
 
         Texture tex;
-        tex.id=m_diffuseTexture->textureId();
-        tex.type="texture_diffuse";
+        tex.id = m_diffuseTexture->textureId();
+        tex.type = "texture_diffuse";
         _textures.push_back(tex);
-        tex.id=m_specularTexture->textureId();
-        tex.type="texture_specular";
+        tex.id = m_specularTexture->textureId();
+        tex.type = "texture_specular";
         _textures.push_back(tex);
         return new Mesh(QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>()
             ,_vertices,_indices,_textures);

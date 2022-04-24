@@ -18,15 +18,16 @@ class Mesh {
 public:
     // mesh data
     vector<Vertex>          m_vVertices;
-    vector<unsigned int>    m_vIndices;
     vector<Texture>         m_vTextures;
-
+    vector<unsigned int>    m_vIndices;
+public:
     void Draw(QOpenGLShaderProgram &shader);
     Mesh(QOpenGLFunctions_3_3_Core *glFuns,
          vector<Vertex> vVertices, vector<unsigned int> vIndices, vector<Texture> vTextures);
 private:
     // render data
     unsigned int VAO, VBO, EBO;
+private:
     void SetupMesh();
 private: QOpenGLFunctions_3_3_Core *m_glFuns;
 };
