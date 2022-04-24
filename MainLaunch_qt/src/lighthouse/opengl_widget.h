@@ -9,7 +9,7 @@
 #include <QTimer>
 #include <QWheelEvent>
 #include "src/camera/camera.h"
-#include "src/mesh/mesh.h"
+#include "src/model/model.h"
 class OpenGL_Widget : public QOpenGLWidget,QOpenGLFunctions_3_3_Core
 {
     Q_OBJECT
@@ -37,8 +37,7 @@ private:
     QOpenGLTexture* m_diffuseTexture;
     QOpenGLTexture* m_specularTexture;
 
-    Mesh* m_mesh;
-    Mesh* ProcessMesh();
+    Model* m_model;
 public slots:
     void OnTimeout();
 };

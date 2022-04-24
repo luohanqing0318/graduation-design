@@ -21,7 +21,6 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 #include <src/lighthouse/opengl_widget.h>
-
 QT_BEGIN_NAMESPACE
 
 class Ui_LightHouseDemo

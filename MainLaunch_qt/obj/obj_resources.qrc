@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/obj">
+        <file>untitled.mtl</file>
+        <file>untitled.obj</file>
+    </qresource>
+</RCC>

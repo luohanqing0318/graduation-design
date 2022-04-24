@@ -9,26 +9,7 @@ Mesh::Mesh(QOpenGLFunctions_3_3_Core *glFuns,
         SetupMesh();
 }
 
-void Mesh::Draw(QOpenGLShaderProgram &shader)
-{
-      unsigned int diffuseNr = 1;
-      unsigned int specularNr = 1;
-      for(unsigned int i = 0; i < m_vTextures.size(); i++) {
-          m_glFuns->glActiveTexture(GL_TEXTURE0 + i);
-          string number;
-          string name = m_vTextures[i].type;
-          if(name == "texture_diffuse")
-              number = std::to_string(diffuseNr++);
-          else if(name == "texture_specular")
-              number = std::to_string(specularNr++);
 
-          shader.setUniformValue(("material." + name + number).c_str(), i);
-          m_glFuns->glBindTexture(GL_TEXTURE_2D, m_vTextures[i].id);
-
-      }
-      m_glFuns->glBindVertexArray(VAO);
-      m_glFuns->glDrawArrays(GL_TRIANGLES, 0, 36);
-}
 
 void Mesh::SetupMesh()
 {
@@ -47,7 +28,8 @@ void Mesh::SetupMesh()
       m_glFuns->glBufferData(GL_ELEMENT_ARRAY_BUFFER,
                              m_vIndices.size() * sizeof(unsigned int),&m_vIndices[0], GL_STATIC_DRAW);
       //告知显卡如何解析缓冲里的属性值
-      m_glFuns->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+      m_glFuns->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),
+                                      (void*)0);
       m_glFuns->glEnableVertexAttribArray(0);
       m_glFuns->glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                                       (void*)offsetof(Vertex, normal));
@@ -56,4 +38,26 @@ void Mesh::SetupMesh()
       m_glFuns->glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                                       (void*)offsetof(Vertex, texCoords));
       m_glFuns->glEnableVertexAttribArray(2);
+}
+
+void Mesh::Draw(QOpenGLShaderProgram &shader)
+{
+      unsigned int diffuseNr = 1;
+      unsigned int specularNr = 1;
+      for(unsigned int i = 0; i < m_vTextures.size(); i++) {
+          m_glFuns->glActiveTexture(GL_TEXTURE0 + i);
+          string number;
+          string name = m_vTextures[i].type;
+          if(name == "texture_diffuse")
+              number = std::to_string(diffuseNr++);//先赋值，后加1
+          else if(name == "texture_specular")
+              number = std::to_string(specularNr++);
+
+          shader.setUniformValue(("material." + name + number).c_str(), i);
+          m_glFuns->glBindTexture(GL_TEXTURE_2D, m_vTextures[i].id);
+
+      }
+      m_glFuns->glBindVertexArray(VAO);
+      //m_glFuns->glDrawArrays(GL_TRIANGLES, 0, m_vVertices.size());
+      m_glFuns->glDrawElements(GL_TRIANGLES, m_vIndices.size(), GL_UNSIGNED_INT, 0);
 }

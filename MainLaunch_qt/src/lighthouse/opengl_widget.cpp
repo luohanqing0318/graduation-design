@@ -2,51 +2,6 @@
 
 const unsigned int TIMEOUTSECOND = 50;
 
-float vertices[] = {
-    // positions          // normals           // texture coords
-    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
-    0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 0.0f,
-    0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
-    0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
-
-    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
-    0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 0.0f,
-    0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
-    0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
-
-    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-
-    0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-    0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
-    0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-    0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-    0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
-    0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-
-    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
-    0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 1.0f,
-    0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
-    0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
-
-    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f,
-    0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 1.0f,
-    0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
-    0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
-};
-
 unsigned int VAO,VBO,lightVAO;
 QVector3D light_position(1.2f, 1.0f, 2.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
@@ -59,8 +14,8 @@ OpenGL_Widget::OpenGL_Widget(QWidget *parent) : QOpenGLWidget(parent)
     connect(&m_timer,SIGNAL(timeout()),this,SLOT(OnTimeout()));
     m_timer.start(TIMEOUTSECOND);
     m_time.start();
-    m_camera.Position = QVector3D(0.0,0.0,5.0) ;
-
+    m_camera.Position = view_auto_positon;
+    setFocusPolicy(Qt::StrongFocus);
 }
 
 OpenGL_Widget::~OpenGL_Widget()
@@ -84,8 +39,6 @@ void OpenGL_Widget::initializeGL()
       success=m_shaderprogram.link();
       if(!success) qDebug()<<"ERR:"<<m_shaderprogram.log();
 
-      m_diffuseTexture = new QOpenGLTexture(QImage(":/learnopengl/images/container2.png").mirrored());
-      m_specularTexture = new QOpenGLTexture(QImage(":/learnopengl/images/container2_specular.png").mirrored());
       m_shaderprogram.bind();
 
 
@@ -95,9 +48,9 @@ void OpenGL_Widget::initializeGL()
       success=m_light_shaderProgram.link();
       if(!success) qDebug()<<"ERR:"<<m_light_shaderProgram.log();
 
-      m_mesh=ProcessMesh();
 
-
+      m_model = new Model(QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>(),
+                          "D:/LearnOpenGL/GraduationProject/LightHouse/obj/untitled.obj");
 }
 
 void OpenGL_Widget::resizeGL(int w, int h)
@@ -120,19 +73,19 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.bind();
        m_shaderprogram.setUniformValue("projection_matrix", projection);
        m_shaderprogram.setUniformValue("view_matrix", view);
-       model.rotate(time, 1.0f, 5.0f, 0.5f);
+       model.rotate(time, 5.0f, 5.0f, 0.5f);
 
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
 
        // light properties, note that all light colors are set at full intensity
        m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
        m_shaderprogram.setUniformValue("light.diffuse", 0.9f, 0.9f, 0.9f);
-       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
+       m_shaderprogram.setUniformValue("light.specular", 5.0f, 5.0f, 5.0f);
        // material properties
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
        m_shaderprogram.setUniformValue("light.direction", -0.2f, -1.0f, -0.3f);
        m_shaderprogram.setUniformValue("model_matrix", model);
-       m_mesh->Draw(m_shaderprogram);
+       m_model->Draw(m_shaderprogram);
 
        m_light_shaderProgram.bind();
        m_light_shaderProgram.setUniformValue("projection_matrix", projection);
@@ -144,7 +97,7 @@ void OpenGL_Widget::paintGL()
        m_light_shaderProgram.setUniformValue("model_matrix", model);
        m_light_shaderProgram.setUniformValue("light_color",light_color);
 
-       m_mesh->Draw(m_light_shaderProgram);
+       m_model->Draw(m_light_shaderProgram);
 
 
 }
@@ -189,39 +142,4 @@ void OpenGL_Widget::mouseMoveEvent(QMouseEvent *event)
     }
 }
 
-Mesh *OpenGL_Widget::ProcessMesh()
-{
 
-
-        vector<Vertex> _vertices(36);
-        vector<unsigned int> _indices;
-        vector<Texture> _textures;
-        // _vertices.reserve(36);
-        // _vertices.resize(36);
-        memcpy(&_vertices[0],vertices,sizeof(vertices));
-        for(int i=0;i<36;i++){
-            // Vertex vert;
-            // vert.Position[0]=vertices[i*8+0];
-            // vert.Position[1]=vertices[i*8+1];
-            // vert.Position[2]=vertices[i*8+2];
-            // vert.Normal[0]=vertices[i*8+3];
-            // vert.Normal[1]=vertices[i*8+4];
-            // vert.Normal[2]=vertices[i*8+5];
-            // vert.TexCoords[0]=vertices[i*8+6];
-            // vert.TexCoords[1]=vertices[i*8+7];
-            // _vertices.push_back(vert);
-            _indices.push_back(i);
-        }
-
-        Texture tex;
-        tex.id=m_diffuseTexture->textureId();
-        tex.type="texture_diffuse";
-        _textures.push_back(tex);
-        tex.id=m_specularTexture->textureId();
-        tex.type="texture_specular";
-        _textures.push_back(tex);
-        return new Mesh(QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>()
-            ,_vertices,_indices,_textures);
-
-
-}
