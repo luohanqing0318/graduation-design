@@ -37,6 +37,7 @@ void OpenGL_Widget::LoadModel(string path)
     makeCurrent();
     m_model = new Model(QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>(),
                         path.c_str());
+    m_camera.Position = CameraPositionAuto(m_model->m_max_Y, m_model->m_min_Y);
     doneCurrent();
 }
 
@@ -159,6 +160,19 @@ void OpenGL_Widget::mouseMoveEvent(QMouseEvent *event)
 
         m_camera.ProcessMouseMovement(deltaPos.x(),-deltaPos.y());
     }
+}
+
+QVector3D OpenGL_Widget::CameraPositionAuto(float max_Y, float min_Y)
+{
+    QVector3D tempVe3 = {0.0f, 0.0f, 0.0f};
+    float height = max_Y - min_Y;
+    tempVe3.setZ(1.0 * height);
+    if(min_Y >= 0)
+    {
+        tempVe3.setY(height / 2.0f);
+    }
+    view_auto_positon = tempVe3;
+    return tempVe3;
 }
 
 

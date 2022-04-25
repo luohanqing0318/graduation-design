@@ -30,6 +30,8 @@ protected:
     void wheelEvent(QWheelEvent *event);
     void keyPressEvent(QKeyEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+private:
+    QVector3D CameraPositionAuto(float max_Y, float min_Y);
 
 private:
     QTime m_time;

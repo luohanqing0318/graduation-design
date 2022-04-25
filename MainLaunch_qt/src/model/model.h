@@ -23,7 +23,7 @@ public:
     float m_max_Y = -100.0f;
 
     float m_min_X = 100.0f;
-    float m_min_X = 100.0f;
+    float m_min_Y = 100.0f;
 
 private:
     // model data
