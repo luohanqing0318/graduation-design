@@ -21,12 +21,13 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 #include <src/lighthouse/opengl_widget.h>
+
 QT_BEGIN_NAMESPACE
 
 class Ui_LightHouseDemo
 {
 public:
-    QAction *actionDebug;
+    QAction *actionLoadModel;
     QWidget *centralwidget;
     OpenGL_Widget *openGLWidget;
     QMenuBar *menubar;
@@ -48,8 +49,8 @@ public:
 "	background-color:rgb(200,200,200);\n"
 "	color:rgb(60,60,60);\n"
 "}"));
-        actionDebug = new QAction(LightHouseDemo);
-        actionDebug->setObjectName(QStringLiteral("actionDebug"));
+        actionLoadModel = new QAction(LightHouseDemo);
+        actionLoadModel->setObjectName(QStringLiteral("actionLoadModel"));
         centralwidget = new QWidget(LightHouseDemo);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         openGLWidget = new OpenGL_Widget(centralwidget);
@@ -58,7 +59,7 @@ public:
         LightHouseDemo->setCentralWidget(centralwidget);
         menubar = new QMenuBar(LightHouseDemo);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 23));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         menu = new QMenu(menubar);
         menu->setObjectName(QStringLiteral("menu"));
         LightHouseDemo->setMenuBar(menubar);
@@ -70,7 +71,7 @@ public:
         LightHouseDemo->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menubar->addAction(menu->menuAction());
-        toolBar->addAction(actionDebug);
+        toolBar->addAction(actionLoadModel);
 
         retranslateUi(LightHouseDemo);
 
@@ -80,7 +81,7 @@ public:
     void retranslateUi(QMainWindow *LightHouseDemo)
     {
         LightHouseDemo->setWindowTitle(QApplication::translate("LightHouseDemo", "LightHouseDemo", Q_NULLPTR));
-        actionDebug->setText(QApplication::translate("LightHouseDemo", "\350\260\203\350\257\225", Q_NULLPTR));
+        actionLoadModel->setText(QApplication::translate("LightHouseDemo", "\350\275\275\345\205\245\346\250\241\345\236\213", Q_NULLPTR));
         menu->setTitle(QApplication::translate("LightHouseDemo", "\346\226\207\344\273\266", Q_NULLPTR));
         toolBar->setWindowTitle(QApplication::translate("LightHouseDemo", "toolBar", Q_NULLPTR));
     } // retranslateUi

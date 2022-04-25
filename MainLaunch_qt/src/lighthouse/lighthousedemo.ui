@@ -42,7 +42,7 @@ QMenuBar{
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -63,11 +63,11 @@ QMenuBar{
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionDebug"/>
+   <addaction name="actionLoadModel"/>
   </widget>
-  <action name="actionDebug">
+  <action name="actionLoadModel">
    <property name="text">
-    <string>调试</string>
+    <string>载入模型</string>
    </property>
   </action>
  </widget>

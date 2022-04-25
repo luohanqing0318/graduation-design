@@ -6,6 +6,7 @@
 #include "src/mesh/mesh.h"
 class Model {
 public:
+
     vector<Texture> textures_loaded;
     Model(QOpenGLFunctions_3_3_Core *glfuns, const char *path) :m_glFuns(glfuns) {
         m_glFuns = glfuns;
@@ -16,6 +17,13 @@ public:
             meshes[i].Draw(shader);
 
     }
+
+public:
+    float m_max_X = -100.0f;
+    float m_max_Y = -100.0f;
+
+    float m_min_X = 100.0f;
+    float m_min_X = 100.0f;
 
 private:
     // model data

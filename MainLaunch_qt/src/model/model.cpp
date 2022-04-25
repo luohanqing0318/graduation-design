@@ -30,7 +30,8 @@ void Model::ProcessNode(aiNode *node, const aiScene *scene)
 
 Mesh Model::ProcessMesh(aiMesh *mesh, const aiScene *scene)
 {
-    vector<Vertex> vertices;
+
+        vector<Vertex> vertices;
         vector<unsigned int> indices;
         vector<Texture> textures;
         for(unsigned int i = 0; i < mesh->mNumVertices; i++) {
@@ -85,7 +86,7 @@ vector<Texture> Model::LoadMaterialTextures(aiMaterial *mat, aiTextureType type,
             aiString str;
             mat->GetTexture(type, i, &str);
             bool skip = false;
-            for(unsigned int j = 0; j < textures_loaded.size(); j++) {
+            for(unsigned int j = 0; j < textures_loaded.size(); j++) {//防止有重复的纹理
                 if(std::strcmp(textures_loaded[j].path.data(), str.C_Str()) == 0) {
                     textures.push_back(textures_loaded[j]);
                     skip = true;
@@ -109,7 +110,7 @@ unsigned int Model::TextureFromFile(const char *path, const string &directory)
         string filename = string(path);
         filename = directory + '/' + filename;
 
-        QOpenGLTexture * texture=new QOpenGLTexture(QImage(filename.c_str()).mirrored());
+        QOpenGLTexture * texture = new QOpenGLTexture(QImage(filename.c_str()).mirrored());
         if(texture==NULL) qDebug()<<"texture is NULL";
         else qDebug()<<filename.c_str()<<"loaded";
 
