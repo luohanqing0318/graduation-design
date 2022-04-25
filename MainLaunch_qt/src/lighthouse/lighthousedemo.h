@@ -15,6 +15,9 @@ public:
     explicit LightHouseDemo(QWidget *parent = 0);
     ~LightHouseDemo();
 
+private slots:
+    void on_actionLoadModel_triggered();
+
 private:
     Ui::LightHouseDemo *ui;
 };

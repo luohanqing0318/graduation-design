@@ -16,6 +16,9 @@ class OpenGL_Widget : public QOpenGLWidget,QOpenGLFunctions_3_3_Core
 public:
     explicit OpenGL_Widget(QWidget *parent = nullptr);
     ~OpenGL_Widget();
+
+     void LoadModel(string path);
+
 signals:
 
 
@@ -37,7 +40,7 @@ private:
     QOpenGLTexture* m_diffuseTexture;
     QOpenGLTexture* m_specularTexture;
 
-    Model* m_model;
+    Model* m_model = nullptr;
 public slots:
     void OnTimeout();
 };
