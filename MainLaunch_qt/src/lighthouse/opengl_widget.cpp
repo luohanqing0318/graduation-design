@@ -1,9 +1,11 @@
 #include "opengl_widget.h"
 
 const unsigned int TIMEOUTSECOND = 50;
+const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
+
 
 unsigned int VAO, VBO, lightVAO;
-unsigned int FBO, depthMap;
+unsigned int depthMapFBO, depthMap;
 
 QVector3D light_position(1.2f, 1.0f, 2.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
@@ -109,7 +111,7 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
        m_shaderprogram.setUniformValue("model_matrix", model);
        m_model->Draw(m_shaderprogram);
-
+       m_shaderprogram.release();
 //       m_light_shaderProgram.bind();
 //       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
 //       m_light_shaderProgram.setUniformValue("view_matrix", view);
