@@ -30,6 +30,7 @@ protected:
     void wheelEvent(QWheelEvent *event);
     void keyPressEvent(QKeyEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
 private:
     QVector3D CameraPositionAuto(float max_Y, float min_Y);
 
@@ -39,8 +40,7 @@ private:
     QOpenGLShaderProgram m_shaderprogram;
     QOpenGLShaderProgram m_light_shaderProgram;
     Camera m_camera;
-    QOpenGLTexture* m_diffuseTexture;
-    QOpenGLTexture* m_specularTexture;
+
 
     Model* m_model = nullptr;
 public slots:

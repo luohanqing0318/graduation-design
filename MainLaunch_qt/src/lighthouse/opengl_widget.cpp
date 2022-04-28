@@ -2,7 +2,9 @@
 
 const unsigned int TIMEOUTSECOND = 50;
 
-unsigned int VAO,VBO,lightVAO;
+unsigned int VAO, VBO, lightVAO;
+unsigned int FBO, depthMap;
+
 QVector3D light_position(1.2f, 1.0f, 2.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
 QVector3D object_color(1.0f, 0.5f, 0.31f);
@@ -88,6 +90,9 @@ void OpenGL_Widget::paintGL()
        glEnable(GL_DEPTH_TEST);
        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        model.scale(0.2);
+
+
+
        m_shaderprogram.bind();
        m_shaderprogram.setUniformValue("projection_matrix", projection);
        m_shaderprogram.setUniformValue("view_matrix", view);
@@ -95,7 +100,6 @@ void OpenGL_Widget::paintGL()
        //model.rotate(time, 5.0f, 5.0f, 0.5f);
 
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
-
        // light properties, note that all light colors are set at full intensity
        m_shaderprogram.setUniformValue("light.direction", -0.2f, -1.0f, -0.3f);
        m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
@@ -103,9 +107,7 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
        // material properties
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
-
        m_shaderprogram.setUniformValue("model_matrix", model);
-
        m_model->Draw(m_shaderprogram);
 
 //       m_light_shaderProgram.bind();
@@ -152,6 +154,18 @@ void OpenGL_Widget::keyPressEvent(QKeyEvent *event)
 }
 
 void OpenGL_Widget::mouseMoveEvent(QMouseEvent *event)
+{
+    if(event->buttons() & Qt::RightButton){
+        static QPoint lastPos(width()/2,height()/2);
+        auto currentPos=event->pos();
+        QPoint deltaPos=currentPos-lastPos;
+        lastPos=currentPos;
+
+        m_camera.ProcessMouseMovement(deltaPos.x(),-deltaPos.y());
+    }
+}
+
+void OpenGL_Widget::mousePressEvent(QMouseEvent *event)
 {
     if(event->buttons() & Qt::RightButton){
         static QPoint lastPos(width()/2,height()/2);
