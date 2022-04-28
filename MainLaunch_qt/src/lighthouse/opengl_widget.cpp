@@ -97,12 +97,13 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
 
        // light properties, note that all light colors are set at full intensity
+       m_shaderprogram.setUniformValue("light.direction", -0.2f, -1.0f, -0.3f);
        m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
-       m_shaderprogram.setUniformValue("light.diffuse", 0.9f, 0.9f, 0.9f);
+       m_shaderprogram.setUniformValue("light.diffuse", 0.2f, 0.2f, 0.2f);
        m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
        // material properties
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
-       m_shaderprogram.setUniformValue("light.direction", -0.2f, -1.0f, -0.3f);
+
        m_shaderprogram.setUniformValue("model_matrix", model);
 
        m_model->Draw(m_shaderprogram);

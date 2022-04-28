@@ -25,8 +25,8 @@ in vec2 out_texcoords;
 uniform vec3 view_position;
 
 void main() {
-    vec3 diffuseTexColor=vec3(texture(material.texture_diffuse1,out_texcoords));
-    vec3 specularTexColor=vec3(texture(material.texture_specular1,out_texcoords));
+    vec3 diffuseTexColor = vec3(texture(material.texture_diffuse1,out_texcoords));
+    vec3 specularTexColor = vec3(texture(material.texture_specular1,out_texcoords));
 
     // ambient
     vec3 ambient = diffuseTexColor*light.ambient;
