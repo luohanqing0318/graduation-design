@@ -57,15 +57,42 @@ void OpenGL_Widget::initializeGL()
       success=m_shaderprogram.link();
       if(!success) qDebug()<<"ERR:"<<m_shaderprogram.log();
 
-      m_shaderprogram.bind();
-
-
       m_light_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex,":/shaders/glsl/v_light.glsl");
       m_light_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment,":/shaders/glsl/f_light.glsl");
 
       success=m_light_shaderProgram.link();
       if(!success) qDebug()<<"ERR:"<<m_light_shaderProgram.log();
 
+
+      m_depthMap_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex,":/shaders/glsl/v_depthMap.glsl");
+      m_depthMap_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment,":/shaders/glsl/f_depthMap.glsl");
+      success=m_depthMap_shaderProgram.link();
+      if(!success) qDebug()<<"ERR:"<<m_depthMap_shaderProgram.log();
+
+      m_quad_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex,":/shaders/glsl/v_quad.glsl");
+      m_quad_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment,":/shaders/glsl/f_quad.glsl");
+      success=m_quad_shaderProgram.link();
+      if(!success) qDebug()<<"ERR:"<<m_quad_shaderProgram.log();
+
+
+
+
+      glGenTextures(1, &depthMap);
+      glBindTexture(GL_TEXTURE_2D, depthMap);
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+      // attach depth texture as FBO's depth buffer
+      glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+      glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
+      glDrawBuffer(GL_NONE);
+      glReadBuffer(GL_NONE);
+
+      if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+          qDebug() << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << endl;
+      glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject() );
 
 
 }
@@ -85,11 +112,15 @@ void OpenGL_Widget::paintGL()
        QMatrix4x4 model;
        QMatrix4x4 view;
        QMatrix4x4 projection;
+       model.setToIdentity();
+       view.setToIdentity();
+       projection.setToIdentity();
        //float time=m_time.elapsed()/50.0;
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
        glEnable(GL_DEPTH_TEST);
+       glDepthFunc(GL_LESS);
        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        model.scale(0.2);
 
@@ -110,7 +141,57 @@ void OpenGL_Widget::paintGL()
        // material properties
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
        m_shaderprogram.setUniformValue("model_matrix", model);
+       //m_model->Draw(m_shaderprogram);
+
+
+
+       m_depthMap_shaderProgram.bind();
+       // 1. render depth of scene to texture (from light's perspective)
+       // --------------------------------------------------------------
+       QMatrix4x4 lightProjection, lightView;
+       QMatrix4x4 lightSpaceMatrix;
+       float near_plane = 1.0f, far_plane = 7.5f;
+       lightProjection.ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+       lightView.lookAt(light_position, QVector3D(0.0,0.0,0.0), QVector3D(0.0, 1.0, 0.0));
+       lightSpaceMatrix = lightProjection * lightView;
+
+       glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+       glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+       glClear(GL_DEPTH_BUFFER_BIT);
+       m_depthMap_shaderProgram.setUniformValue("lightSpaceMatrix", lightSpaceMatrix);
+
+       model.setToIdentity();
+       m_depthMap_shaderProgram.setUniformValue("model_matrix", model);
+       m_model->Draw(m_depthMap_shaderProgram);
+
+       glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject());
+       m_depthMap_shaderProgram.release();
+
+
+//           m_quad_shaderProgram.bind();
+//           // reset viewport
+//           glViewport(0, 0, width(), height());
+//           glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//           // render Depth map to quad for visual debugging
+//           // ---------------------------------------------
+//           m_model->Draw(m_quad_shaderProgram);
+//           m_quad_shaderProgram.release();
+
+
+       m_shaderprogram.bind();
+       m_shaderprogram.setUniformValue("lightSpaceMatrix", lightSpaceMatrix);
+       glViewport(0, 0, width(), height());
+       glActiveTexture(GL_TEXTURE1);
+       glBindTexture(GL_TEXTURE_2D, depthMap);
+       m_shaderprogram.setUniformValue("depthMap",1);
+       model.setToIdentity();
+       m_shaderprogram.setUniformValue("model_matrix", model);
        m_model->Draw(m_shaderprogram);
+
+
+
+
+
        m_shaderprogram.release();
 //       m_light_shaderProgram.bind();
 //       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
