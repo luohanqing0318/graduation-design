@@ -52,7 +52,7 @@ float vertices[] = {
     -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
 };
 
-QVector3D light_position(5.0f, 0.0f, 0.0f);
+QVector3D light_position(3.0f, 0.0f, 0.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
 QVector3D object_color(1.0f, 0.5f, 0.31f);
 QVector3D view_auto_positon(0.0,5.0,0.0);
