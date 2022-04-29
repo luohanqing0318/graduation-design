@@ -30,17 +30,24 @@ protected:
     void wheelEvent(QWheelEvent *event);
     void keyPressEvent(QKeyEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
 
+
+private:
+    QVector3D CameraPositionAuto(float max_Y, float min_Y);
+    Mesh* ProcessMesh();
 private:
     QTime m_time;
     QTimer m_timer;
     QOpenGLShaderProgram m_shaderprogram;
     QOpenGLShaderProgram m_light_shaderProgram;
+    QOpenGLShaderProgram m_depthMap_shaderProgram;
+    QOpenGLShaderProgram m_quad_shaderProgram;
     Camera m_camera;
-    QOpenGLTexture* m_diffuseTexture;
-    QOpenGLTexture* m_specularTexture;
+
 
     Model* m_model = nullptr;
+    Mesh* m_light_mesh = nullptr;
 public slots:
     void OnTimeout();
 };

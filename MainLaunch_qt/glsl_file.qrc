@@ -4,5 +4,9 @@
         <file>glsl/v_demo.glsl</file>
         <file>glsl/f_light.glsl</file>
         <file>glsl/v_light.glsl</file>
+        <file>glsl/f_depthMap.glsl</file>
+        <file>glsl/f_quad.glsl</file>
+        <file>glsl/v_depthMap.glsl</file>
+        <file>glsl/v_quad.glsl</file>
     </qresource>
 </RCC>

@@ -35,6 +35,23 @@ Mesh Model::ProcessMesh(aiMesh *mesh, const aiScene *scene)
         vector<unsigned int> indices;
         vector<Texture> textures;
         for(unsigned int i = 0; i < mesh->mNumVertices; i++) {
+            if(m_max_X < mesh->mVertices[i].x)
+            {
+                m_max_X = mesh->mVertices[i].x;
+            }
+            if(m_max_Y < mesh->mVertices[i].y)
+            {
+                m_max_Y = mesh->mVertices[i].y;
+            }
+            if(m_min_X > mesh->mVertices[i].x)
+            {
+                m_min_X = mesh->mVertices[i].x;
+            }
+            if(m_min_Y > mesh->mVertices[i].y)
+            {
+                m_min_Y = mesh->mVertices[i].y;
+            }
+
             Vertex vertex;
             // 处理顶点位置、法线和纹理坐标
             QVector3D vector;
