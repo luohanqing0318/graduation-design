@@ -41,8 +41,7 @@ private:
     QTimer m_timer;
     QOpenGLShaderProgram m_shaderprogram;
     QOpenGLShaderProgram m_light_shaderProgram;
-    QOpenGLShaderProgram m_depthMap_shaderProgram;
-    QOpenGLShaderProgram m_quad_shaderProgram;
+
     Camera m_camera;
 
 
