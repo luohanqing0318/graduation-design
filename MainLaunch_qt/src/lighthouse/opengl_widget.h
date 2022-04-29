@@ -31,9 +31,11 @@ protected:
     void keyPressEvent(QKeyEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
+
+
 private:
     QVector3D CameraPositionAuto(float max_Y, float min_Y);
-
+    Mesh* ProcessMesh();
 private:
     QTime m_time;
     QTimer m_timer;
@@ -45,6 +47,7 @@ private:
 
 
     Model* m_model = nullptr;
+    Mesh* m_light_mesh = nullptr;
 public slots:
     void OnTimeout();
 };

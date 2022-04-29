@@ -7,7 +7,52 @@ const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 unsigned int VAO, VBO, lightVAO;
 unsigned int depthMapFBO, depthMap;
 
-QVector3D light_position(1.2f, 1.0f, 2.0f);
+float vertices[] = {
+    // positions          // normals
+    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
+    0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 0.0f,
+    0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
+    0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
+
+    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
+    0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 0.0f,
+    0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
+    0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
+
+    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+
+    0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+    0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
+    0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
+    0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
+    0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
+    0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+
+    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
+    0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 1.0f,
+    0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
+    0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
+
+    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f,
+    0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 1.0f,
+    0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
+    0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
+};
+
+QVector3D light_position(5.0f, 0.0f, 0.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
 QVector3D object_color(1.0f, 0.5f, 0.31f);
 QVector3D view_auto_positon(0.0,5.0,0.0);
@@ -62,7 +107,7 @@ void OpenGL_Widget::initializeGL()
 
       success=m_light_shaderProgram.link();
       if(!success) qDebug()<<"ERR:"<<m_light_shaderProgram.log();
-
+      m_light_mesh = ProcessMesh();
 
       m_depthMap_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex,":/shaders/glsl/v_depthMap.glsl");
       m_depthMap_shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment,":/shaders/glsl/f_depthMap.glsl");
@@ -193,17 +238,17 @@ void OpenGL_Widget::paintGL()
 
 
        m_shaderprogram.release();
-//       m_light_shaderProgram.bind();
-//       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
-//       m_light_shaderProgram.setUniformValue("view_matrix", view);
-//       model.setToIdentity();
-//       model.translate(light_position);
-//       model.rotate(1.0, 1.0f, 1.0f, 0.5f);
-//       model.scale(0.2);
-//       m_light_shaderProgram.setUniformValue("model_matrix", model);
-//       m_light_shaderProgram.setUniformValue("light_color",light_color);
+       m_light_shaderProgram.bind();
+           m_light_shaderProgram.setUniformValue("projection_matrix", projection);
+           m_light_shaderProgram.setUniformValue("view_matrix", view);
+           model.setToIdentity();
+           model.translate(light_position);
+           model.rotate(1.0, 1.0f, 1.0f, 0.5f);
+           model.scale(0.2);
+           m_light_shaderProgram.setUniformValue("model_matrix", model);
+           m_light_shaderProgram.setUniformValue("light_color",light_color);
 
-//       m_model->Draw(m_light_shaderProgram);
+           m_light_mesh->Draw(m_light_shaderProgram);
 
 
 }
@@ -271,6 +316,32 @@ QVector3D OpenGL_Widget::CameraPositionAuto(float max_Y, float min_Y)
     }
     view_auto_positon = tempVe3;
     return tempVe3;
+}
+
+Mesh *OpenGL_Widget::ProcessMesh()
+{
+    vector<Vertex> _vertices(36);
+       vector<unsigned int> _indices;
+       vector<Texture> _textures;
+       // _vertices.reserve(36);
+       // _vertices.resize(36);
+       memcpy(&_vertices[0],vertices,sizeof(vertices));
+       for(int i=0;i<36;i++){
+           // Vertex vert;
+           // vert.Position[0]=vertices[i*8+0];
+           // vert.Position[1]=vertices[i*8+1];
+           // vert.Position[2]=vertices[i*8+2];
+           // vert.Normal[0]=vertices[i*8+3];
+           // vert.Normal[1]=vertices[i*8+4];
+           // vert.Normal[2]=vertices[i*8+5];
+           // vert.TexCoords[0]=vertices[i*8+6];
+           // vert.TexCoords[1]=vertices[i*8+7];
+           // _vertices.push_back(vert);
+           _indices.push_back(i);
+       }
+
+       return new Mesh(QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>()
+           ,_vertices,_indices,_textures);
 }
 
 
