@@ -16,7 +16,6 @@ LightHouseDemo::~LightHouseDemo()
 
 void LightHouseDemo::on_actionLoadModel_triggered()
 {
-//    QString str = QFileDialog::getOpenFileName(this, "选择文件", "" , "OBJ(*.obj);;FBX(*.fbx);;ALL FILES(*.*)");
-      QString str = "F:/House_blender/house01.obj";
+    QString str = QFileDialog::getOpenFileName(this, "选择文件", "" , "OBJ(*.obj);;FBX(*.fbx);;ALL FILES(*.*)");
     ui->openGLWidget->LoadModel(str.toStdString());
 }

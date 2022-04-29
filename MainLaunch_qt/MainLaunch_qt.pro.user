@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.3.1, 2022-04-29T01:27:05. -->
+=======
+<!-- Written by QtCreator 4.3.1, 2022-04-25T14:38:45. -->
+>>>>>>> parent of dc5d066 (20220428)
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
