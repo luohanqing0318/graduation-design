@@ -3,7 +3,7 @@
 const unsigned int TIMEOUTSECOND = 50;
 const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 
-
+float rx_ = 1.0f, ry_ = 1.0f, rz_ = 1.0f;
 unsigned int VAO, VBO, lightVAO;
 
 
@@ -132,7 +132,7 @@ void OpenGL_Widget::paintGL()
        model.setToIdentity();
        view.setToIdentity();
        projection.setToIdentity();
-       float time = m_time.elapsed()/150.0;
+       float time = m_time.elapsed()/150.0 - 50.0f;
        if(m_time.elapsed()/150.0 > 100)
        {
            time -= 99.0f;
@@ -159,7 +159,21 @@ void OpenGL_Widget::paintGL()
 
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
        // light properties, note that all light colors are set at full intensity
-       m_shaderprogram.setUniformValue("light.direction", -0.2f, -1.0f, -0.3f);
+
+       rx_ += 0.3f;
+       ry_ += 0.5f;
+       rz_ += 0.2f;
+
+       if(rx_ >= 10.0f){
+           rx_ = 0.0f;
+       }
+       if(ry_ >= 10.0f){
+           ry_ = 0.0f;
+       }
+       if(rz_ >= 10.0f){
+           rz_ = 0.0f;
+       }
+       m_shaderprogram.setUniformValue("light.direction", -2.0f, -2.0f, -1.3f);
        m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
        m_shaderprogram.setUniformValue("light.diffuse", 0.2f, 0.2f, 0.2f);
        m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
