@@ -30,8 +30,10 @@ public:
 
 private slots:
     void on_actionLoadModel_triggered();
-    void on_actionChooseSeason_triggered();
-
+    void on_actionChooseSeason1_triggered();
+    void on_actionChooseSeason2_triggered();
+    void on_actionChooseSeason3_triggered();
+    void on_actionChooseSeason4_triggered();
 
 private:
     Ui::LightHouseDemo *ui;

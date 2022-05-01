@@ -18,7 +18,7 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
     pActiontSeason1 = new QAction("春季",this);
     pActiontSeason2 = new QAction("夏季",this);
     pActiontSeason3 = new QAction("秋季",this);
-    pActiontSeason4 = new QAction("春季",this);
+    pActiontSeason4 = new QAction("冬季",this);
 
     pMenuChooseSeason->addAction(pActiontSeason1);
     pMenuChooseSeason->addAction(pActiontSeason2);
@@ -27,7 +27,10 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
 
     pMenuBar->addMenu(pMenuChooseSeason);
 
-    connect(pActiontSeason1,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason_triggered);
+    connect(pActiontSeason1,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason1_triggered);
+    connect(pActiontSeason2,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason2_triggered);
+    connect(pActiontSeason3,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason3_triggered);
+    connect(pActiontSeason4,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason4_triggered);
 
 #ifndef USE_DEFAULT_MENU_BAR
 
@@ -47,9 +50,23 @@ void LightHouseDemo::on_actionLoadModel_triggered()
     ui->openGLWidget->LoadModel(str.toStdString());
 }
 
-
-void LightHouseDemo::on_actionChooseSeason_triggered()
+void LightHouseDemo::on_actionChooseSeason1_triggered()
 {
+    qDebug()<<"choose_season1";
+}
 
+void LightHouseDemo::on_actionChooseSeason2_triggered()
+{
+    qDebug()<<"choose_season2";
+}
+
+void LightHouseDemo::on_actionChooseSeason3_triggered()
+{
+    qDebug()<<"choose_season3";
+}
+
+void LightHouseDemo::on_actionChooseSeason4_triggered()
+{
+    qDebug()<<"choose_season4";
 }
 

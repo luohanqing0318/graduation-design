@@ -10,7 +10,8 @@
 #include <QWheelEvent>
 #include "src/camera/camera.h"
 #include "src/model/model.h"
-class OpenGL_Widget : public QOpenGLWidget,QOpenGLFunctions_3_3_Core
+#include "lighthousedemo.h"
+class OpenGL_Widget : public  QOpenGLWidget,QOpenGLFunctions_3_3_Core
 {
     Q_OBJECT
 public:
