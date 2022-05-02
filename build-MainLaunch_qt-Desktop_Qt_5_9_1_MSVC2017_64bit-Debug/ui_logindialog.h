@@ -17,6 +17,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,6 +28,8 @@ public:
     QLineEdit *password_lineEdit;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_1;
 
     void setupUi(QDialog *LoginDialog)
     {
@@ -45,6 +48,12 @@ public:
         pushButton_2 = new QPushButton(LoginDialog);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(250, 250, 80, 20));
+        radioButton_2 = new QRadioButton(LoginDialog);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+        radioButton_2->setGeometry(QRect(240, 220, 115, 19));
+        radioButton_1 = new QRadioButton(LoginDialog);
+        radioButton_1->setObjectName(QStringLiteral("radioButton_1"));
+        radioButton_1->setGeometry(QRect(100, 220, 115, 19));
 
         retranslateUi(LoginDialog);
 
@@ -56,6 +65,8 @@ public:
         LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "Dialog", Q_NULLPTR));
         pushButton->setText(QApplication::translate("LoginDialog", "\347\231\273\345\275\225", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("LoginDialog", "\346\263\250\345\206\214", Q_NULLPTR));
+        radioButton_2->setText(QApplication::translate("LoginDialog", "\346\210\221\346\230\257\346\210\277\344\270\234", Q_NULLPTR));
+        radioButton_1->setText(QApplication::translate("LoginDialog", "\346\210\221\346\230\257\347\247\237\345\256\242", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT += sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = MainLaunch_qt
@@ -31,7 +31,8 @@ SOURCES += \
     src/lighthouse/lighthousedemo.cpp \
     src/lighthouse/opengl_widget.cpp \
     src/mesh/mesh.cpp \
-    src/model/model.cpp
+    src/model/model.cpp \
+    src/sign/dialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,12 +42,14 @@ HEADERS += \
     src/camera/camera.h \
     src/mesh/mesh.h \
     src/model/model.h \
-    common_data.h
+    common_data.h \
+    src/sign/dialog.h
 
 FORMS += \
         mainwindow.ui \
     src/login/logindialog.ui \
-    src/lighthouse/lighthousedemo.ui
+    src/lighthouse/lighthousedemo.ui \
+    src/sign/dialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -66,3 +69,5 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../third-lib/assimp-
 
 INCLUDEPATH += $$PWD/../../third-lib/assimp-5.0.1/include
 DEPENDPATH += $$PWD/../../third-lib/assimp-5.0.1/include
+
+

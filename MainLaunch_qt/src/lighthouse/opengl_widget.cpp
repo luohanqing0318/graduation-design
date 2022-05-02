@@ -4,7 +4,7 @@
 const unsigned int TIMEOUTSECOND = 50;
 const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 
-float rx_ = 1.0f, ry_ = 1.0f, rz_ = 1.0f;
+
 unsigned int VAO, VBO, lightVAO;
 
 
@@ -145,7 +145,7 @@ void OpenGL_Widget::paintGL()
 
 
 
-        qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
+
 
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
@@ -166,20 +166,9 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
        // light properties, note that all light colors are set at full intensity
 
-       rx_ += 0.3f;
-       ry_ += 0.5f;
-       rz_ += 0.2f;
 
-       if(rx_ >= 10.0f){
-           rx_ = 0.0f;
-       }
-       if(ry_ >= 10.0f){
-           ry_ = 0.0f;
-       }
-       if(rz_ >= 10.0f){
-           rz_ = 0.0f;
-       }
-       m_shaderprogram.setUniformValue("light.direction", -2.0f, -2.0f, -1.3f);
+       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
+       m_shaderprogram.setUniformValue("light.direction", -COMMON_LIGHT_DIRECTION_X, -COMMON_LIGHT_DIRECTION_Y, -COMMON_LIGHT_DIRECTION_Z);
        m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
        m_shaderprogram.setUniformValue("light.diffuse", 0.2f, 0.2f, 0.2f);
        m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
