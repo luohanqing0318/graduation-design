@@ -15,8 +15,6 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -30,8 +28,6 @@ public:
     QAction *actionLoadModel;
     QWidget *centralwidget;
     OpenGL_Widget *openGLWidget;
-    QMenuBar *menubar;
-    QMenu *menu;
     QStatusBar *statusbar;
     QToolBar *toolBar;
 
@@ -57,12 +53,6 @@ public:
         openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
         openGLWidget->setGeometry(QRect(200, 130, 300, 200));
         LightHouseDemo->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(LightHouseDemo);
-        menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
-        menu = new QMenu(menubar);
-        menu->setObjectName(QStringLiteral("menu"));
-        LightHouseDemo->setMenuBar(menubar);
         statusbar = new QStatusBar(LightHouseDemo);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         LightHouseDemo->setStatusBar(statusbar);
@@ -70,7 +60,6 @@ public:
         toolBar->setObjectName(QStringLiteral("toolBar"));
         LightHouseDemo->addToolBar(Qt::TopToolBarArea, toolBar);
 
-        menubar->addAction(menu->menuAction());
         toolBar->addAction(actionLoadModel);
 
         retranslateUi(LightHouseDemo);
@@ -82,7 +71,6 @@ public:
     {
         LightHouseDemo->setWindowTitle(QApplication::translate("LightHouseDemo", "LightHouseDemo", Q_NULLPTR));
         actionLoadModel->setText(QApplication::translate("LightHouseDemo", "\350\275\275\345\205\245\346\250\241\345\236\213", Q_NULLPTR));
-        menu->setTitle(QApplication::translate("LightHouseDemo", "\346\226\207\344\273\266", Q_NULLPTR));
         toolBar->setWindowTitle(QApplication::translate("LightHouseDemo", "toolBar", Q_NULLPTR));
     } // retranslateUi
 

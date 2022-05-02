@@ -17,3 +17,10 @@ void LoginDialog::on_pushButton_clicked()
 {
     accept();
 }
+
+
+
+void LoginDialog::on_pushButton_2_clicked()
+{
+    accept();
+}

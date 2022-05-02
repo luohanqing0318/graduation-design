@@ -258,6 +258,7 @@ Makefile: ..\MainLaunch_qt\MainLaunch_qt.pro ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\qtmaind.prl \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Widgets.prl \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Gui.prl \
+		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Sql.prl \
 		..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Core.prl
 	$(QMAKE) -o Makefile ..\MainLaunch_qt\MainLaunch_qt.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
 ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\mkspecs\features\spec_pre.prf:
@@ -443,6 +444,7 @@ Makefile: ..\MainLaunch_qt\MainLaunch_qt.pro ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\
 ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\qtmaind.prl:
 ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Widgets.prl:
 ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Gui.prl:
+..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Sql.prl:
 ..\..\..\Qt5.9.1\5.9.1\msvc2017_64\lib\Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\MainLaunch_qt\MainLaunch_qt.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
