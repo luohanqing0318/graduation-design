@@ -34,17 +34,17 @@ static const qt_meta_stringdata_LightHouseDemo_t qt_meta_stringdata_LightHouseDe
 QT_MOC_LITERAL(0, 0, 14), // "LightHouseDemo"
 QT_MOC_LITERAL(1, 15, 28), // "on_actionLoadModel_triggered"
 QT_MOC_LITERAL(2, 44, 0), // ""
-QT_MOC_LITERAL(3, 45, 32), // "on_actionChooseSeason1_triggered"
-QT_MOC_LITERAL(4, 78, 32), // "on_actionChooseSeason2_triggered"
-QT_MOC_LITERAL(5, 111, 32), // "on_actionChooseSeason3_triggered"
-QT_MOC_LITERAL(6, 144, 32) // "on_actionChooseSeason4_triggered"
+QT_MOC_LITERAL(3, 45, 32), // "On_actionChooseSeason1_triggered"
+QT_MOC_LITERAL(4, 78, 32), // "On_actionChooseSeason2_triggered"
+QT_MOC_LITERAL(5, 111, 32), // "On_actionChooseSeason3_triggered"
+QT_MOC_LITERAL(6, 144, 32) // "On_actionChooseSeason4_triggered"
 
     },
     "LightHouseDemo\0on_actionLoadModel_triggered\0"
-    "\0on_actionChooseSeason1_triggered\0"
-    "on_actionChooseSeason2_triggered\0"
-    "on_actionChooseSeason3_triggered\0"
-    "on_actionChooseSeason4_triggered"
+    "\0On_actionChooseSeason1_triggered\0"
+    "On_actionChooseSeason2_triggered\0"
+    "On_actionChooseSeason3_triggered\0"
+    "On_actionChooseSeason4_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -85,10 +85,10 @@ void LightHouseDemo::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_actionLoadModel_triggered(); break;
-        case 1: _t->on_actionChooseSeason1_triggered(); break;
-        case 2: _t->on_actionChooseSeason2_triggered(); break;
-        case 3: _t->on_actionChooseSeason3_triggered(); break;
-        case 4: _t->on_actionChooseSeason4_triggered(); break;
+        case 1: _t->On_actionChooseSeason1_triggered(); break;
+        case 2: _t->On_actionChooseSeason2_triggered(); break;
+        case 3: _t->On_actionChooseSeason3_triggered(); break;
+        case 4: _t->On_actionChooseSeason4_triggered(); break;
         default: ;
         }
     }

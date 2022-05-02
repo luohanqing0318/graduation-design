@@ -1,6 +1,9 @@
 #include "lighthousedemo.h"
 #include "ui_lighthousedemo.h"
 #include <QFileDialog>
+float  COMMON_LIGHT_DIRECTION_X = 1.0f;
+float  COMMON_LIGHT_DIRECTION_Y = 1.0f;
+float  COMMON_LIGHT_DIRECTION_Z = 1.0f;
 LightHouseDemo::LightHouseDemo(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LightHouseDemo)
@@ -27,10 +30,12 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
 
     pMenuBar->addMenu(pMenuChooseSeason);
 
-    connect(pActiontSeason1,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason1_triggered);
-    connect(pActiontSeason2,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason2_triggered);
-    connect(pActiontSeason3,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason3_triggered);
-    connect(pActiontSeason4,&QAction::triggered,this,&LightHouseDemo::on_actionChooseSeason4_triggered);
+    connect(pActiontSeason1,&QAction::triggered,this,&LightHouseDemo::On_actionChooseSeason1_triggered);
+    connect(pActiontSeason2,&QAction::triggered,this,&LightHouseDemo::On_actionChooseSeason2_triggered);
+    connect(pActiontSeason3,&QAction::triggered,this,&LightHouseDemo::On_actionChooseSeason3_triggered);
+    connect(pActiontSeason4,&QAction::triggered,this,&LightHouseDemo::On_actionChooseSeason4_triggered);
+
+
 
 #ifndef USE_DEFAULT_MENU_BAR
 
@@ -50,23 +55,43 @@ void LightHouseDemo::on_actionLoadModel_triggered()
     ui->openGLWidget->LoadModel(str.toStdString());
 }
 
-void LightHouseDemo::on_actionChooseSeason1_triggered()
+void LightHouseDemo::On_actionChooseSeason1_triggered()
 {
     qDebug()<<"choose_season1";
+    COMMON_LIGHT_DIRECTION_X = 2.0f;
+    COMMON_LIGHT_DIRECTION_Y = 2.0f;
+    COMMON_LIGHT_DIRECTION_Z = 1.3f;
+
+    qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }
 
-void LightHouseDemo::on_actionChooseSeason2_triggered()
+void LightHouseDemo::On_actionChooseSeason2_triggered()
 {
     qDebug()<<"choose_season2";
+    COMMON_LIGHT_DIRECTION_X = 1.0f;
+    COMMON_LIGHT_DIRECTION_Y = 1.0f;
+    COMMON_LIGHT_DIRECTION_Z = 0.8f;
+
+    qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }
 
-void LightHouseDemo::on_actionChooseSeason3_triggered()
+void LightHouseDemo::On_actionChooseSeason3_triggered()
 {
     qDebug()<<"choose_season3";
+    COMMON_LIGHT_DIRECTION_X = 2.0f;
+    COMMON_LIGHT_DIRECTION_Y = 2.0f;
+    COMMON_LIGHT_DIRECTION_Z = 1.3f;
+
+    qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }
 
-void LightHouseDemo::on_actionChooseSeason4_triggered()
+void LightHouseDemo::On_actionChooseSeason4_triggered()
 {
     qDebug()<<"choose_season4";
+    COMMON_LIGHT_DIRECTION_X = 0.5f;
+    COMMON_LIGHT_DIRECTION_Y = 0.4f;
+    COMMON_LIGHT_DIRECTION_Z = 0.3f;
+
+    qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }
 

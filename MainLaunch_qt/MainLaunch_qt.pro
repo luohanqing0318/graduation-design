@@ -40,7 +40,8 @@ HEADERS += \
     src/lighthouse/opengl_widget.h \
     src/camera/camera.h \
     src/mesh/mesh.h \
-    src/model/model.h
+    src/model/model.h \
+    common_data.h
 
 FORMS += \
         mainwindow.ui \

@@ -11,6 +11,8 @@
 #include "src/camera/camera.h"
 #include "src/model/model.h"
 #include "lighthousedemo.h"
+
+
 class OpenGL_Widget : public  QOpenGLWidget,QOpenGLFunctions_3_3_Core
 {
     Q_OBJECT

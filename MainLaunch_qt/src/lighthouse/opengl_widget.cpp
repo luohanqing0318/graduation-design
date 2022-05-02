@@ -1,5 +1,6 @@
 #include "opengl_widget.h"
 
+
 const unsigned int TIMEOUTSECOND = 50;
 const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 
@@ -51,7 +52,7 @@ float vertices[] = {
     -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
     -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
 };
-
+QVector3D light_direction(0.0f, 0.0f, 0.0f);
 QVector3D light_position(3.0f, 0.0f, 0.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
 
@@ -65,6 +66,8 @@ OpenGL_Widget::OpenGL_Widget(QWidget *parent) : QOpenGLWidget(parent)
     m_time.start();
     m_camera.Position = view_auto_positon;
     setFocusPolicy(Qt::StrongFocus);
+
+
 }
 
 OpenGL_Widget::~OpenGL_Widget()
@@ -138,8 +141,11 @@ void OpenGL_Widget::paintGL()
            time -= 99.0f;
        }
 //       QTime time = m_time.currentTime();
-       qDebug() << time;
+//       qDebug() << time;
 
+
+
+        qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
