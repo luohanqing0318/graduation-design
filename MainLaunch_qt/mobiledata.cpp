@@ -50,7 +50,7 @@ int MobileData::age() const
     return m_age;
 }
 
-void MobileData::setAge(int age)
+void MobileData::setAge(const int &age)
 {
     m_age = age;
 }

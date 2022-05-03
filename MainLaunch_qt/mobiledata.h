@@ -22,7 +22,7 @@ public:
     void setName(const QString &name);
 
     int age() const;
-    void setAge(int age);
+    void setAge(const int &age);
 
     QString phone() const;
     void setPhone(const QString &phone);
