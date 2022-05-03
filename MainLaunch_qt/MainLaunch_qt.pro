@@ -32,7 +32,8 @@ SOURCES += \
     src/lighthouse/opengl_widget.cpp \
     src/mesh/mesh.cpp \
     src/model/model.cpp \
-    src/sign/dialog.cpp
+    src/sign/dialog.cpp \
+    mobiledata.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
     src/mesh/mesh.h \
     src/model/model.h \
     common_data.h \
-    src/sign/dialog.h
+    src/sign/dialog.h \
+    mobiledata.h
 
 FORMS += \
         mainwindow.ui \

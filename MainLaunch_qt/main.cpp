@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QSqlError>
+#include "common_data.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -15,14 +16,14 @@ int main(int argc, char *argv[])
 
         if (qss.open(QFile::ReadOnly))
         {
-            qDebug("open success");
+            qDebug("style open success");
             QString style = QLatin1String(qss.readAll());
             a.setStyleSheet(style);
             qss.close();
         }
         else
         {
-            qDebug("Open failed");
+            qDebug("style open failed");
         }
         QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
         //连接数据库
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
         db.setDatabaseName("odbc1");
         db.setUserName("root");		//用户名
         db.setPassword("1234");   //密码
-        //db.setDatabaseName("mysql"); //使用数据库
+
 
         //判断，是否连接成功
         if(db.open() == false)	//连接失败
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
         }
 
 
-
+    SingletonMan::GetInstance()->Test();
 
     LoginDialog logindialog;
     LightHouseDemo lighthousedemo;
