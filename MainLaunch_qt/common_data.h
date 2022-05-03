@@ -3,15 +3,16 @@
 
 #include <iostream>
 #include "mobiledata.h"
-extern MobileData mobiledata;
 
 class SingletonMan
 {
 public:
+
     static SingletonMan* GetInstance()
     {
         return m_pSingleton;
     }
+
     void Test()
     {
         std::cout<<"Here is Singleton Test"<<std::endl;
@@ -28,6 +29,6 @@ private:
 
 SingletonMan *SingletonMan::m_pSingleton = new SingletonMan();
 
-
+MobileData common_mobiledata;
 
 #endif // COMMON_DATA_H

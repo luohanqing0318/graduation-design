@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include <QSqlError>
 #include "common_data.h"
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -48,9 +49,16 @@ int main(int argc, char *argv[])
 
 
     SingletonMan::GetInstance()->Test();
+    int temp = 99;
+    common_mobiledata.setAge(temp);
+    int res = common_mobiledata.age();
+    qDebug()<<res;
+
+
 
     LoginDialog logindialog;
     LightHouseDemo lighthousedemo;
+
     MainWindow w;
     if (logindialog.exec() == QDialog::Accepted)
        {
