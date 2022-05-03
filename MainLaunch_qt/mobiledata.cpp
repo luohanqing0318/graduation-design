@@ -1,5 +1,5 @@
 #include "mobiledata.h"
-
+MobileData mobiledata;
 MobileData::MobileData()
 {
 

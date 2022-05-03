@@ -2,6 +2,8 @@
 #define COMMON_DATA_H
 
 #include <iostream>
+#include "mobiledata.h"
+extern MobileData mobiledata;
 
 class SingletonMan
 {
@@ -14,14 +16,18 @@ public:
     {
         std::cout<<"Here is Singleton Test"<<std::endl;
     }
-private:
-    SingletonMan() {}  // 构造函数（被保护）
 
 private:
-    static SingletonMan *m_pSingleton;  // 指向单例对象的指针
+    SingletonMan() {}
+
+private:
+    static SingletonMan *m_pSingleton;
+
 
 };
 
 SingletonMan *SingletonMan::m_pSingleton = new SingletonMan();
+
+
 
 #endif // COMMON_DATA_H
