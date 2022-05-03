@@ -49,11 +49,11 @@ int main(int argc, char *argv[])
 
 
     SingletonMan::GetInstance()->Test();
-     int temp = 69;
-    common_mobiledata.setAge(temp);
-    int res = common_mobiledata.age();
-    qDebug()<<res;
+     int temp = 29;
+    SingletonMan::GetMobileDataInstance()->setAge(temp);
 
+    int res = SingletonMan::GetMobileDataInstance()->age();
+    qDebug()<<res;
 
 
     LoginDialog logindialog;

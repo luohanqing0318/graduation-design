@@ -12,6 +12,10 @@ public:
     {
         return m_pSingleton;
     }
+    static MobileData* GetMobileDataInstance()
+    {
+        return m_pMobileData;
+    }
 
     void Test()
     {
@@ -23,12 +27,12 @@ private:
 
 private:
     static SingletonMan *m_pSingleton;
-
+    static MobileData * m_pMobileData;
 
 };
 
 SingletonMan *SingletonMan::m_pSingleton = new SingletonMan();
+MobileData *SingletonMan::m_pMobileData = new MobileData();
 
-MobileData common_mobiledata;
 
 #endif // COMMON_DATA_H
