@@ -69,14 +69,14 @@ int main(int argc, char *argv[])
     LightHouseDemo lighthousedemo;
     signdialog.show();
     MainWindow w;
-//    if (logindialog.exec() == QDialog::Accepted)
-//       {
-//          //w.show();
-//        lighthousedemo.show();
-//          return a.exec();
-//       }
+    if (logindialog.exec() == QDialog::Accepted)
+       {
+          //w.show();
+        lighthousedemo.show();
+          return a.exec();
+       }
 
-//    w.show();
+    w.show();
 
     return a.exec();
 }
