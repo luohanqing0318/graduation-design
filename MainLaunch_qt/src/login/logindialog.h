@@ -2,7 +2,9 @@
 #define LOGINDIALOG_H
 
 #include <QDialog>
-
+#include <QMessageBox>
+#include <QSqlQuery>
+#include <QDebug>
 namespace Ui {
 class LoginDialog;
 }

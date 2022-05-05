@@ -1,12 +1,38 @@
 #include "mainwindow.h"
 #include "src/login/logindialog.h"
 #include "src/lighthouse/lighthousedemo.h"
+#include "src/sign/signdialog.h"
 #include <QApplication>
 #include <QFile>
 #include <QSqlDatabase>
 #include <QDebug>
 #include <QMessageBox>
 #include <QSqlError>
+#include <QSqlQuery>
+
+
+void ConnectSql(QSqlDatabase &db);
+
+void ConnectSql(QSqlDatabase &db)
+{
+    db.setHostName("127.0.0.1");
+    db.setPort(3306);
+    db.setDatabaseName("odbc1");
+    db.setUserName("root");
+    db.setPassword("1234");
+    if(db.open() == false)
+    {
+        qDebug() << db.lastError().text();
+        qDebug() << "sql connect fail";
+
+    }
+    else//连接成功
+    {
+        qDebug() << "sql connect success";
+    }
+
+}
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -15,41 +41,33 @@ int main(int argc, char *argv[])
 
         if (qss.open(QFile::ReadOnly))
         {
-            qDebug("open success");
+            qDebug("style open success");
             QString style = QLatin1String(qss.readAll());
             a.setStyleSheet(style);
             qss.close();
         }
         else
         {
-            qDebug("Open failed");
+            qDebug("style open failed");
         }
-        QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
         //连接数据库
-        db.setHostName("127.0.0.1");    //数据库服务器IP
-        db.setPort(3306);
-        db.setDatabaseName("odbc1");
-        db.setUserName("root");		//用户名
-        db.setPassword("1234");   //密码
-        //db.setDatabaseName("mysql"); //使用数据库
+    ConnectSql(db);
 
-        //判断，是否连接成功
-        if(db.open() == false)	//连接失败
-        {
-            qDebug() << db.lastError().text();	//打印失败原因
-            qDebug() << "连接失败";
-
-        }
-        else//连接成功
-        {
-            qDebug() << "连接成功";
-        }
+//    SingletonMan::GetInstance()->Test();
+//    int temp = 29;
+//    SingletonMan::GetMobileDataInstance()->setAge(temp);
+//    int res = SingletonMan::GetMobileDataInstance()->age();
+//    qDebug()<<res;
 
 
 
 
+
+    SignDialog signdialog;
     LoginDialog logindialog;
     LightHouseDemo lighthousedemo;
+    signdialog.show();
     MainWindow w;
     if (logindialog.exec() == QDialog::Accepted)
        {

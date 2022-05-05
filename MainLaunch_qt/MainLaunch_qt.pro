@@ -32,7 +32,8 @@ SOURCES += \
     src/lighthouse/opengl_widget.cpp \
     src/mesh/mesh.cpp \
     src/model/model.cpp \
-    src/sign/dialog.cpp
+    mobiledata.cpp \
+    src/sign/signdialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,13 +44,14 @@ HEADERS += \
     src/mesh/mesh.h \
     src/model/model.h \
     common_data.h \
-    src/sign/dialog.h
+    mobiledata.h \
+    src/sign/signdialog.h
 
 FORMS += \
         mainwindow.ui \
     src/login/logindialog.ui \
     src/lighthouse/lighthousedemo.ui \
-    src/sign/dialog.ui
+    src/sign/signdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

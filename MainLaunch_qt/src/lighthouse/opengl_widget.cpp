@@ -6,7 +6,7 @@ const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 
 
 unsigned int VAO, VBO, lightVAO;
-
+float dirX = 0.0f, dirY = 0.0f, dirZ = 0.0f;
 
 float vertices[] = {
     // positions          // normals
@@ -165,10 +165,28 @@ void OpenGL_Widget::paintGL()
 
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
        // light properties, note that all light colors are set at full intensity
+       float tempX =  COMMON_LIGHT_DIRECTION_X;
+       float tempY =  COMMON_LIGHT_DIRECTION_Z;
+       float tempZ =  COMMON_LIGHT_DIRECTION_Y;
+       dirX += tempX/2;
+       dirY += tempY/2;
+       dirZ += tempZ/2;
+       if(dirX >= 10.0f)
+       {
+           dirX = COMMON_LIGHT_DIRECTION_X;
+       }
+       if(dirY >= 10.0f)
+       {
+           dirY = COMMON_LIGHT_DIRECTION_X;
+       }
+       if(dirZ >= 10.0f)
+       {
+           dirZ = COMMON_LIGHT_DIRECTION_Z;
+       }
 
-
-       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
-       m_shaderprogram.setUniformValue("light.direction", -COMMON_LIGHT_DIRECTION_X, -COMMON_LIGHT_DIRECTION_Y, -COMMON_LIGHT_DIRECTION_Z);
+//       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
+qDebug()<<"("<<dirX<<","<<dirY<<","<<dirZ<<")";
+       m_shaderprogram.setUniformValue("light.direction", -dirX, -dirY, -dirZ);
        m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
        m_shaderprogram.setUniformValue("light.diffuse", 0.2f, 0.2f, 0.2f);
        m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
