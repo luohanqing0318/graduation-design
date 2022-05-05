@@ -1,6 +1,6 @@
 #include "logindialog.h"
 #include "ui_logindialog.h"
-
+#include "common_data.h"
 LoginDialog::LoginDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::LoginDialog)
@@ -42,6 +42,9 @@ void LoginDialog::on_pushButton_clicked()
     if(query.exec())
     {
         qDebug()<<"signdialog : sql select success";
+        int temp = 10;
+        SingletonMan::GetMobileDataInstance()->setAge(temp);
+        qDebug()<<SingletonMan::GetMobileDataInstance()->age();
         accept();
     }else{
          qDebug()<<"signdialog : sql select failed";

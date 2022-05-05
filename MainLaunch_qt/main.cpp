@@ -9,7 +9,7 @@
 #include <QMessageBox>
 #include <QSqlError>
 #include <QSqlQuery>
-#include "common_data.h"
+
 
 void ConnectSql(QSqlDatabase &db);
 
