@@ -1,4 +1,4 @@
-#include "logindialog.h"
+﻿#include "logindialog.h"
 #include "ui_logindialog.h"
 #include "common_data.h"
 LoginDialog::LoginDialog(QWidget *parent) :
@@ -42,9 +42,21 @@ void LoginDialog::on_pushButton_clicked()
     if(query.exec())
     {
         qDebug()<<"signdialog : sql select success";
-        int temp = 10;
-        SingletonMan::GetMobileDataInstance()->setAge(temp);
-        qDebug()<<SingletonMan::GetMobileDataInstance()->age();
+        while (query.next()) {
+                QString sqlusername = query.value(0).toString();
+                SingletonMan::GetMobileDataInstance()->setUsername(sqlusername);
+                QString sqlpassword = query.value(1).toString();
+                SingletonMan::GetMobileDataInstance()->setPassword(sqlpassword);
+                QString sqlname = query.value(2).toString();
+                SingletonMan::GetMobileDataInstance()->setName(sqlname);
+                int sqlage = query.value(3).toInt();
+                SingletonMan::GetMobileDataInstance()->setAge(sqlage);
+                QString sqlphone = query.value(4).toString();
+                SingletonMan::GetMobileDataInstance()->setPhone(sqlphone);
+
+        }
+
+        qDebug()<<"singletonman init:"<<SingletonMan::GetMobileDataInstance()->username()<<SingletonMan::GetMobileDataInstance()->password()<<SingletonMan::GetMobileDataInstance()->name()<<SingletonMan::GetMobileDataInstance()->age()<<SingletonMan::GetMobileDataInstance()->phone();
         accept();
     }else{
          qDebug()<<"signdialog : sql select failed";
