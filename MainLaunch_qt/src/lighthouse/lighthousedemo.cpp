@@ -1,9 +1,22 @@
-#include "lighthousedemo.h"
+﻿#include "lighthousedemo.h"
 #include "ui_lighthousedemo.h"
 #include <QFileDialog>
 float  COMMON_LIGHT_DIRECTION_X = 1.0f;
 float  COMMON_LIGHT_DIRECTION_Y = 1.0f;
 float  COMMON_LIGHT_DIRECTION_Z = 1.0f;
+
+float  COMMON_AMBIENT_LIGHT_R = 1.0f;
+float  COMMON_AMBIENT_LIGHT_G = 1.0f;
+float  COMMON_AMBIENT_LIGHT_B = 1.0f;
+
+float  COMMON_DIFFUSE_LIGHT_R = 1.0f;
+float  COMMON_DIFFUSE_LIGHT_G = 1.0f;
+float  COMMON_DIFFUSE_LIGHT_B = 1.0f;
+
+float  COMMON_SPECULAR_LIGHT_R = 1.0f;
+float  COMMON_SPECULAR_LIGHT_G = 1.0f;
+float  COMMON_SPECULAR_LIGHT_B = 1.0f;
+
 LightHouseDemo::LightHouseDemo(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LightHouseDemo)
@@ -16,12 +29,12 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
 #else
     pMenuBar = new QMenuBar(this);
 #endif
-    pMenuChooseSeason = new QMenu("选择季节",this);
+    pMenuChooseSeason = new QMenu(QStringLiteral("选择季节"),this);
 
-    pActiontSeason1 = new QAction("春季",this);
-    pActiontSeason2 = new QAction("夏季",this);
-    pActiontSeason3 = new QAction("秋季",this);
-    pActiontSeason4 = new QAction("冬季",this);
+    pActiontSeason1 = new QAction(QStringLiteral("春季"),this);
+    pActiontSeason2 = new QAction(QStringLiteral("夏季"),this);
+    pActiontSeason3 = new QAction(QStringLiteral("秋季"),this);
+    pActiontSeason4 = new QAction(QStringLiteral("冬季"),this);
 
     pMenuChooseSeason->addAction(pActiontSeason1);
     pMenuChooseSeason->addAction(pActiontSeason2);
@@ -62,6 +75,18 @@ void LightHouseDemo::On_actionChooseSeason1_triggered()
     COMMON_LIGHT_DIRECTION_Y = 2.0f;
     COMMON_LIGHT_DIRECTION_Z = 1.3f;
 
+    COMMON_AMBIENT_LIGHT_R = 0.5f;
+    COMMON_AMBIENT_LIGHT_G = 0.5f;
+    COMMON_AMBIENT_LIGHT_B = 0.5f;
+
+    COMMON_DIFFUSE_LIGHT_R = 0.3f;
+    COMMON_DIFFUSE_LIGHT_G = 0.3f;
+    COMMON_DIFFUSE_LIGHT_B = 0.3f;
+
+    COMMON_SPECULAR_LIGHT_R = 0.8f;
+    COMMON_SPECULAR_LIGHT_G = 0.8f;
+    COMMON_SPECULAR_LIGHT_B = 0.8f;
+
     qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }
 
@@ -71,6 +96,18 @@ void LightHouseDemo::On_actionChooseSeason2_triggered()
     COMMON_LIGHT_DIRECTION_X = 1.0f;
     COMMON_LIGHT_DIRECTION_Y = 1.0f;
     COMMON_LIGHT_DIRECTION_Z = 0.8f;
+
+    COMMON_AMBIENT_LIGHT_R = 0.6f;
+    COMMON_AMBIENT_LIGHT_G = 0.6f;
+    COMMON_AMBIENT_LIGHT_B = 0.6f;
+
+    COMMON_DIFFUSE_LIGHT_R = 0.4f;
+    COMMON_DIFFUSE_LIGHT_G = 0.4f;
+    COMMON_DIFFUSE_LIGHT_B = 0.4f;
+
+    COMMON_SPECULAR_LIGHT_R = 0.7f;
+    COMMON_SPECULAR_LIGHT_G = 0.7f;
+    COMMON_SPECULAR_LIGHT_B = 0.7f;
 
     qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }
@@ -82,6 +119,18 @@ void LightHouseDemo::On_actionChooseSeason3_triggered()
     COMMON_LIGHT_DIRECTION_Y = 2.0f;
     COMMON_LIGHT_DIRECTION_Z = 1.3f;
 
+    COMMON_AMBIENT_LIGHT_R = 0.5f;
+    COMMON_AMBIENT_LIGHT_G = 0.5f;
+    COMMON_AMBIENT_LIGHT_B = 0.5f;
+
+    COMMON_DIFFUSE_LIGHT_R = 0.3f;
+    COMMON_DIFFUSE_LIGHT_G = 0.3f;
+    COMMON_DIFFUSE_LIGHT_B = 0.3f;
+
+    COMMON_SPECULAR_LIGHT_R = 0.8f;
+    COMMON_SPECULAR_LIGHT_G = 0.8f;
+    COMMON_SPECULAR_LIGHT_B = 0.8f;
+
     qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }
 
@@ -91,6 +140,18 @@ void LightHouseDemo::On_actionChooseSeason4_triggered()
     COMMON_LIGHT_DIRECTION_X = 0.5f;
     COMMON_LIGHT_DIRECTION_Y = 0.4f;
     COMMON_LIGHT_DIRECTION_Z = 0.3f;
+
+    COMMON_AMBIENT_LIGHT_R = 0.4f;
+    COMMON_AMBIENT_LIGHT_G = 0.4f;
+    COMMON_AMBIENT_LIGHT_B = 0.4f;
+
+    COMMON_DIFFUSE_LIGHT_R = 0.2f;
+    COMMON_DIFFUSE_LIGHT_G = 0.2f;
+    COMMON_DIFFUSE_LIGHT_B = 0.2f;
+
+    COMMON_SPECULAR_LIGHT_R = 0.6f;
+    COMMON_SPECULAR_LIGHT_G = 0.6f;
+    COMMON_SPECULAR_LIGHT_B = 0.6f;
 
     qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 }

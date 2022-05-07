@@ -1,4 +1,4 @@
-#include "signdialog.h"
+﻿#include "signdialog.h"
 #include "ui_signdialog.h"
 
 SignDialog::SignDialog(QWidget *parent) :
@@ -36,7 +36,7 @@ void SignDialog::on_pushButton_clicked()
 
     if(username == ""  || password == "" || name == "" || age == 0 || phone == "")
     {
-         QMessageBox::about(NULL, "消息", "清完善信息");
+         QMessageBox::about(NULL, QStringLiteral("消息"), QStringLiteral("清完善信息"));
          return;
     }
     QSqlQuery query;

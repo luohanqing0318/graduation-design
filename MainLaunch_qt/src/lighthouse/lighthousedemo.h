@@ -1,4 +1,4 @@
-#ifndef LIGHTHOUSEDEMO_H
+﻿#ifndef LIGHTHOUSEDEMO_H
 #define LIGHTHOUSEDEMO_H
 
 #include <QMainWindow>
@@ -7,6 +7,19 @@
 extern float  COMMON_LIGHT_DIRECTION_X;
 extern float  COMMON_LIGHT_DIRECTION_Y;
 extern float  COMMON_LIGHT_DIRECTION_Z;
+
+extern float  COMMON_AMBIENT_LIGHT_R;
+extern float  COMMON_AMBIENT_LIGHT_G;
+extern float  COMMON_AMBIENT_LIGHT_B;
+
+extern float  COMMON_DIFFUSE_LIGHT_R;
+extern float  COMMON_DIFFUSE_LIGHT_G;
+extern float  COMMON_DIFFUSE_LIGHT_B;
+
+extern float  COMMON_SPECULAR_LIGHT_R;
+extern float  COMMON_SPECULAR_LIGHT_G;
+extern float  COMMON_SPECULAR_LIGHT_B;
+
 
 namespace Ui {
 class LightHouseDemo;

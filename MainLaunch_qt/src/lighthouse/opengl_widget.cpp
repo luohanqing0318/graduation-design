@@ -1,4 +1,4 @@
-#include "opengl_widget.h"
+﻿#include "opengl_widget.h"
 
 
 const unsigned int TIMEOUTSECOND = 50;
@@ -187,9 +187,9 @@ void OpenGL_Widget::paintGL()
 //       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 qDebug()<<"("<<dirX<<","<<dirY<<","<<dirZ<<")";
        m_shaderprogram.setUniformValue("light.direction", -dirX, -dirY, -dirZ);
-       m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
-       m_shaderprogram.setUniformValue("light.diffuse", 0.2f, 0.2f, 0.2f);
-       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
+       m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
+       m_shaderprogram.setUniformValue("light.diffuse", COMMON_DIFFUSE_LIGHT_R, COMMON_DIFFUSE_LIGHT_G, COMMON_DIFFUSE_LIGHT_B);
+       m_shaderprogram.setUniformValue("light.specular", COMMON_SPECULAR_LIGHT_R, COMMON_SPECULAR_LIGHT_G, COMMON_SPECULAR_LIGHT_B);
        // material properties
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
        m_shaderprogram.setUniformValue("model_matrix", model);

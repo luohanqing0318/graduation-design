@@ -32,7 +32,7 @@ void LoginDialog::on_pushButton_clicked()
 
     if(username == ""  || password == "")
     {
-         QMessageBox::about(NULL, "消息", "清完善信息");
+         QMessageBox::about(NULL, QStringLiteral("消息"), QStringLiteral("清完善信息"));
          return;
     }
     QSqlQuery query;
