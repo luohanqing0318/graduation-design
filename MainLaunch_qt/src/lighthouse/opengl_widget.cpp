@@ -54,6 +54,7 @@ float vertices[] = {
 };
 QVector3D light_direction(0.0f, 0.0f, 0.0f);
 QVector3D light_position(5.0f, 0.0f, 0.0f);
+QVector3D light_position2(4.0f, 0.0f, 0.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
 
 QVector3D view_auto_positon(0.0,5.0,0.0);
@@ -166,8 +167,8 @@ void OpenGL_Widget::paintGL()
 
        model.rotate(time, 0.0f, 1.0f, 0.0f);
        model.translate(light_position);
-       QVector4D temp4d = model.column(2);
-       qDebug()<<"("<<temp4d<<")";
+//       QVector4D temp4d = model.column(2);
+//       qDebug()<<"("<<temp4d<<")";
        model.scale(0.2);
        m_light_shaderProgram.setUniformValue("model_matrix", model);
        m_light_shaderProgram.setUniformValue("light_color",light_color);
@@ -192,12 +193,17 @@ void OpenGL_Widget::paintGL()
 
 //       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 
-       m_shaderprogram.setUniformValue("light.direction", -temp4d.x(), -COMMON_LIGHT_DIRECTION_Y, -temp4d.z());
+//       m_shaderprogram.setUniformValue("light.direction", -temp4d.x(), -COMMON_LIGHT_DIRECTION_Y, -temp4d.z());
+
        m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
        m_shaderprogram.setUniformValue("light.diffuse", COMMON_DIFFUSE_LIGHT_R, COMMON_DIFFUSE_LIGHT_G, COMMON_DIFFUSE_LIGHT_B);
        m_shaderprogram.setUniformValue("light.specular", COMMON_SPECULAR_LIGHT_R, COMMON_SPECULAR_LIGHT_G, COMMON_SPECULAR_LIGHT_B);
        // material properties
-       m_shaderprogram.setUniformValue("material.shininess", 32.0f);
+       m_shaderprogram.setUniformValue("material.shininess", 2.0f);
+
+       QVector3D temp_position2(time, 0.0f, 0.0f);
+
+       m_shaderprogram.setUniformValue("light.position", temp_position2);
        model.setToIdentity();
 
        m_shaderprogram.setUniformValue("model_matrix", model);

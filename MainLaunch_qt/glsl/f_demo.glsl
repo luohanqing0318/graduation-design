@@ -1,3 +1,4 @@
+﻿
 #version 330 core
 
 struct Material {
@@ -7,7 +8,8 @@ struct Material {
 };
 
 struct Light {
-    vec3 direction;
+    vec3 position;
+    //vec3 direction;
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
@@ -33,7 +35,7 @@ void main() {
     vec3 ambient = diffuseTexColor*light.ambient;
     // diffuse
     vec3 norm = normalize(out_normal);
-    vec3 lightDir = normalize(-light.direction);
+    vec3 lightDir = normalize(light.position - out_frag_position);
     float diff = max(dot(norm, lightDir), 0.0);
     vec3 diffuse = diff *diffuseTexColor*light.diffuse;
     // specular
