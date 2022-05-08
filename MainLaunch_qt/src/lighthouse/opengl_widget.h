@@ -1,4 +1,4 @@
-#ifndef OPENGL_WIDGET_H
+﻿#ifndef OPENGL_WIDGET_H
 #define OPENGL_WIDGET_H
 
 #include <QOpenGLWidget>

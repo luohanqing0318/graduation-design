@@ -25,6 +25,10 @@ in vec4 out_frag_position_lightSpace;
 uniform vec3 view_position;
 uniform sampler2D depthMap;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 float ShadowCalculation(vec4 fragPosLightSpace) {
     // perform perspective divide
     vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
@@ -51,6 +55,7 @@ void main() {
     float diff = max(dot(norm, lightDir), 0.0);
     vec3 diffuse = diff *diffuseTexColor*light.diffuse;
     // specular
+<<<<<<< Updated upstream
 
     float shadow =ShadowCalculation(out_frag_position_lightSpace);
 
@@ -59,6 +64,21 @@ void main() {
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
     vec3 specular =  spec*specularTexColor*light.specular;
     vec3 result = (ambient + (1.0-shadow)*(diffuse + specular));
+=======
+float shadow =ShadowCalculation(out_frag_position_lightSpace);
+
+    vec3 viewDir = normalize(view_position - out_frag_position);
+       vec3 reflectDir = reflect(-lightDir, norm);
+       float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+       vec3 specular =  spec*specularTexColor*light.specular;
+
+
+    ambient *= attenuation;
+    diffuse *= attenuation;
+    specular *= attenuation;
+
+   vec3 result = (ambient + (1.0-shadow)*(diffuse + specular));
+>>>>>>> Stashed changes
 
     frag_color = vec4(result, 1.0);
 }

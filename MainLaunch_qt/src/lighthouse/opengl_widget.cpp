@@ -5,6 +5,10 @@ const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
 
 
 unsigned int VAO, VBO, lightVAO;
+<<<<<<< Updated upstream
+=======
+float dirX = 0.0f, dirY = 0.0f, dirZ = 0.0f;
+>>>>>>> Stashed changes
 unsigned int depthMapFBO, depthMap;
 
 float vertices[] = {
@@ -119,6 +123,7 @@ void OpenGL_Widget::initializeGL()
       success=m_quad_shaderProgram.link();
       if(!success) qDebug()<<"ERR:"<<m_quad_shaderProgram.log();
 
+<<<<<<< Updated upstream
 
 
 
@@ -140,6 +145,24 @@ void OpenGL_Widget::initializeGL()
       glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject() );
 
 
+=======
+      glGenTextures(1, &depthMap);
+           glBindTexture(GL_TEXTURE_2D, depthMap);
+           glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+           // attach depth texture as FBO's depth buffer
+           glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+           glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
+           glDrawBuffer(GL_NONE);
+           glReadBuffer(GL_NONE);
+
+           if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+               qDebug() << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << endl;
+           glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject() );
+>>>>>>> Stashed changes
 }
 
 void OpenGL_Widget::resizeGL(int w, int h)
@@ -212,6 +235,7 @@ void OpenGL_Widget::paintGL()
        glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject());
        m_depthMap_shaderProgram.release();
 
+<<<<<<< Updated upstream
 
 //           m_quad_shaderProgram.bind();
 //           // reset viewport
@@ -221,6 +245,12 @@ void OpenGL_Widget::paintGL()
 //           // ---------------------------------------------
 //           m_model->Draw(m_quad_shaderProgram);
 //           m_quad_shaderProgram.release();
+=======
+       m_shaderprogram.setUniformValue("light.position", temp_position2);
+       m_shaderprogram.setUniformValue("light.constant", 1.0f);
+       m_shaderprogram.setUniformValue("light.linear", 0.09f);
+       m_shaderprogram.setUniformValue("light.quadratic", 0.032f);
+>>>>>>> Stashed changes
 
 
        m_shaderprogram.bind();
@@ -231,7 +261,47 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("depthMap",1);
        model.setToIdentity();
        m_shaderprogram.setUniformValue("model_matrix", model);
+<<<<<<< Updated upstream
        m_model->Draw(m_shaderprogram);
+=======
+       m_depthMap_shaderProgram.bind();
+            // 1. render depth of scene to texture (from light's perspective)
+            // --------------------------------------------------------------
+            QMatrix4x4 lightProjection, lightView;
+            QMatrix4x4 lightSpaceMatrix;
+            float near_plane = 1.0f, far_plane = 7.5f;
+            lightProjection.ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+            lightView.lookAt(light_position, QVector3D(0.0,0.0,0.0), QVector3D(0.0, 1.0, 0.0));
+            lightSpaceMatrix = lightProjection * lightView;
+
+            glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+            glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+            glClear(GL_DEPTH_BUFFER_BIT);
+            m_depthMap_shaderProgram.setUniformValue("lightSpaceMatrix", lightSpaceMatrix);
+
+            model.setToIdentity();
+            m_depthMap_shaderProgram.setUniformValue("model_matrix", model);
+            m_model->Draw(m_depthMap_shaderProgram);
+
+            glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebufferObject());
+            m_depthMap_shaderProgram.release();
+
+            m_shaderprogram.bind();
+                  m_shaderprogram.setUniformValue("lightSpaceMatrix", lightSpaceMatrix);
+                  glViewport(0, 0, width(), height());
+                  glActiveTexture(GL_TEXTURE1);
+                  glBindTexture(GL_TEXTURE_2D, depthMap);
+                  m_shaderprogram.setUniformValue("depthMap",1);
+                  model.setToIdentity();
+                  m_shaderprogram.setUniformValue("model_matrix", model);
+                  m_model->Draw(m_shaderprogram);
+
+
+
+
+
+                  m_shaderprogram.release();
+>>>>>>> Stashed changes
 
 
 
