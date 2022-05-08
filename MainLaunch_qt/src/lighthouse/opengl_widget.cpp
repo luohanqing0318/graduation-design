@@ -136,13 +136,15 @@ void OpenGL_Widget::paintGL()
        model.setToIdentity();
        view.setToIdentity();
        projection.setToIdentity();
-       float time = m_time.elapsed()/150.0 - 50.0f;
-       if(m_time.elapsed()/150.0 > 100)
+
+       float time = m_time.elapsed() / 1000.0f;
+       if(m_time.elapsed()/1000.0 > 20)
        {
-           time -= 99.0f;
+           m_time.restart();
        }
+
 //       QTime time = m_time.currentTime();
-//       qDebug() << time;
+       qDebug() << time;
 
 
 
@@ -199,11 +201,17 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("light.diffuse", COMMON_DIFFUSE_LIGHT_R, COMMON_DIFFUSE_LIGHT_G, COMMON_DIFFUSE_LIGHT_B);
        m_shaderprogram.setUniformValue("light.specular", COMMON_SPECULAR_LIGHT_R, COMMON_SPECULAR_LIGHT_G, COMMON_SPECULAR_LIGHT_B);
        // material properties
-       m_shaderprogram.setUniformValue("material.shininess", 2.0f);
+       m_shaderprogram.setUniformValue("material.shininess", 4.0f);
 
        QVector3D temp_position2(time, 0.0f, 0.0f);
 
        m_shaderprogram.setUniformValue("light.position", temp_position2);
+
+       m_shaderprogram.setUniformValue("light.constant", 1.0f);
+       m_shaderprogram.setUniformValue("light.linear", 0.09f);
+       m_shaderprogram.setUniformValue("light.quadratic", 0.032f);
+
+
        model.setToIdentity();
 
        m_shaderprogram.setUniformValue("model_matrix", model);
