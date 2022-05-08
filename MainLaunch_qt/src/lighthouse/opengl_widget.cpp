@@ -185,28 +185,14 @@ void OpenGL_Widget::paintGL()
 
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
        // light properties, note that all light colors are set at full intensity
-       float tempX =  COMMON_LIGHT_DIRECTION_X;
-       float tempY =  COMMON_LIGHT_DIRECTION_Z;
+
        float tempZ =  COMMON_LIGHT_DIRECTION_Y;
-       dirX += tempX/2;
-       dirY += tempY/2;
-       dirZ += tempZ/2;
-       if(dirX >= 10.0f)
-       {
-           dirX = COMMON_LIGHT_DIRECTION_X;
-       }
-       if(dirY >= 10.0f)
-       {
-           dirY = COMMON_LIGHT_DIRECTION_X;
-       }
-       if(dirZ >= 10.0f)
-       {
-           dirZ = COMMON_LIGHT_DIRECTION_Z;
-       }
+
+
 
 //       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
 
-       m_shaderprogram.setUniformValue("light.direction", -temp4d.x(), -2.0f, -temp4d.z());
+       m_shaderprogram.setUniformValue("light.direction", -temp4d.x(), -COMMON_LIGHT_DIRECTION_Y, -temp4d.z());
        m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
        m_shaderprogram.setUniformValue("light.diffuse", COMMON_DIFFUSE_LIGHT_R, COMMON_DIFFUSE_LIGHT_G, COMMON_DIFFUSE_LIGHT_B);
        m_shaderprogram.setUniformValue("light.specular", COMMON_SPECULAR_LIGHT_R, COMMON_SPECULAR_LIGHT_G, COMMON_SPECULAR_LIGHT_B);
