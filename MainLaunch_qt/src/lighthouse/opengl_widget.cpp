@@ -53,7 +53,7 @@ float vertices[] = {
     -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
 };
 QVector3D light_direction(0.0f, 0.0f, 0.0f);
-QVector3D light_position(5.0f, 0.0f, 0.0f);
+QVector3D light_position(6.0f, 0.0f, 0.0f);
 QVector3D light_position2(4.0f, 0.0f, 0.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
 
@@ -167,10 +167,10 @@ void OpenGL_Widget::paintGL()
        model.translate(light_position);
 
        QVector4D temp4d3 = model.column(3);
-
-        float tempx = temp4d3.x();
+       float tempx = temp4d3.x();
        float tempz = temp4d3.z();
-       qDebug()<<"("<<model<<")";
+
+//       qDebug()<<"("<<model<<")";
        model.scale(0.2);
        m_light_shaderProgram.setUniformValue("model_matrix", model);
        m_light_shaderProgram.setUniformValue("light_color",light_color);
@@ -207,7 +207,7 @@ void OpenGL_Widget::paintGL()
 
        QVector3D temp_position2(time, 0.0f, 0.0f);
 
-       m_shaderprogram.setUniformValue("light.position", tempx, 0.0f, tempz);
+       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, 0.0f, tempz + 4.0f);
 
        m_shaderprogram.setUniformValue("light.constant", 1.0f);
        m_shaderprogram.setUniformValue("light.linear", 0.09f);
