@@ -35,7 +35,7 @@ private:
     Ui::MainWindow *ui;
     LightHouseDemo m_lighthouse;
     Picturewidget *m_picturewidget;
-
+myinformation *m_myinformation;
     QList<QPushButton*> m_btnList;
     QPushButton *m_pbtn;
     int m_btnNum;

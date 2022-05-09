@@ -24,10 +24,12 @@ void LoginDialog::on_pushButton_clicked()
      {
 
         sql = "SELECT * FROM `tenants` WHERE username = :username and `password` = :password;";
+        SingletonMan::GetMobileDataInstance()->setWho(true);
      }else if(ui->buttonGroup->checkedId() == 1)
     {
 
         sql = "SELECT * FROM `landlords` WHERE username = :username and `password` = :password;";
+        SingletonMan::GetMobileDataInstance()->setWho(false);
     }
 
     if(username == ""  || password == "")
@@ -54,10 +56,13 @@ void LoginDialog::on_pushButton_clicked()
                 QString sqlphone = query.value(4).toString();
                 SingletonMan::GetMobileDataInstance()->setPhone(sqlphone);
 
+
         }
 
-        qDebug()<<"singletonman init:"<<SingletonMan::GetMobileDataInstance()->username()<<SingletonMan::GetMobileDataInstance()->password()<<SingletonMan::GetMobileDataInstance()->name()<<SingletonMan::GetMobileDataInstance()->age()<<SingletonMan::GetMobileDataInstance()->phone();
+        qDebug()<<"singletonman init:"<<SingletonMan::GetMobileDataInstance()->username()<<SingletonMan::GetMobileDataInstance()->password()<<SingletonMan::GetMobileDataInstance()->name()<<SingletonMan::GetMobileDataInstance()->age()<<SingletonMan::GetMobileDataInstance()->phone()<<SingletonMan::GetMobileDataInstance()->getWho();
         accept();
+        MainWindow* mainwindo = new MainWindow();
+        mainwindo->show();
     }else{
          qDebug()<<"signdialog : sql select failed";
         QMessageBox::about(NULL, "错误", "用户名或密码错误");

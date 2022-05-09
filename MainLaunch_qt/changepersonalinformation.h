@@ -2,7 +2,10 @@
 #define CHANGEPERSONALINFORMATION_H
 
 #include <QWidget>
-
+#include <QDebug>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMessageBox>
 namespace Ui {
 class changepersonalinformation;
 }

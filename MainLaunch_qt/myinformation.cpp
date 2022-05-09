@@ -11,6 +11,12 @@ myinformation::myinformation(QWidget *parent) :
     m_name = SingletonMan::GetMobileDataInstance()->name();
 
     ui->label_3->setText(m_name);
+    if(SingletonMan::GetMobileDataInstance()->getWho() == true)
+    {
+        ui->label_4->setText(QStringLiteral("租客"));
+    }else{
+         ui->label_4->setText(QStringLiteral("房东"));
+    }
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(on_pushButton_2_clicked()));
 }
 

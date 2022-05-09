@@ -1,4 +1,4 @@
-#include "mobiledata.h"
+﻿#include "mobiledata.h"
 
 
 MobileData::MobileData()
@@ -63,6 +63,16 @@ QString MobileData::phone() const
 void MobileData::setPhone(const QString &phone)
 {
     m_phone = phone;
+}
+
+bool MobileData::getWho() const
+{
+    return who;
+}
+
+void MobileData::setWho(bool value)
+{
+    who = value;
 }
 
 

@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    m_myinformation = new myinformation();
     m_btnNum = 1;
         QListWidgetItem *item=new QListWidgetItem;
         item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
@@ -77,6 +77,6 @@ void MainWindow::On_list_Button_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
 
-   myinformation *m_myinformationWidget = new myinformation();
-    m_myinformationWidget->show();
+
+    m_myinformation->show();
 }
