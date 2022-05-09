@@ -1,11 +1,12 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "common_data.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     m_btnNum = 1;
         QListWidgetItem *item=new QListWidgetItem;
         item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
@@ -59,6 +60,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
         connect(pushButton1, SIGNAL(clicked()), this, SLOT(On_list_Button_clicked()));
+         connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(on_pushButton_2_clicked()));
 
 }
 
@@ -70,4 +72,11 @@ MainWindow::~MainWindow()
 void MainWindow::On_list_Button_clicked()
 {
     m_lighthouse.show();
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+   myinformation *m_myinformationWidget = new myinformation();
+    m_myinformationWidget->show();
 }

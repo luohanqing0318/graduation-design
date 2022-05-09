@@ -5,5 +5,7 @@
         <file>goodhouse.png</file>
         <file>goodehouse2.png</file>
         <file>tenants.png</file>
+        <file>personalinfo.png</file>
+        <file>bill.png</file>
     </qresource>
 </RCC>

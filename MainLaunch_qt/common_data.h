@@ -1,4 +1,4 @@
-#ifndef COMMON_DATA_H
+﻿#ifndef COMMON_DATA_H
 #define COMMON_DATA_H
 
 #include <iostream>
@@ -31,8 +31,6 @@ private:
 
 };
 
-SingletonMan *SingletonMan::m_pSingleton = new SingletonMan();
-MobileData *SingletonMan::m_pMobileData = new MobileData();
 
 
 #endif // COMMON_DATA_H

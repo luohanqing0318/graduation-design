@@ -11,6 +11,7 @@
 #include <QLabel>
 #include "src/lighthouse/lighthousedemo.h"
 #include "picturewidget.h"
+#include "myinformation.h"
 namespace Ui {
 class MainWindow;
 }
@@ -28,10 +29,13 @@ private slots:
     void On_list_Button_clicked();//动态创建QPushButton按钮信号槽函数
 
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     LightHouseDemo m_lighthouse;
     Picturewidget *m_picturewidget;
+
     QList<QPushButton*> m_btnList;
     QPushButton *m_pbtn;
     int m_btnNum;

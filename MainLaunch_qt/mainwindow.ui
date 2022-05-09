@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>合同信息</string>
+     <string>看房单</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -239,7 +239,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>所有房屋</string>
+     <string>浏览记录</string>
     </property>
    </widget>
   </widget>

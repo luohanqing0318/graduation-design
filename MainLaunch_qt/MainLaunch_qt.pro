@@ -35,7 +35,9 @@ SOURCES += \
     mobiledata.cpp \
     src/sign/signdialog.cpp \
     picturewidget.cpp \
-    myinformation.cpp
+    myinformation.cpp \
+    common_data.cpp \
+    changepersonalinformation.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,7 +51,8 @@ HEADERS += \
     mobiledata.h \
     src/sign/signdialog.h \
     picturewidget.h \
-    myinformation.h
+    myinformation.h \
+    changepersonalinformation.h
 
 FORMS += \
         mainwindow.ui \
@@ -57,7 +60,8 @@ FORMS += \
     src/lighthouse/lighthousedemo.ui \
     src/sign/signdialog.ui \
     picturewidget.ui \
-    myinformation.ui
+    myinformation.ui \
+    changepersonalinformation.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
