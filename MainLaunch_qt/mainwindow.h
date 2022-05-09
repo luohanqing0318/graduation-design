@@ -10,6 +10,7 @@
 #include <QWidget>
 #include <QLabel>
 #include "src/lighthouse/lighthousedemo.h"
+#include "picturewidget.h"
 namespace Ui {
 class MainWindow;
 }
@@ -30,6 +31,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     LightHouseDemo m_lighthouse;
+    Picturewidget *m_picturewidget;
     QList<QPushButton*> m_btnList;
     QPushButton *m_pbtn;
     int m_btnNum;

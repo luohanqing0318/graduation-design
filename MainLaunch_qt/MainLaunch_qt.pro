@@ -33,7 +33,9 @@ SOURCES += \
     src/mesh/mesh.cpp \
     src/model/model.cpp \
     mobiledata.cpp \
-    src/sign/signdialog.cpp
+    src/sign/signdialog.cpp \
+    picturewidget.cpp \
+    myinformation.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -45,13 +47,17 @@ HEADERS += \
     src/model/model.h \
     common_data.h \
     mobiledata.h \
-    src/sign/signdialog.h
+    src/sign/signdialog.h \
+    picturewidget.h \
+    myinformation.h
 
 FORMS += \
         mainwindow.ui \
     src/login/logindialog.ui \
     src/lighthouse/lighthousedemo.ui \
-    src/sign/signdialog.ui
+    src/sign/signdialog.ui \
+    picturewidget.ui \
+    myinformation.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -62,7 +68,9 @@ RESOURCES += \
     ui_style.qrc \
     glsl_file.qrc \
     other_resources.qrc \
-    obj/obj_resources.qrc
+    obj/obj_resources.qrc \
+    icon/icons.qrc \
+    images/picturewall/picturewall.qrc
 
 DISTFILES +=
 

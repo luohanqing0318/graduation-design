@@ -46,6 +46,18 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->listWidget->setIconSize(QSize(180,180));
         ui->listWidget->setItemWidget(item,w);
 
+        m_picturewidget = new Picturewidget();
+
+        ui->verticalLayout_2->addWidget(m_picturewidget);
+
+        m_picturewidget->addImage(":/1.png");
+            m_picturewidget->addImage(":/2.png");
+            m_picturewidget->addImage(":/3.png");
+            m_picturewidget->addImage(":/4.png");
+            m_picturewidget->startPlay();
+            m_picturewidget->show();
+
+
         connect(pushButton1, SIGNAL(clicked()), this, SLOT(On_list_Button_clicked()));
 
 }
