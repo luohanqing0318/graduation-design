@@ -41,7 +41,9 @@ SOURCES += \
     newitem_btn.cpp \
     newitem_label.cpp \
     addhouse.cpp \
-    houseinfor.cpp
+    houseinfor.cpp \
+    newiteminfo_btn.cpp \
+    houseinfor_btn.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -60,7 +62,9 @@ HEADERS += \
     newitem_btn.h \
     newitem_label.h \
     addhouse.h \
-    houseinfor.h
+    houseinfor.h \
+    newiteminfo_btn.h \
+    houseinfor_btn.h
 
 FORMS += \
         mainwindow.ui \

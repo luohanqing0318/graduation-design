@@ -7,5 +7,6 @@
         <file>tenants.png</file>
         <file>personalinfo.png</file>
         <file>bill.png</file>
+        <file>landlordshead.png</file>
     </qresource>
 </RCC>

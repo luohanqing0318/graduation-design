@@ -9,44 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     m_myinformation = new myinformation();
     m_paddhouse = new addHouse();
-//        QListWidgetItem *item=new QListWidgetItem;
-
-//        item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
-//        item->setSizeHint(QSize(100,100));
-//        ui->listWidget->addItem(item);
-
-//        QWidget *w = new QWidget;
-//        QHBoxLayout *hlayout=new QHBoxLayout;
-
-//        QVBoxLayout *vlayout1 = new QVBoxLayout;
-//        QVBoxLayout *vlayout2 = new QVBoxLayout;
-
-//        QLabel *label1 = new QLabel;
-//        label1->setAlignment(Qt::AlignCenter);
-//        label1->setText(QStringLiteral("天通南苑东一区-702"));
-
-//        QLabel *label2 = new QLabel;
-//        label2->setAlignment(Qt::AlignCenter);
-//        label2->setText(QStringLiteral("合租/月付/2350"));
-
-//        QPushButton *pushButton1=new QPushButton(w);
-//        QPushButton *pushButton2=new QPushButton(w);
-//        pushButton1->setText(QStringLiteral("采光展示"));
-//        pushButton2->setText(QStringLiteral("合约信息"));
-//        hlayout->addLayout(vlayout1);
-//        hlayout->addLayout(vlayout2);
-
-//        vlayout1->addWidget(label1);
-//        vlayout1->addWidget(label2);
-
-//        vlayout2->addWidget(pushButton1);
-//        vlayout2->addWidget(pushButton2);
-
-//        w->setLayout(hlayout);
-//        ui->listWidget->setIconSize(QSize(180,180));
-//        ui->listWidget->setItemWidget(item,w);
-//    connect(pushButton1, SIGNAL(clicked()), this, SLOT(On_list_Button_clicked()));
-//    connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(on_pushButton_2_clicked()));
         GetNewrooms();
 
         if(SingletonMan::GetMobileDataInstance()->getWho())
@@ -92,6 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
              QLabel *label1 = new QLabel;
              QLabel *label2 = new QLabel;
              QLabel *label3 = new QLabel;
+             QString landlordsid = query.value(1).toString();
              QString housename = query.value(2).toString();
              label1->setAlignment(Qt::AlignCenter);
              label1->setText(QStringLiteral("地点:") + housename);
@@ -116,12 +79,19 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
              m_pnewitembtn1 = new newitem_btn(w);
-
-
              m_pnewitembtn1->setText(QStringLiteral("采光展示"));
              int house_id = query.value(0).toInt();
              m_pnewitembtn1->setObjectName("m_pnewitembtn1"+QString::number(house_id));
              m_pnewitembtn1->setHouse_id(house_id);
+
+
+             m_phouseinfobtn = new houseinfor_btn(w);
+             m_phouseinfobtn->setText(QStringLiteral("房东信息"));
+             m_phouseinfobtn->setHouseid(house_id);
+             m_phouseinfobtn->setLandlordsid(landlordsid);
+
+
+
 
 
              vlayout1->addWidget(label1);
@@ -129,7 +99,7 @@ MainWindow::MainWindow(QWidget *parent) :
              vlayout1->addWidget(label3);
 
              vlayout2->addWidget(m_pnewitembtn1);
-
+             vlayout2->addWidget(m_phouseinfobtn);
 
              w->setLayout(hlayout);
              ui->listWidget->setIconSize(QSize(180,180));

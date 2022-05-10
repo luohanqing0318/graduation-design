@@ -14,6 +14,8 @@
 #include "myinformation.h"
 #include "addhouse.h"
 #include "newitem_btn.h"
+#include "houseinfor_btn.h"
+#include "houseinfor.h"
 #include <QSqlQuery>
 namespace Ui {
 class MainWindow;
@@ -53,7 +55,8 @@ private:
     QList<newitem_btn*> m_btnList;
     newitem_btn *m_pnewitembtn1;
     newitem_btn *m_pnewitembtn2;
-
+    houseinfor_btn *m_phouseinfobtn;
+    houseinfor *m_houseinfor_wdiget;
 };
 
 #endif // MAINWINDOW_H
