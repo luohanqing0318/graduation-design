@@ -17,6 +17,8 @@ class changepersonalinformation : public QWidget
 public:
     explicit changepersonalinformation(QWidget *parent = 0);
     ~changepersonalinformation();
+    void SetmTemp(int &temp);
+    int m_temp;
 
 private slots:
     void on_pushButton_2_clicked();

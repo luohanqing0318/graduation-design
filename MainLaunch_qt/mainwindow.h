@@ -23,7 +23,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void UpdateNewrooms();
+    void GetNewrooms();
 
 private slots:
     void On_list_Button_clicked();//动态创建QPushButton按钮信号槽函数
@@ -40,7 +40,9 @@ myinformation *m_myinformation;
     QPushButton *m_pbtn;
     int m_btnNum;
 
-    int newrooms;
+    int m_newrooms;
+    QList<QListWidgetItem*> m_itemlist;
+    QListWidgetItem * m_create_item;
 };
 
 #endif // MAINWINDOW_H

@@ -8,6 +8,8 @@ myinformation::myinformation(QWidget *parent) :
 {
     ui->setupUi(this);
     m_changewidiget = new changepersonalinformation();
+    int temp = 10;
+    m_changewidiget->SetmTemp(temp);
     m_name = SingletonMan::GetMobileDataInstance()->name();
 
     ui->label_3->setText(m_name);

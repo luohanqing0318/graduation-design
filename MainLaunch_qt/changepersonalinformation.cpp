@@ -27,8 +27,15 @@ changepersonalinformation::~changepersonalinformation()
     delete ui;
 }
 
+void changepersonalinformation::SetmTemp(int &temp)
+{
+    m_temp = temp;
+
+}
+
 void changepersonalinformation::on_pushButton_2_clicked()
 {
+
     QString username = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
      QString name = ui->lineEdit_3->text();
@@ -74,5 +81,6 @@ void changepersonalinformation::on_pushButton_2_clicked()
 
 void changepersonalinformation::pushButton_clicked()
 {
+
     close();
 }
