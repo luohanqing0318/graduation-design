@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "src/login/logindialog.h"
 #include "src/lighthouse/lighthousedemo.h"
 #include "src/sign/signdialog.h"
@@ -64,19 +64,13 @@ int main(int argc, char *argv[])
 
 
 
-    SignDialog signdialog;
-    LoginDialog logindialog;
-    LightHouseDemo lighthousedemo;
-    signdialog.show();
-    MainWindow w;
-    if (logindialog.exec() == QDialog::Accepted)
-       {
-          //w.show();
-        lighthousedemo.show();
-          return a.exec();
-       }
 
-    w.show();
+    LoginDialog logindialog;
+
+
+
+
+    logindialog.show();
 
     return a.exec();
 }

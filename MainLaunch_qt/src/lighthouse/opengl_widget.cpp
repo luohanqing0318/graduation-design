@@ -1,4 +1,4 @@
-#include "opengl_widget.h"
+﻿#include "opengl_widget.h"
 
 
 const unsigned int TIMEOUTSECOND = 50;
@@ -53,7 +53,8 @@ float vertices[] = {
     -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
 };
 QVector3D light_direction(0.0f, 0.0f, 0.0f);
-QVector3D light_position(3.0f, 0.0f, 0.0f);
+QVector3D light_position(6.0f, 0.0f, 0.0f);
+QVector3D light_position2(4.0f, 0.0f, 0.0f);
 QVector3D light_color(1.0f, 1.0f, 1.0f);
 
 QVector3D view_auto_positon(0.0,5.0,0.0);
@@ -135,18 +136,16 @@ void OpenGL_Widget::paintGL()
        model.setToIdentity();
        view.setToIdentity();
        projection.setToIdentity();
-       float time = m_time.elapsed()/150.0 - 50.0f;
-       if(m_time.elapsed()/150.0 > 100)
-       {
-           time -= 99.0f;
+
+       float time = m_time.elapsed() / 100.0f;
+       if(m_time.elapsed()/1000.0 > 20)
+      {
+           m_time.restart();
+
        }
+
 //       QTime time = m_time.currentTime();
-//       qDebug() << time;
-
-
-
-
-
+       qDebug() << time;
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -154,6 +153,25 @@ void OpenGL_Widget::paintGL()
        glDepthFunc(GL_LESS);
        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        model.scale(0.2);
+
+       m_light_shaderProgram.bind();
+       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
+       m_light_shaderProgram.setUniformValue("view_matrix", view);
+       model.setToIdentity();
+
+       model.rotate(time, 0.0f, 1.0f, 0.0f);
+       model.translate(light_position);
+
+       QVector4D temp4d3 = model.column(3);
+       float tempx = temp4d3.x();
+       float tempz = temp4d3.z();
+
+       model.scale(0.2);
+       m_light_shaderProgram.setUniformValue("model_matrix", model);
+       m_light_shaderProgram.setUniformValue("light_color",light_color);
+
+       m_light_mesh->Draw(m_light_shaderProgram);
+       m_light_shaderProgram.release();
 
 
 
@@ -165,33 +183,27 @@ void OpenGL_Widget::paintGL()
 
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
        // light properties, note that all light colors are set at full intensity
-       float tempX =  COMMON_LIGHT_DIRECTION_X;
-       float tempY =  COMMON_LIGHT_DIRECTION_Z;
-       float tempZ =  COMMON_LIGHT_DIRECTION_Y;
-       dirX += tempX/2;
-       dirY += tempY/2;
-       dirZ += tempZ/2;
-       if(dirX >= 10.0f)
-       {
-           dirX = COMMON_LIGHT_DIRECTION_X;
-       }
-       if(dirY >= 10.0f)
-       {
-           dirY = COMMON_LIGHT_DIRECTION_X;
-       }
-       if(dirZ >= 10.0f)
-       {
-           dirZ = COMMON_LIGHT_DIRECTION_Z;
-       }
 
-//       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
-qDebug()<<"("<<dirX<<","<<dirY<<","<<dirZ<<")";
-       m_shaderprogram.setUniformValue("light.direction", -dirX, -dirY, -dirZ);
-       m_shaderprogram.setUniformValue("light.ambient", 0.4f, 0.4f, 0.4f);
-       m_shaderprogram.setUniformValue("light.diffuse", 0.2f, 0.2f, 0.2f);
-       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
-       // material properties
-       m_shaderprogram.setUniformValue("material.shininess", 32.0f);
+
+
+       m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
+       m_shaderprogram.setUniformValue("light.diffuse", 0.8f, 0.7f, 0.3f);
+
+
+       m_shaderprogram.setUniformValue("light.specular", 0.8f, 0.7f, 0.3f);
+       m_shaderprogram.setUniformValue("material.shininess", 4.0f);
+
+       QVector3D temp_position2(time, 0.0f, 0.0f);
+
+       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, 0.0f, tempz + 4.0f);
+
+       m_shaderprogram.setUniformValue("light.constant", 1.0f);
+       m_shaderprogram.setUniformValue("light.linear", 0.09f);
+       m_shaderprogram.setUniformValue("light.quadratic", 0.032f);
+
+
+       model.setToIdentity();
+
        m_shaderprogram.setUniformValue("model_matrix", model);
 
        m_model->Draw(m_shaderprogram);
@@ -199,22 +211,8 @@ qDebug()<<"("<<dirX<<","<<dirY<<","<<dirZ<<")";
 
        m_shaderprogram.release();
 
-       m_light_shaderProgram.bind();
-       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
-       m_light_shaderProgram.setUniformValue("view_matrix", view);
-       model.setToIdentity();
 
 
-
-
-       model.rotate(time, 0.0f, 1.0f, 0.0f);
-       model.translate(light_position);
-       model.scale(0.2);
-       m_light_shaderProgram.setUniformValue("model_matrix", model);
-       m_light_shaderProgram.setUniformValue("light_color",light_color);
-
-       m_light_mesh->Draw(m_light_shaderProgram);
-       m_light_shaderProgram.release();
 
 }
 

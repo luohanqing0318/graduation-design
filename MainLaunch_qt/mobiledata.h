@@ -1,4 +1,4 @@
-#ifndef MOBILEDATA_H
+﻿#ifndef MOBILEDATA_H
 #define MOBILEDATA_H
 #include <iostream>
 #include <QString>
@@ -27,12 +27,16 @@ public:
     QString phone() const;
     void setPhone(const QString &phone);
 
+    bool getWho() const;
+    void setWho(bool value);
+
 private:
     QString m_username;
     QString m_password;
     QString m_name;
     int m_age;
     QString m_phone;
+    bool who;
 };
 
 

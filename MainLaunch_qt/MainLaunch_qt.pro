@@ -33,7 +33,20 @@ SOURCES += \
     src/mesh/mesh.cpp \
     src/model/model.cpp \
     mobiledata.cpp \
-    src/sign/signdialog.cpp
+    src/sign/signdialog.cpp \
+    picturewidget.cpp \
+    myinformation.cpp \
+    common_data.cpp \
+    changepersonalinformation.cpp \
+    newitem_btn.cpp \
+    newitem_label.cpp \
+    addhouse.cpp \
+    houseinfor.cpp \
+    newiteminfo_btn.cpp \
+    houseinfor_btn.cpp \
+    smallhouselist.cpp \
+    bighouselist.cpp \
+    goodhouselist.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -45,13 +58,33 @@ HEADERS += \
     src/model/model.h \
     common_data.h \
     mobiledata.h \
-    src/sign/signdialog.h
+    src/sign/signdialog.h \
+    picturewidget.h \
+    myinformation.h \
+    changepersonalinformation.h \
+    newitem_btn.h \
+    newitem_label.h \
+    addhouse.h \
+    houseinfor.h \
+    newiteminfo_btn.h \
+    houseinfor_btn.h \
+    smallhouselist.h \
+    bighouselist.h \
+    goodhouselist.h
 
 FORMS += \
         mainwindow.ui \
     src/login/logindialog.ui \
     src/lighthouse/lighthousedemo.ui \
-    src/sign/signdialog.ui
+    src/sign/signdialog.ui \
+    picturewidget.ui \
+    myinformation.ui \
+    changepersonalinformation.ui \
+    addhouse.ui \
+    houseinfor.ui \
+    smallhouselist.ui \
+    bighouselist.ui \
+    goodhouselist.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -62,7 +95,9 @@ RESOURCES += \
     ui_style.qrc \
     glsl_file.qrc \
     other_resources.qrc \
-    obj/obj_resources.qrc
+    obj/obj_resources.qrc \
+    icon/icons.qrc \
+    images/picturewall/picturewall.qrc
 
 DISTFILES +=
 

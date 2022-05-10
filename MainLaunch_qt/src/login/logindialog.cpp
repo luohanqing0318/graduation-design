@@ -1,4 +1,4 @@
-#include "logindialog.h"
+﻿#include "logindialog.h"
 #include "ui_logindialog.h"
 #include "common_data.h"
 LoginDialog::LoginDialog(QWidget *parent) :
@@ -24,15 +24,17 @@ void LoginDialog::on_pushButton_clicked()
      {
 
         sql = "SELECT * FROM `tenants` WHERE username = :username and `password` = :password;";
+        SingletonMan::GetMobileDataInstance()->setWho(true);
      }else if(ui->buttonGroup->checkedId() == 1)
     {
 
         sql = "SELECT * FROM `landlords` WHERE username = :username and `password` = :password;";
+        SingletonMan::GetMobileDataInstance()->setWho(false);
     }
 
     if(username == ""  || password == "")
     {
-         QMessageBox::about(NULL, "消息", "清完善信息");
+         QMessageBox::about(NULL, QStringLiteral("消息"), QStringLiteral("清完善信息"));
          return;
     }
     QSqlQuery query;
@@ -42,10 +44,25 @@ void LoginDialog::on_pushButton_clicked()
     if(query.exec())
     {
         qDebug()<<"signdialog : sql select success";
-        int temp = 10;
-        SingletonMan::GetMobileDataInstance()->setAge(temp);
-        qDebug()<<SingletonMan::GetMobileDataInstance()->age();
+        while (query.next()) {
+                QString sqlusername = query.value(0).toString();
+                SingletonMan::GetMobileDataInstance()->setUsername(sqlusername);
+                QString sqlpassword = query.value(1).toString();
+                SingletonMan::GetMobileDataInstance()->setPassword(sqlpassword);
+                QString sqlname = query.value(2).toString();
+                SingletonMan::GetMobileDataInstance()->setName(sqlname);
+                int sqlage = query.value(3).toInt();
+                SingletonMan::GetMobileDataInstance()->setAge(sqlage);
+                QString sqlphone = query.value(4).toString();
+                SingletonMan::GetMobileDataInstance()->setPhone(sqlphone);
+
+
+        }
+
+        qDebug()<<"singletonman init:"<<SingletonMan::GetMobileDataInstance()->username()<<SingletonMan::GetMobileDataInstance()->password()<<SingletonMan::GetMobileDataInstance()->name()<<SingletonMan::GetMobileDataInstance()->age()<<SingletonMan::GetMobileDataInstance()->phone()<<SingletonMan::GetMobileDataInstance()->getWho();
         accept();
+        MainWindow* mainwindo = new MainWindow();
+        mainwindo->show();
     }else{
          qDebug()<<"signdialog : sql select failed";
         QMessageBox::about(NULL, "错误", "用户名或密码错误");

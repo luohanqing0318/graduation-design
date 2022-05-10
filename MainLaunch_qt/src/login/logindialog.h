@@ -1,10 +1,11 @@
-#ifndef LOGINDIALOG_H
+﻿#ifndef LOGINDIALOG_H
 #define LOGINDIALOG_H
 
 #include <QDialog>
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QDebug>
+#include "mainwindow.h"
 namespace Ui {
 class LoginDialog;
 }

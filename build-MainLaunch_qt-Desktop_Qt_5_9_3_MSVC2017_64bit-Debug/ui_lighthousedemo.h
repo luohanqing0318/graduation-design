@@ -18,7 +18,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include <src/lighthouse/opengl_widget.h>
+#include <opengl_widget.h>
 
 QT_BEGIN_NAMESPACE
 
