@@ -37,7 +37,8 @@ SOURCES += \
     picturewidget.cpp \
     myinformation.cpp \
     common_data.cpp \
-    changepersonalinformation.cpp
+    changepersonalinformation.cpp \
+    newitem_btn.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -52,7 +53,8 @@ HEADERS += \
     src/sign/signdialog.h \
     picturewidget.h \
     myinformation.h \
-    changepersonalinformation.h
+    changepersonalinformation.h \
+    newitem_btn.h
 
 FORMS += \
         mainwindow.ui \

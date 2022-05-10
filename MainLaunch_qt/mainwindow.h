@@ -9,9 +9,10 @@
 #include <QCheckBox>
 #include <QWidget>
 #include <QLabel>
-#include "src/lighthouse/lighthousedemo.h"
+
 #include "picturewidget.h"
 #include "myinformation.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -31,9 +32,11 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
-    LightHouseDemo m_lighthouse;
+
     Picturewidget *m_picturewidget;
 myinformation *m_myinformation;
     QList<QPushButton*> m_btnList;

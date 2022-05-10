@@ -255,6 +255,19 @@
      <string>上传合同</string>
     </property>
    </widget>
+   <widget class="newitem_btn" name="pushButton_11">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>770</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>diyButton</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -277,6 +290,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>newitem_btn</class>
+   <extends>QPushButton</extends>
+   <header location="global">newitem_btn.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -149,7 +149,7 @@ void MainWindow::GetNewrooms()
 }
 void MainWindow::On_list_Button_clicked()
 {
-    m_lighthouse.show();
+
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -158,3 +158,4 @@ void MainWindow::on_pushButton_2_clicked()
 
     m_myinformation->show();
 }
+
