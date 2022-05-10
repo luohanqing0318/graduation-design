@@ -51,6 +51,7 @@ public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout_2;
     QPushButton *pushButton_9;
+    QPushButton *pushButton_10;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -127,6 +128,9 @@ public:
         pushButton_9 = new QPushButton(centralWidget);
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         pushButton_9->setGeometry(QRect(650, 360, 221, 51));
+        pushButton_10 = new QPushButton(centralWidget);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+        pushButton_10->setGeometry(QRect(20, 750, 181, 71));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -164,6 +168,7 @@ public:
         pushButton_7->setText(QApplication::translate("MainWindow", "\346\211\200\346\234\211\346\210\277\345\261\213", Q_NULLPTR));
         pushButton_8->setText(QApplication::translate("MainWindow", "\346\211\200\346\234\211LIGHTHOUSES", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainWindow", "\346\265\217\350\247\210\350\256\260\345\275\225", Q_NULLPTR));
+        pushButton_10->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240\345\220\210\345\220\214", Q_NULLPTR));
     } // retranslateUi
 
 };

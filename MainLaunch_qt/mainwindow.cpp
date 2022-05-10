@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     m_myinformation = new myinformation();
     m_btnNum = 1;
         QListWidgetItem *item=new QListWidgetItem;
-        item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
 
+        item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
         item->setSizeHint(QSize(100,100));
         ui->listWidget->addItem(item);
 
@@ -33,6 +33,15 @@ MainWindow::MainWindow(QWidget *parent) :
         pushButton1->setText(QStringLiteral("采光展示"));
         pushButton2->setText(QStringLiteral("合约信息"));
 
+        UpdateNewrooms();
+
+        if(SingletonMan::GetMobileDataInstance()->getWho())
+        {
+            ui->pushButton_10->hide();
+        }else{
+            ui->pushButton->hide();
+        }
+
 
         hlayout->addLayout(vlayout1);
         hlayout->addLayout(vlayout2);
@@ -52,15 +61,15 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->verticalLayout_2->addWidget(m_picturewidget);
 
         m_picturewidget->addImage(":/1.png");
-            m_picturewidget->addImage(":/2.png");
-            m_picturewidget->addImage(":/3.png");
-            m_picturewidget->addImage(":/4.png");
-            m_picturewidget->startPlay();
-            m_picturewidget->show();
+        m_picturewidget->addImage(":/2.png");
+        m_picturewidget->addImage(":/3.png");
+        m_picturewidget->addImage(":/4.png");
+        m_picturewidget->startPlay();
+        m_picturewidget->show();
 
 
         connect(pushButton1, SIGNAL(clicked()), this, SLOT(On_list_Button_clicked()));
-         connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(on_pushButton_2_clicked()));
+        connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(on_pushButton_2_clicked()));
 
 }
 
@@ -69,6 +78,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::UpdateNewrooms()
+{
+    QString sql = "SELECT * FROM `rooms`;";
+
+    QSqlQuery query;
+    query.prepare(sql);
+    if(query.exec())
+    {
+    qDebug()<<"newrooms : sql select success";
+    if (query.last())
+
+    {
+
+        newrooms = query.at() + 1;
+        qDebug()<<"newrooms"<< newrooms;
+
+     }
+
+    }
+}
 void MainWindow::On_list_Button_clicked()
 {
     m_lighthouse.show();

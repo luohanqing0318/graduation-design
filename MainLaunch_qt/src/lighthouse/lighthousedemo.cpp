@@ -163,8 +163,13 @@ void LightHouseDemo::On_actionChooseSeason4_triggered()
 
 void LightHouseDemo::timer()
 {
+    float time = m_time.elapsed()/1000.0f;
+    if(time > 24)
+    {
+m_time.restart();
+    }
     QDateTime sysTime = QDateTime::currentDateTime();
-    float time = m_time.elapsed()/100.0f;
+
     ui->statusbar->showMessage(QStringLiteral("时间") + QString("%1").arg(time)/*sysTime.toString()*/);
 }
 
