@@ -44,8 +44,11 @@ void addHouse::on_pushButton_4_clicked()
 
     m_housename = ui->lineEdit_2->text();
     m_prices = ui->lineEdit->text().toInt();
+    QDateTime dateTime(QDateTime::currentDateTime());
+    QString date = dateTime.toString("yyyy-MM-dd");
 
-    QString sql = "INSERT INTO rooms (name, landlordsid, picture, price, kind, objname, buy_kind) VALUES (:a1, :a7, :a2, :a3, :a4, :a5, :a6);";
+
+    QString sql = "INSERT INTO rooms (name, landlordsid, picture, price, kind, objname, buy_kind, add_time) VALUES (:a1, :a7, :a2, :a3, :a4, :a5, :a6, :a8);";
 
     QSqlQuery query;
     query.prepare(sql);
@@ -56,6 +59,7 @@ void addHouse::on_pushButton_4_clicked()
     query.bindValue(":a4", kind);
     query.bindValue(":a5", m_objname);
     query.bindValue(":a6", buy_flag);
+    query.bindValue(":a8", date);
     if(query.exec())
     {
         qDebug()<<"addhouse : sql insert success";

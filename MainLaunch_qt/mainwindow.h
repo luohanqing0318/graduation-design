@@ -51,7 +51,8 @@ private:
     QList<QListWidgetItem*> m_itemlist;
     QListWidgetItem * m_create_item;
     QList<newitem_btn*> m_btnList;
-    newitem_btn *m_pbtn;
+    newitem_btn *m_pnewitembtn1;
+    newitem_btn *m_pnewitembtn2;
 
 };
 

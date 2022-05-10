@@ -16,8 +16,14 @@ public:
     QString objname() const;
     void setObjname(const QString &objname);
 
+
+
+    int getHouse_id() const;
+    void setHouse_id(int value);
+
 private:
     QString m_objname;
+    int house_id;
     LightHouseDemo *m_plighthouse;
 
 signals:

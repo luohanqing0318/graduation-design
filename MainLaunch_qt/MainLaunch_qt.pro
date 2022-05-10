@@ -40,7 +40,8 @@ SOURCES += \
     changepersonalinformation.cpp \
     newitem_btn.cpp \
     newitem_label.cpp \
-    addhouse.cpp
+    addhouse.cpp \
+    houseinfor.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -58,7 +59,8 @@ HEADERS += \
     changepersonalinformation.h \
     newitem_btn.h \
     newitem_label.h \
-    addhouse.h
+    addhouse.h \
+    houseinfor.h
 
 FORMS += \
         mainwindow.ui \
@@ -68,7 +70,8 @@ FORMS += \
     picturewidget.ui \
     myinformation.ui \
     changepersonalinformation.ui \
-    addhouse.ui
+    addhouse.ui \
+    houseinfor.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
