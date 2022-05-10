@@ -1,4 +1,4 @@
-﻿/********************************************************************************
+/********************************************************************************
 ** Form generated from reading UI file 'lighthousedemo.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.9.3
@@ -18,7 +18,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include <src/lighthouse/opengl_widget.h>
+#include <opengl_widget.h>
 
 QT_BEGIN_NAMESPACE
 

@@ -575,7 +575,6 @@ debug\moc_mainwindow.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\Q
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdialog.h \
 		..\MainLaunch_qt\addhouse.h \
-		..\MainLaunch_qt\newitem_btn.h \
 		..\MainLaunch_qt\src\lighthouse\lighthousedemo.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
@@ -585,6 +584,7 @@ debug\moc_mainwindow.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\Q
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		..\MainLaunch_qt\newitem_btn.h \
 		..\MainLaunch_qt\mainwindow.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -751,7 +751,6 @@ debug\moc_logindialog.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\QSqlError \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlerror.h \
 		..\MainLaunch_qt\addhouse.h \
-		..\MainLaunch_qt\newitem_btn.h \
 		..\MainLaunch_qt\src\lighthouse\lighthousedemo.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
@@ -761,6 +760,7 @@ debug\moc_logindialog.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		..\MainLaunch_qt\newitem_btn.h \
 		..\MainLaunch_qt\src\login\logindialog.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -1863,6 +1863,19 @@ debug\moc_addhouse.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QWi
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\MainLaunch_qt\src\lighthouse\lighthousedemo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenu.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
 		..\MainLaunch_qt\addhouse.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -2193,7 +2206,6 @@ debug\main.obj: ..\MainLaunch_qt\main.cpp ../MainLaunch_qt/mainwindow.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdialog.h \
 		../MainLaunch_qt/addhouse.h \
-		../MainLaunch_qt/newitem_btn.h \
 		../MainLaunch_qt/src/lighthouse/lighthousedemo.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
@@ -2203,6 +2215,7 @@ debug\main.obj: ..\MainLaunch_qt\main.cpp ../MainLaunch_qt/mainwindow.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		../MainLaunch_qt/newitem_btn.h \
 		../MainLaunch_qt/src/login/logindialog.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QDialog \
 		../MainLaunch_qt/src/sign/signdialog.h \
@@ -2376,7 +2389,6 @@ debug\mainwindow.obj: ..\MainLaunch_qt\mainwindow.cpp ../MainLaunch_qt/mainwindo
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdialog.h \
 		../MainLaunch_qt/addhouse.h \
-		../MainLaunch_qt/newitem_btn.h \
 		../MainLaunch_qt/src/lighthouse/lighthousedemo.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
@@ -2386,6 +2398,7 @@ debug\mainwindow.obj: ..\MainLaunch_qt\mainwindow.cpp ../MainLaunch_qt/mainwindo
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		../MainLaunch_qt/newitem_btn.h \
 		ui_mainwindow.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
@@ -2578,7 +2591,6 @@ debug\logindialog.obj: ..\MainLaunch_qt\src\login\logindialog.cpp ../MainLaunch_
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\QSqlError \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlerror.h \
 		../MainLaunch_qt/addhouse.h \
-		../MainLaunch_qt/newitem_btn.h \
 		../MainLaunch_qt/src/lighthouse/lighthousedemo.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
@@ -2588,6 +2600,7 @@ debug\logindialog.obj: ..\MainLaunch_qt\src\login\logindialog.cpp ../MainLaunch_
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		../MainLaunch_qt/newitem_btn.h \
 		ui_logindialog.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
@@ -4206,7 +4219,83 @@ debug\addhouse.obj: ..\MainLaunch_qt\addhouse.cpp ../MainLaunch_qt/addhouse.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtouchdevice.h \
-		ui_addhouse.h
+		../MainLaunch_qt/src/lighthouse/lighthousedemo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenu.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		ui_addhouse.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QButtonGroup \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qbuttongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QComboBox \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qcombobox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QLineEdit \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlineedit.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtextcursor.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtextformat.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpen.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtextoption.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QPushButton \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QFileDialog \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qfiledialog.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdir.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfileinfo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdialog.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QImage \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMessageBox \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmessagebox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QDebug \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\QSqlQuery \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlquery.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qtsqlglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqldatabase.h \
+		../MainLaunch_qt/common_data.h \
+		../MainLaunch_qt/mobiledata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QString
 
 debug\qrc_ui_style.obj: debug\qrc_ui_style.cpp 
 

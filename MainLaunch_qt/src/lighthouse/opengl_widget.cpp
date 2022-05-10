@@ -138,11 +138,11 @@ void OpenGL_Widget::paintGL()
        projection.setToIdentity();
 
        float time = m_time.elapsed() / 100.0f;
-//       if(m_time.elapsed()/1000.0 > 20)
-//       {
-//           m_time.restart();
+       if(m_time.elapsed()/1000.0 > 20)
+      {
+           m_time.restart();
 
-//       }
+       }
 
 //       QTime time = m_time.currentTime();
        qDebug() << time;

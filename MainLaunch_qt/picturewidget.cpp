@@ -122,7 +122,7 @@ void Picturewidget::mousePressEvent(QMouseEvent *event)
 {
     // 这里可以对当前图片进行点击然后触发每个图片对应的效果;
        // 比如web上好多类似的弹出对应的广告页面等功能;
-       qDebug() << m_currentDrawImageIndx;
+//       qDebug() << m_currentDrawImageIndx;
        return __super::mousePressEvent(event);
 
 }
