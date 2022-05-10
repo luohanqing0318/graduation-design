@@ -69,8 +69,9 @@ LightHouseDemo::~LightHouseDemo()
 void LightHouseDemo::on_actionLoadModel_triggered()
 {
 //    QString str = QFileDialog::getOpenFileName(this, "选择文件", "" , "OBJ(*.obj);;FBX(*.fbx);;ALL FILES(*.*)");
-    QString str = "F:/House_blender/house02.obj";
-    ui->openGLWidget->LoadModel(str.toStdString());
+//    QString str = "F:/House_blender/house02.obj";
+    qDebug()<<"load obj:"<<m_objname;
+    ui->openGLWidget->LoadModel(m_objname.toStdString());
 }
 
 void LightHouseDemo::On_actionChooseSeason1_triggered()
@@ -171,5 +172,15 @@ m_time.restart();
     QDateTime sysTime = QDateTime::currentDateTime();
 
     ui->statusbar->showMessage(QStringLiteral("时间") + QString("%1").arg(time)/*sysTime.toString()*/);
+}
+
+QString LightHouseDemo::objname() const
+{
+    return m_objname;
+}
+
+void LightHouseDemo::setObjname(const QString &objname)
+{
+    m_objname = objname;
 }
 

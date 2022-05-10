@@ -48,9 +48,12 @@ public:
    QTime m_time;
 
 
+   QString objname() const;
+   void setObjname(const QString &objname);
+
 private slots:
-    void on_actionLoadModel_triggered();
-    void On_actionChooseSeason1_triggered();
+   void on_actionLoadModel_triggered();
+   void On_actionChooseSeason1_triggered();
     void On_actionChooseSeason2_triggered();
     void On_actionChooseSeason3_triggered();
     void On_actionChooseSeason4_triggered();
@@ -59,7 +62,7 @@ private slots:
 
 private:
     Ui::LightHouseDemo *ui;
-
+    QString m_objname;
 
 };
 

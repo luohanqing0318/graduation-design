@@ -32,6 +32,9 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QComboBox *comboBox_2;
     QComboBox *comboBox;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *label_3;
+    QLineEdit *lineEdit_2;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_2;
     QLineEdit *lineEdit;
@@ -70,6 +73,25 @@ public:
 
 
         verticalLayout->addLayout(horizontalLayout_5);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        label_3 = new QLabel(verticalLayoutWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
+        label_3->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_8->addWidget(label_3);
+
+        lineEdit_2 = new QLineEdit(verticalLayoutWidget);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setMinimumSize(QSize(300, 0));
+        lineEdit_2->setMaximumSize(QSize(300, 16777215));
+
+        horizontalLayout_8->addWidget(lineEdit_2);
+
+
+        verticalLayout->addLayout(horizontalLayout_8);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
@@ -145,6 +167,7 @@ public:
     void retranslateUi(QWidget *addHouse)
     {
         addHouse->setWindowTitle(QApplication::translate("addHouse", "Form", Q_NULLPTR));
+        label_3->setText(QApplication::translate("addHouse", "\346\210\277\345\261\213\345\220\215", Q_NULLPTR));
         label_2->setText(QApplication::translate("addHouse", "\344\273\267\346\240\274", Q_NULLPTR));
         label->setText(QApplication::translate("addHouse", "\346\227\240\345\233\276\347\211\207", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("addHouse", "\344\270\212\344\274\240\345\233\276\347\211\207", Q_NULLPTR));
