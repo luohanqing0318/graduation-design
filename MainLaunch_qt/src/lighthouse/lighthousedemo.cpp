@@ -23,7 +23,10 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
 {
     ui->setupUi(this);
     setCentralWidget(ui->openGLWidget);
-
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(timer()));
+    timer->start(1);
+    m_time.start();
 #ifdef USE_DEFAULT_MENU_BAR
     pMenuBar = this->menuBar();
 #else
@@ -47,6 +50,8 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
     connect(pActiontSeason2,&QAction::triggered,this,&LightHouseDemo::On_actionChooseSeason2_triggered);
     connect(pActiontSeason3,&QAction::triggered,this,&LightHouseDemo::On_actionChooseSeason3_triggered);
     connect(pActiontSeason4,&QAction::triggered,this,&LightHouseDemo::On_actionChooseSeason4_triggered);
+
+    ui->statusbar->setStyleSheet("font: 14pt ");
 
 
 
@@ -154,5 +159,12 @@ void LightHouseDemo::On_actionChooseSeason4_triggered()
     COMMON_SPECULAR_LIGHT_B = 0.6f;
 
     qDebug()<< "LightDirection changed::"<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
+}
+
+void LightHouseDemo::timer()
+{
+    QDateTime sysTime = QDateTime::currentDateTime();
+    float time = m_time.elapsed()/100.0f;
+    ui->statusbar->showMessage(QStringLiteral("时间") + QString("%1").arg(time)/*sysTime.toString()*/);
 }
 

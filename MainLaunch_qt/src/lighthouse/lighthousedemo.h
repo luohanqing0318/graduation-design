@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QMenuBar>
 #include <QMenu>
+#include <QTime>
 extern float  COMMON_LIGHT_DIRECTION_X;
 extern float  COMMON_LIGHT_DIRECTION_Y;
 extern float  COMMON_LIGHT_DIRECTION_Z;
@@ -44,7 +45,7 @@ public:
    QAction *pActiontSeason2;
    QAction *pActiontSeason3;
    QAction *pActiontSeason4;
-
+   QTime m_time;
 
 
 private slots:
@@ -53,6 +54,8 @@ private slots:
     void On_actionChooseSeason2_triggered();
     void On_actionChooseSeason3_triggered();
     void On_actionChooseSeason4_triggered();
+
+    void timer();
 
 private:
     Ui::LightHouseDemo *ui;

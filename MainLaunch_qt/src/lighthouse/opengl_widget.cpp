@@ -137,7 +137,7 @@ void OpenGL_Widget::paintGL()
        view.setToIdentity();
        projection.setToIdentity();
 
-       float time = m_time.elapsed() / 100.0f + 4.0f;
+       float time = m_time.elapsed() / 100.0f;
 //       if(m_time.elapsed()/1000.0 > 20)
 //       {
 //           m_time.restart();
@@ -145,7 +145,7 @@ void OpenGL_Widget::paintGL()
 //       }
 
 //       QTime time = m_time.currentTime();
-//       qDebug() << time;
+       qDebug() << time;
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -159,10 +159,6 @@ void OpenGL_Widget::paintGL()
        m_light_shaderProgram.setUniformValue("view_matrix", view);
        model.setToIdentity();
 
-
-
-
-
        model.rotate(time, 0.0f, 1.0f, 0.0f);
        model.translate(light_position);
 
@@ -170,7 +166,6 @@ void OpenGL_Widget::paintGL()
        float tempx = temp4d3.x();
        float tempz = temp4d3.z();
 
-//       qDebug()<<"("<<model<<")";
        model.scale(0.2);
        m_light_shaderProgram.setUniformValue("model_matrix", model);
        m_light_shaderProgram.setUniformValue("light_color",light_color);
@@ -189,20 +184,13 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("view_position",m_camera.Position);
        // light properties, note that all light colors are set at full intensity
 
-       float tempZ =  COMMON_LIGHT_DIRECTION_Y;
 
-
-
-//       qDebug()<<"("<<COMMON_LIGHT_DIRECTION_X<<","<<COMMON_LIGHT_DIRECTION_Y<<","<<COMMON_LIGHT_DIRECTION_Z<<")";
-
-//       m_shaderprogram.setUniformValue("light.direction", -temp4d.x(), -COMMON_LIGHT_DIRECTION_Y, -temp4d.z());
 
        m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
        m_shaderprogram.setUniformValue("light.diffuse", 0.8f, 0.7f, 0.3f);
 
 
        m_shaderprogram.setUniformValue("light.specular", 0.8f, 0.7f, 0.3f);
-       // material properties
        m_shaderprogram.setUniformValue("material.shininess", 4.0f);
 
        QVector3D temp_position2(time, 0.0f, 0.0f);
