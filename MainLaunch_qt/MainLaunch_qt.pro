@@ -38,7 +38,9 @@ SOURCES += \
     myinformation.cpp \
     common_data.cpp \
     changepersonalinformation.cpp \
-    newitem_btn.cpp
+    newitem_btn.cpp \
+    newitem_label.cpp \
+    addhouse.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -54,7 +56,9 @@ HEADERS += \
     picturewidget.h \
     myinformation.h \
     changepersonalinformation.h \
-    newitem_btn.h
+    newitem_btn.h \
+    newitem_label.h \
+    addhouse.h
 
 FORMS += \
         mainwindow.ui \
@@ -63,7 +67,8 @@ FORMS += \
     src/sign/signdialog.ui \
     picturewidget.ui \
     myinformation.ui \
-    changepersonalinformation.ui
+    changepersonalinformation.ui \
+    addhouse.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

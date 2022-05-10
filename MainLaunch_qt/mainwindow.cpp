@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     m_myinformation = new myinformation();
-    m_btnNum = 1;
+    m_paddhouse = new addHouse();
 //        QListWidgetItem *item=new QListWidgetItem;
 
 //        item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
@@ -69,39 +69,67 @@ MainWindow::MainWindow(QWidget *parent) :
         m_picturewidget->startPlay();
         m_picturewidget->show();
 
-//        for(int i=0; i < m_newrooms; i++)
-//           {
-//               m_create_item=new QListWidgetItem;
-//               m_create_item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
-//               //设置按钮在主对话框的位置
-//               m_create_item->setSizeHint(QSize(100,100));
-//               ui->listWidget->addItem(m_create_item);
-//               QWidget *w = new QWidget;
-//               QHBoxLayout *hlayout=new QHBoxLayout;
-//               QVBoxLayout *vlayout1 = new QVBoxLayout;
-//               QVBoxLayout *vlayout2 = new QVBoxLayout;
-//               QLabel *label1 = new QLabel;
-//               label1->setAlignment(Qt::AlignCenter);
-//               label1->setText(QStringLiteral("天通南苑东一区-702"));
-//               QLabel *label2 = new QLabel;
-//               label2->setAlignment(Qt::AlignCenter);
-//               label2->setText(QStringLiteral("合租/月付/2350"));
-//               QPushButton *pushButton1=new QPushButton(w);
-//               QPushButton *pushButton2=new QPushButton(w);
-//               pushButton1->setText(QStringLiteral("采光展示"));
-//               pushButton2->setText(QStringLiteral("合约信息"));
-//               hlayout->addLayout(vlayout1);
-//               hlayout->addLayout(vlayout2);
+        for(int i=m_newrooms - 1; i >=0 ; i--)
+           {
+               m_create_item=new QListWidgetItem;
+               m_create_item->setIcon(QIcon("F:/GitHub Desktop/image/house01_2.jpg"));
+               //设置按钮在主对话框的位置
+               m_create_item->setSizeHint(QSize(100,100));
+               ui->listWidget->addItem(m_create_item);
+               QWidget *w = new QWidget;
+               QHBoxLayout *hlayout=new QHBoxLayout;
+               QVBoxLayout *vlayout1 = new QVBoxLayout;
+               QVBoxLayout *vlayout2 = new QVBoxLayout;
+               hlayout->addLayout(vlayout1);
+               hlayout->addLayout(vlayout2);
 
-//               vlayout1->addWidget(label1);
-//               vlayout1->addWidget(label2);
+               QLabel *label1 = new QLabel;
+               QLabel *label2 = new QLabel;
 
-//               vlayout2->addWidget(pushButton1);
-//               vlayout2->addWidget(pushButton2);
+               QString sql = "SELECT * FROM `rooms` WHERE id = :sql1;";
+               QSqlQuery query;
+               query.prepare(sql);
+               query.bindValue(":sql1", i+1);
+               if(query.exec())
+               {
+                   qDebug()<<"newlabel : sql select success";
+                   while (query.next()) {
+                           QString housename = query.value(2).toString();
+                           label1->setAlignment(Qt::AlignCenter);
+                           label1->setText(housename);
+                           QString prices = query.value(4).toString();
+                           label2->setAlignment(Qt::AlignCenter);
+                           int thekind = query.value(4).toInt();
+                           QString kind = GetFindKind(thekind);
+                           label2->setText(prices + "/" + kind);
 
-//               w->setLayout(hlayout);
-//               ui->listWidget->setIconSize(QSize(180,180));
-//               ui->listWidget->setItemWidget(item,w);
+                   }
+
+                }
+
+               QPushButton *pushButton1=new QPushButton(w);
+               QPushButton *pushButton2=new QPushButton(w);
+               pushButton1->setText(QStringLiteral("采光展示"));
+               pushButton2->setText(QStringLiteral("合约信息"));
+
+
+               vlayout1->addWidget(label1);
+               vlayout1->addWidget(label2);
+
+               vlayout2->addWidget(pushButton1);
+               vlayout2->addWidget(pushButton2);
+
+               w->setLayout(hlayout);
+               ui->listWidget->setIconSize(QSize(180,180));
+               ui->listWidget->setItemWidget(m_create_item,w);
+
+
+
+
+
+
+
+
 //               connect(pushButton1, SIGNAL(clicked()), this, SLOT(On_list_Button_clicked()));
 //               connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(on_pushButton_2_clicked()));
 
@@ -117,7 +145,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-//           }
+           }
 
 
 
@@ -147,6 +175,24 @@ void MainWindow::GetNewrooms()
 
     }
 }
+
+QString MainWindow::GetFindKind(int kind)
+{
+    QString thekind = "";
+    if(thekind == 0)
+    {
+        thekind += QString(QStringLiteral("合租"));
+
+    }else if(kind == 1)
+    {
+        thekind = QString(QStringLiteral("合租"));
+    }
+    else if(kind == 2)
+    {
+        thekind = QString(QStringLiteral("合租"));
+     }
+    return thekind;
+}
 void MainWindow::On_list_Button_clicked()
 {
 
@@ -159,3 +205,8 @@ void MainWindow::on_pushButton_2_clicked()
     m_myinformation->show();
 }
 
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    m_paddhouse->show();
+}
