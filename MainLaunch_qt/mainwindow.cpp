@@ -110,7 +110,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
          }
 
+    m_psmallhouselist = new smallhouselist();
+    m_pbighouselist = new bighouselist();
+    m_pgoodehouselist = new goodhouselist();
 
+    ui->pushButton_3->hide();
+    ui->pushButton_11->hide();
 
 
 }
@@ -179,3 +184,20 @@ void MainWindow::on_pushButton_7_clicked()
 {
 
 }
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    m_psmallhouselist->show();
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    m_pbighouselist->show();
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    m_pgoodehouselist->show();
+}
+
+

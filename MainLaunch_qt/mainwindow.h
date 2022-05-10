@@ -16,6 +16,9 @@
 #include "newitem_btn.h"
 #include "houseinfor_btn.h"
 #include "houseinfor.h"
+#include "smallhouselist.h"
+#include "bighouselist.h"
+#include "goodhouselist.h"
 #include <QSqlQuery>
 namespace Ui {
 class MainWindow;
@@ -42,6 +45,14 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+
+
 private:
     Ui::MainWindow *ui;
 
@@ -57,6 +68,9 @@ private:
     newitem_btn *m_pnewitembtn2;
     houseinfor_btn *m_phouseinfobtn;
     houseinfor *m_houseinfor_wdiget;
+    smallhouselist *m_psmallhouselist;
+    bighouselist *m_pbighouselist;
+    goodhouselist *m_pgoodehouselist;
 };
 
 #endif // MAINWINDOW_H
