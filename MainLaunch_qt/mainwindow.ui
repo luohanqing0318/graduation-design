@@ -40,19 +40,6 @@
      <string>我的</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>750</y>
-      <width>181</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>房屋列表</string>
-    </property>
-   </widget>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
@@ -255,17 +242,17 @@
      <string>上传合同</string>
     </property>
    </widget>
-   <widget class="newitem_btn" name="pushButton_11">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>370</x>
       <y>770</y>
-      <width>93</width>
-      <height>28</height>
+      <width>72</width>
+      <height>15</height>
      </rect>
     </property>
     <property name="text">
-     <string>diyButton</string>
+     <string>NULL</string>
     </property>
    </widget>
   </widget>
@@ -290,13 +277,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>newitem_btn</class>
-   <extends>QPushButton</extends>
-   <header location="global">newitem_btn.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

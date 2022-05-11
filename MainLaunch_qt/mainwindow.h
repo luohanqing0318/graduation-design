@@ -34,6 +34,8 @@ public:
     ~MainWindow();
     void GetNewrooms();
     QString GetFindKind(int kind);
+    void childrecText(QString str);
+    void RecHuseid(int house_id);
 private slots:
     void On_list_Button_clicked();//动态创建QPushButton按钮信号槽函数
 
@@ -64,6 +66,9 @@ private:
     addHouse *m_paddhouse;
 
     int m_newrooms;
+    int m_once_addhouseid;
+
+
     QList<QListWidgetItem*> m_itemlist;
     QListWidgetItem * m_create_item;
     QList<newitem_btn*> m_btnList;

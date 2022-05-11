@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include "common_data.h"
+#include <QMessageBox>
 addHouse::addHouse(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::addHouse)
@@ -60,9 +61,37 @@ void addHouse::on_pushButton_4_clicked()
     query.bindValue(":a5", m_objname);
     query.bindValue(":a6", buy_flag);
     query.bindValue(":a8", date);
+
+    if(m_housename == "" || var == NULL || m_prices == 0 || m_objname == "")
+    {
+       QMessageBox::about(NULL, QStringLiteral("错误"), QStringLiteral("必须填写完整合同信息"));
+       return;
+    }
+
+
     if(query.exec())
     {
         qDebug()<<"addhouse : sql insert success";
+
+        QString sql = "SELECT id FROM `rooms` WHERE name = :b1 and landlordsid = :b5 and price = :b2 and kind = :b3 and add_time = :b4;";
+
+        QSqlQuery query;
+        query.prepare(sql);
+        query.bindValue(":b5", SingletonMan::GetMobileDataInstance()->username());
+        query.bindValue(":b1", m_housename);
+        query.bindValue(":b2", m_prices);
+        query.bindValue(":b3", kind);
+        query.bindValue(":b4", date);
+        if(query.exec())
+        {
+           query.next();
+           int value = query.value(0).toInt();
+           emit SendAddOneNewHouse(value);
+        }
+
+
+
+
     }
 
 
@@ -122,4 +151,10 @@ QString addHouse::objname() const
 void addHouse::setObjname(const QString &objname)
 {
     m_objname = objname;
+}
+
+void addHouse::on_pushButton_5_clicked()
+{
+    int temp = 1;
+    emit SendAddOneNewHouse(1);
 }

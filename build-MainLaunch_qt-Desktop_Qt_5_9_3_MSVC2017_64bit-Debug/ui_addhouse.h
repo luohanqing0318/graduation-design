@@ -45,12 +45,13 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
 
     void setupUi(QWidget *addHouse)
     {
         if (addHouse->objectName().isEmpty())
             addHouse->setObjectName(QStringLiteral("addHouse"));
-        addHouse->resize(512, 541);
+        addHouse->resize(530, 541);
         verticalLayoutWidget = new QWidget(addHouse);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(80, 30, 383, 351));
@@ -158,6 +159,9 @@ public:
 
         verticalLayout->addWidget(pushButton_4);
 
+        pushButton_5 = new QPushButton(addHouse);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(150, 420, 93, 28));
 
         retranslateUi(addHouse);
 
@@ -174,6 +178,7 @@ public:
         pushButton_2->setText(QApplication::translate("addHouse", "\344\270\212\344\274\240\351\207\207\345\205\211\345\212\250\347\224\273", Q_NULLPTR));
         pushButton->setText(QApplication::translate("addHouse", "\351\242\204\350\247\210\351\207\207\345\205\211\345\212\250\347\224\273", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("addHouse", "\346\217\220\344\272\244", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("addHouse", "test", Q_NULLPTR));
     } // retranslateUi
 
 };

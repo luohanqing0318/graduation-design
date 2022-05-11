@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.1
+** Created by: Qt User Interface Compiler version 5.9.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -25,7 +25,6 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include <newitem_btn.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -35,7 +34,6 @@ public:
     QWidget *centralWidget;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
     QTabWidget *tabWidget;
     QWidget *tab;
     QListWidget *listWidget;
@@ -53,7 +51,7 @@ public:
     QVBoxLayout *verticalLayout_2;
     QPushButton *pushButton_9;
     QPushButton *pushButton_10;
-    newitem_btn *pushButton_11;
+    QLabel *label_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -71,9 +69,6 @@ public:
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(700, 750, 191, 71));
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(360, 750, 181, 71));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setGeometry(QRect(20, 410, 871, 321));
@@ -132,10 +127,10 @@ public:
         pushButton_9->setGeometry(QRect(650, 360, 221, 51));
         pushButton_10 = new QPushButton(centralWidget);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        pushButton_10->setGeometry(QRect(20, 750, 181, 71));
-        pushButton_11 = new newitem_btn(centralWidget);
-        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-        pushButton_11->setGeometry(QRect(230, 770, 93, 28));
+        pushButton_10->setGeometry(QRect(20, 760, 181, 71));
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(370, 770, 72, 15));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -161,7 +156,6 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "\347\234\213\346\210\277\345\215\225", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "\346\210\221\347\232\204", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("MainWindow", "\346\210\277\345\261\213\345\210\227\350\241\250", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\346\234\200\346\226\260", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", Q_NULLPTR));
         pushButton_4->setText(QString());
@@ -174,7 +168,7 @@ public:
         pushButton_8->setText(QApplication::translate("MainWindow", "\346\211\200\346\234\211LIGHTHOUSES", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainWindow", "\346\265\217\350\247\210\350\256\260\345\275\225", Q_NULLPTR));
         pushButton_10->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240\345\220\210\345\220\214", Q_NULLPTR));
-        pushButton_11->setText(QApplication::translate("MainWindow", "diyButton", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MainWindow", "NULL", Q_NULLPTR));
     } // retranslateUi
 
 };

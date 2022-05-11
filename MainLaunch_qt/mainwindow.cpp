@@ -122,9 +122,9 @@ MainWindow::MainWindow(QWidget *parent) :
     m_pbighouselist = new bighouselist();
     m_pgoodehouselist = new goodhouselist();
     m_ptenants_buylist = new tenants_buylist();
-    ui->pushButton_3->hide();
-    ui->pushButton_11->hide();
 
+    connect(m_paddhouse, &addHouse::childsendText, this, &MainWindow::childrecText);
+    connect(m_paddhouse, &addHouse::SendAddOneNewHouse, this, &MainWindow::RecHuseid);
 
 }
 
@@ -170,6 +170,99 @@ QString MainWindow::GetFindKind(int kind)
      }
     return thekind;
 }
+
+void MainWindow::childrecText(QString str)
+{
+    ui->label_4->setText(str);
+}
+
+void MainWindow::RecHuseid(int house_id)
+{
+    m_once_addhouseid = house_id;
+    QString sql = "SELECT * FROM `rooms`where id = :a1;";
+    QSqlQuery query;
+    query.prepare(sql);
+    query.bindValue(":a1", house_id);
+    if(query.exec())
+    {
+        qDebug()<<"newlabel : sql select success";
+        while (query.next()) {
+
+         m_create_item=new QListWidgetItem;
+
+         QWidget *w = new QWidget;
+         QHBoxLayout *hlayout=new QHBoxLayout;
+         QVBoxLayout *vlayout1 = new QVBoxLayout;
+         QVBoxLayout *vlayout2 = new QVBoxLayout;
+         hlayout->addLayout(vlayout1);
+         hlayout->addLayout(vlayout2);
+
+         QLabel *label1 = new QLabel;
+         QLabel *label2 = new QLabel;
+         QLabel *label3 = new QLabel;
+         QString landlordsid = query.value(1).toString();
+         QString housename = query.value(2).toString();
+         label1->setAlignment(Qt::AlignCenter);
+         label1->setText(QStringLiteral("地点:") + housename);
+
+         m_create_item->setSizeHint(QSize(100,100));
+         ui->listWidget->addItem(m_create_item);
+
+
+             QPixmap picture;
+             picture.loadFromData(query.value(3).toByteArray(),"JPG");
+             m_create_item->setIcon(QIcon(picture));
+
+
+
+
+
+
+         QString prices = query.value(4).toString();
+         label2->setAlignment(Qt::AlignCenter);
+         int thekind = query.value(5).toInt();
+         QString kind = GetFindKind(thekind);
+         label2->setText(QStringLiteral("价格:") + prices + "/" + kind);
+
+         QString date = query.value(10).toString();
+         label3->setAlignment(Qt::AlignCenter);
+         label3->setText(QStringLiteral("上传日期:") + date);
+
+
+         m_pnewitembtn1 = new newitem_btn(w);
+         m_pnewitembtn1->setText(QStringLiteral("采光展示"));
+         int house_id = query.value(0).toInt();
+         m_pnewitembtn1->setObjectName("m_pnewitembtn1"+QString::number(house_id));
+         m_pnewitembtn1->setHouse_id(house_id);
+
+
+         m_phouseinfobtn = new houseinfor_btn(w);
+         m_phouseinfobtn->setText(QStringLiteral("房东信息"));
+         m_phouseinfobtn->setHouseid(house_id);
+         m_phouseinfobtn->setLandlordsid(landlordsid);
+
+
+
+
+
+         vlayout1->addWidget(label1);
+         vlayout1->addWidget(label2);
+         vlayout1->addWidget(label3);
+
+         vlayout2->addWidget(m_pnewitembtn1);
+         vlayout2->addWidget(m_phouseinfobtn);
+
+         w->setLayout(hlayout);
+         ui->listWidget->setIconSize(QSize(180,180));
+         ui->listWidget->setItemWidget(m_create_item,w);
+
+
+        }
+
+    ui->label_4->setText(QString::number(house_id));
+    }
+
+}
 void MainWindow::On_list_Button_clicked()
 {
 
@@ -213,18 +306,7 @@ void MainWindow::on_pushButton_5_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     m_ptenants_buylist->setTenantsusername(SingletonMan::GetMobileDataInstance()->username());
-    QString sql_select_id = "SELECT id FROM `tenants_buy` WHERE buy_tenants = :a1;";
-    QSqlQuery query_select_id;
-    query_select_id.prepare(sql_select_id);
-    query_select_id.bindValue(":a1", SingletonMan::GetMobileDataInstance()->username());
-    if(query_select_id.exec())
-    {
-        while(query_select_id.next())
-        {
-            m_ptenants_buylist->addHouseid_list(query_select_id.value(0).toInt());
-        }
-    }
-    m_ptenants_buylist->UpdateList();
+
     m_ptenants_buylist->show();
 
 }
