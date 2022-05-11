@@ -121,7 +121,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_psmallhouselist = new smallhouselist();
     m_pbighouselist = new bighouselist();
     m_pgoodehouselist = new goodhouselist();
-    m_ptenants_buylist = new tenants_buylist();
+
 
     connect(m_paddhouse, &addHouse::childsendText, this, &MainWindow::childrecText);
     connect(m_paddhouse, &addHouse::SendAddOneNewHouse, this, &MainWindow::RecHuseid);
@@ -305,8 +305,7 @@ void MainWindow::on_pushButton_5_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    m_ptenants_buylist->setTenantsusername(SingletonMan::GetMobileDataInstance()->username());
-
-    m_ptenants_buylist->show();
+    m_ptentantswishlist = new tentantswishlist();
+    m_ptentantswishlist->show();
 
 }

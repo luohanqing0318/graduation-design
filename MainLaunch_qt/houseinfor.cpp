@@ -57,16 +57,16 @@ void houseinfor::on_pushButton_2_clicked()
         qDebug()<<"houseinfor : sql update success";
     }
 
-    QString sql_insert = "INSERT INTO tenants_buy (id, landlordsid, buy_tenants) VALUES (:a2, :a3, :a4); ";
-    QSqlQuery query_insert;
-    query_insert.prepare(sql_insert);
-    query_insert.bindValue(":a2", m_houseid);
-    query_insert.bindValue(":a3", m_landlordsid);
-    query_insert.bindValue(":a4", SingletonMan::GetMobileDataInstance()->username());
-    if(query_insert.exec())
-    {
-        qDebug()<<"houseinfor : sql insert success";
-    }
+//    QString sql_insert = "INSERT INTO tenants_buy (id, landlordsid, buy_tenants) VALUES (:a2, :a3, :a4); ";
+//    QSqlQuery query_insert;
+//    query_insert.prepare(sql_insert);
+//    query_insert.bindValue(":a2", m_houseid);
+//    query_insert.bindValue(":a3", m_landlordsid);
+//    query_insert.bindValue(":a4", SingletonMan::GetMobileDataInstance()->username());
+//    if(query_insert.exec())
+//    {
+//        qDebug()<<"houseinfor : sql insert success";
+//    }
 
 
 
@@ -86,5 +86,14 @@ void houseinfor::setLandlordsid(const QString &landlordsid)
 
 void houseinfor::on_pushButton_clicked()
 {
-
+    QString sql_insert = "INSERT INTO tenants_wish (id, landlordsid, buy_tenants_id) VALUES (:a2, :a3, :a4); ";
+    QSqlQuery query_insert;
+    query_insert.prepare(sql_insert);
+    query_insert.bindValue(":a2", m_houseid);
+    query_insert.bindValue(":a3", m_landlordsid);
+    query_insert.bindValue(":a4", SingletonMan::GetMobileDataInstance()->username());
+    if(query_insert.exec())
+    {
+        qDebug()<<"houseinfor : sql insert success";
+    }
 }
