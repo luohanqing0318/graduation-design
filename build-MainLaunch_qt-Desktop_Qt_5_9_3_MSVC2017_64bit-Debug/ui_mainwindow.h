@@ -70,9 +70,21 @@ public:
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(700, 750, 191, 71));
+        pushButton_2->setStyleSheet(QLatin1String("font: 25 12pt \"Microsoft YaHei\";\n"
+" background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 15px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"    padding: 5px;\n"
+""));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/\346\210\221\347\232\204\345\200\237\345\270\246\350\257\201.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon);
+        pushButton_2->setIconSize(QSize(120, 120));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(20, 410, 871, 321));
+        tabWidget->setGeometry(QRect(20, 410, 865, 321));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         listWidget = new QListWidget(tab);
@@ -85,26 +97,33 @@ public:
         pushButton_4 = new QPushButton(centralWidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(40, 130, 81, 81));
-        pushButton_4->setStyleSheet(QStringLiteral("border-image: url(:/smallhouse.png);"));
+        pushButton_4->setStyleSheet(QString::fromUtf8("background-color: #f5f6fa;\n"
+"image: url(:/\346\210\277\345\255\22012.png);"));
         pushButton_4->setFlat(false);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(50, 220, 72, 15));
+        label->setGeometry(QRect(40, 220, 81, 31));
+        label->setStyleSheet(QStringLiteral("font: 25 12pt \"Microsoft YaHei\";"));
         pushButton_6 = new QPushButton(centralWidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setGeometry(QRect(40, 10, 81, 81));
-        pushButton_6->setStyleSheet(QStringLiteral("border-image: url(:/bighouse.png);"));
+        pushButton_6->setStyleSheet(QString::fromUtf8("background-color: #f5f6fa;\n"
+"image: url(:/\346\210\277\345\255\22010.png);"));
         pushButton_6->setFlat(false);
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(50, 100, 72, 15));
+        label_2->setGeometry(QRect(40, 100, 81, 21));
+        label_2->setStyleSheet(QStringLiteral("font: 25 12pt \"Microsoft YaHei\";"));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(50, 360, 72, 15));
+        label_3->setGeometry(QRect(40, 350, 81, 21));
+        label_3->setStyleSheet(QStringLiteral("font: 25 12pt \"Microsoft YaHei\";"));
         pushButton_5 = new QPushButton(centralWidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(40, 250, 81, 81));
-        pushButton_5->setStyleSheet(QStringLiteral("border-image: url(:/goodhouse.png);"));
+        pushButton_5->setStyleSheet(QString::fromUtf8("image: url(:/\346\210\277\345\255\22014.png);\n"
+"background-color: #f5f6fa;\n"
+"    "));
         pushButton_5->setFlat(false);
         lineEdit = new QLineEdit(centralWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
@@ -112,10 +131,29 @@ public:
         pushButton_7 = new QPushButton(centralWidget);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         pushButton_7->setGeometry(QRect(170, 360, 221, 51));
+        pushButton_7->setStyleSheet(QLatin1String("font: 25 9pt \"Microsoft YaHei\";\n"
+" background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 15px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"    padding: 5px;\n"
+""));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/\346\245\274\346\210\277.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_7->setIcon(icon1);
+        pushButton_7->setIconSize(QSize(60, 60));
         pushButton_8 = new QPushButton(centralWidget);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setGeometry(QRect(400, 360, 241, 51));
-        pushButton_8->setStyleSheet(QStringLiteral("pushButton_8{border:1px; background:white; border-radius:5px;}"));
+        pushButton_8->setStyleSheet(QLatin1String("font: 25 9pt \"Microsoft YaHei\";\n"
+" background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 15px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"    padding: 5px;\n"
+""));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(170, 80, 701, 251));
@@ -127,9 +165,29 @@ public:
         pushButton_9 = new QPushButton(centralWidget);
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         pushButton_9->setGeometry(QRect(650, 360, 221, 51));
+        pushButton_9->setStyleSheet(QLatin1String("font: 25 9pt \"Microsoft YaHei\";\n"
+" background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 15px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"    padding: 5px;\n"
+""));
         pushButton_10 = new QPushButton(centralWidget);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
         pushButton_10->setGeometry(QRect(20, 760, 181, 71));
+        pushButton_10->setStyleSheet(QLatin1String("font: 25 12pt \"Microsoft YaHei\";\n"
+" background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 15px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"    padding: 5px;\n"
+""));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/\345\220\210\345\220\214 (1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_10->setIcon(icon2);
+        pushButton_10->setIconSize(QSize(70, 70));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(370, 770, 72, 15));
@@ -157,9 +215,9 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "\347\234\213\346\210\277\345\215\225", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainWindow", "\346\210\221\347\232\204", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("MainWindow", "  \346\210\221\347\232\204", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\346\234\200\346\226\260", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "\347\262\276\351\200\211", Q_NULLPTR));
         pushButton_4->setText(QString());
         label->setText(QApplication::translate("MainWindow", "\346\225\264\347\247\237\345\210\227\350\241\250", Q_NULLPTR));
         pushButton_6->setText(QString());
