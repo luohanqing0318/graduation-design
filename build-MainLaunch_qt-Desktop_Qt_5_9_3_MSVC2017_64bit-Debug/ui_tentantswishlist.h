@@ -28,10 +28,10 @@ public:
     {
         if (tentantswishlist->objectName().isEmpty())
             tentantswishlist->setObjectName(QStringLiteral("tentantswishlist"));
-        tentantswishlist->resize(440, 456);
+        tentantswishlist->resize(558, 585);
         listWidget = new QListWidget(tentantswishlist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(10, 10, 421, 431));
+        listWidget->setGeometry(QRect(10, 10, 531, 511));
 
         retranslateUi(tentantswishlist);
 

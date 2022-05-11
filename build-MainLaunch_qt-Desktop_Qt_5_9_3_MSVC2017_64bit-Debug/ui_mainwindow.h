@@ -61,6 +61,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(927, 885);
+        MainWindow->setStyleSheet(QStringLiteral("MainWindow{border:1px; background:white; border-radius:5px;}"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
@@ -114,6 +115,7 @@ public:
         pushButton_8 = new QPushButton(centralWidget);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setGeometry(QRect(400, 360, 241, 51));
+        pushButton_8->setStyleSheet(QStringLiteral("pushButton_8{border:1px; background:white; border-radius:5px;}"));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(170, 80, 701, 251));

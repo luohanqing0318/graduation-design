@@ -94,7 +94,7 @@ void addHouse::on_pushButton_4_clicked()
 
     }
 
-
+    this->~addHouse();
 
 }
 

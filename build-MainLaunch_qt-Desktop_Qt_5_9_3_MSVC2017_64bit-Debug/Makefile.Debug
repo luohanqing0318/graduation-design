@@ -636,6 +636,7 @@ debug\moc_mainwindow.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\Q
 		..\MainLaunch_qt\bighouselist.h \
 		..\MainLaunch_qt\goodhouselist.h \
 		..\MainLaunch_qt\tentantswishlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
 		..\MainLaunch_qt\mainwindow.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -818,6 +819,7 @@ debug\moc_logindialog.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\
 		..\MainLaunch_qt\bighouselist.h \
 		..\MainLaunch_qt\goodhouselist.h \
 		..\MainLaunch_qt\tentantswishlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
 		..\MainLaunch_qt\src\login\logindialog.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -2719,8 +2721,8 @@ debug\moc_goodhouselist.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidget
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
 	F:\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include debug/moc_predefs.h -IF:/qt5.9.3/5.9.3/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -I"F:/GitHub Desktop/third-lib/assimp-5.0.1/include" -IF:/qt5.9.3/5.9.3/msvc2017_64/include -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtWidgets -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtGui -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtANGLE -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtSql -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\goodhouselist.h -o debug\moc_goodhouselist.cpp
 
-debug\moc_tentantswishlist.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QWidget \
-		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qwidget.h \
+debug\moc_tentantswishlist.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QListWidgetItem \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistwidget.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtguiglobal.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qglobal.h \
@@ -2746,6 +2748,11 @@ debug\moc_tentantswishlist.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWid
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qversiontagging.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtgui-config.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qwidget.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qwindowdefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobjectdefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qnamespace.h \
@@ -2819,6 +2826,49 @@ debug\moc_tentantswishlist.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWid
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QPushButton \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
+		..\MainLaunch_qt\newitem_btn.h \
+		..\MainLaunch_qt\src\lighthouse\lighthousedemo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenu.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		..\MainLaunch_qt\houseinfor_btn.h \
+		..\MainLaunch_qt\houseinfor.h \
 		..\MainLaunch_qt\tentantswishlist.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -3069,6 +3119,7 @@ debug\main.obj: ..\MainLaunch_qt\main.cpp ../MainLaunch_qt/mainwindow.h \
 		../MainLaunch_qt/bighouselist.h \
 		../MainLaunch_qt/goodhouselist.h \
 		../MainLaunch_qt/tentantswishlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
 		../MainLaunch_qt/src/login/logindialog.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QDialog \
 		../MainLaunch_qt/src/sign/signdialog.h \
@@ -3258,7 +3309,8 @@ debug\mainwindow.obj: ..\MainLaunch_qt\mainwindow.cpp ../MainLaunch_qt/mainwindo
 		../MainLaunch_qt/bighouselist.h \
 		../MainLaunch_qt/goodhouselist.h \
 		../MainLaunch_qt/tentantswishlist.h \
-		..\MainLaunch_qt\ui_mainwindow.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
+		ui_mainwindow.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
@@ -3467,7 +3519,8 @@ debug\logindialog.obj: ..\MainLaunch_qt\src\login\logindialog.cpp ../MainLaunch_
 		../MainLaunch_qt/bighouselist.h \
 		../MainLaunch_qt/goodhouselist.h \
 		../MainLaunch_qt/tentantswishlist.h \
-		..\MainLaunch_qt\ui_logindialog.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
+		ui_logindialog.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
@@ -3605,7 +3658,7 @@ debug\lighthousedemo.obj: ..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp ../
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
-		..\MainLaunch_qt\ui_lighthousedemo.h \
+		ui_lighthousedemo.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
@@ -4200,7 +4253,7 @@ debug\signdialog.obj: ..\MainLaunch_qt\src\sign\signdialog.cpp ../MainLaunch_qt/
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlerror.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMessageBox \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmessagebox.h \
-		..\MainLaunch_qt\ui_signdialog.h \
+		ui_signdialog.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
@@ -4365,7 +4418,7 @@ debug\picturewidget.obj: ..\MainLaunch_qt\picturewidget.cpp ../MainLaunch_qt/pic
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qtimer.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qbasictimer.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QDebug \
-		..\MainLaunch_qt\ui_picturewidget.h \
+		ui_picturewidget.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
@@ -4519,7 +4572,7 @@ debug\myinformation.obj: ..\MainLaunch_qt\myinformation.cpp ../MainLaunch_qt/myi
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMessageBox \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdialog.h \
-		..\MainLaunch_qt\ui_myinformation.h \
+		ui_myinformation.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
@@ -4709,7 +4762,7 @@ debug\changepersonalinformation.obj: ..\MainLaunch_qt\changepersonalinformation.
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMessageBox \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdialog.h \
-		..\MainLaunch_qt\ui_changepersonalinformation.h \
+		ui_changepersonalinformation.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
@@ -5103,7 +5156,7 @@ debug\addhouse.obj: ..\MainLaunch_qt\addhouse.cpp ../MainLaunch_qt/addhouse.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
-		..\MainLaunch_qt\ui_addhouse.h \
+		ui_addhouse.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
@@ -5269,7 +5322,7 @@ debug\houseinfor.obj: ..\MainLaunch_qt\houseinfor.cpp ../MainLaunch_qt/houseinfo
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtouchdevice.h \
-		..\MainLaunch_qt\ui_houseinfor.h \
+		ui_houseinfor.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
@@ -5691,7 +5744,7 @@ debug\smallhouselist.obj: ..\MainLaunch_qt\smallhouselist.cpp ../MainLaunch_qt/s
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
 		../MainLaunch_qt/houseinfor_btn.h \
 		../MainLaunch_qt/houseinfor.h \
-		..\MainLaunch_qt\ui_smallhouselist.h \
+		ui_smallhouselist.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
@@ -5860,7 +5913,7 @@ debug\bighouselist.obj: ..\MainLaunch_qt\bighouselist.cpp ../MainLaunch_qt/bigho
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
 		../MainLaunch_qt/houseinfor_btn.h \
 		../MainLaunch_qt/houseinfor.h \
-		..\MainLaunch_qt\ui_bighouselist.h \
+		ui_bighouselist.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
@@ -6029,7 +6082,7 @@ debug\goodhouselist.obj: ..\MainLaunch_qt\goodhouselist.cpp ../MainLaunch_qt/goo
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
 		../MainLaunch_qt/houseinfor_btn.h \
 		../MainLaunch_qt/houseinfor.h \
-		..\MainLaunch_qt\ui_goodhouselist.h \
+		ui_goodhouselist.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
@@ -6051,8 +6104,8 @@ debug\goodhouselist.obj: ..\MainLaunch_qt\goodhouselist.cpp ../MainLaunch_qt/goo
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqldatabase.h
 
 debug\tentantswishlist.obj: ..\MainLaunch_qt\tentantswishlist.cpp ../MainLaunch_qt/tentantswishlist.h \
-		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QWidget \
-		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QListWidgetItem \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistwidget.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtguiglobal.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qglobal.h \
@@ -6078,6 +6131,11 @@ debug\tentantswishlist.obj: ..\MainLaunch_qt\tentantswishlist.cpp ../MainLaunch_
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qversiontagging.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtgui-config.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qwidget.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qwindowdefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobjectdefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qnamespace.h \
@@ -6151,7 +6209,72 @@ debug\tentantswishlist.obj: ..\MainLaunch_qt\tentantswishlist.cpp ../MainLaunch_
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtouchdevice.h \
-		ui_tentantswishlist.h
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QPushButton \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
+		../MainLaunch_qt/newitem_btn.h \
+		../MainLaunch_qt/src/lighthouse/lighthousedemo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenu.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		../MainLaunch_qt/houseinfor_btn.h \
+		../MainLaunch_qt/houseinfor.h \
+		ui_tentantswishlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QButtonGroup \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qbuttongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QListWidget \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qDebug \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\QSqlQuery \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlquery.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qtsqlglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqldatabase.h \
+		../MainLaunch_qt/common_data.h \
+		../MainLaunch_qt/mobiledata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QString
 
 debug\qrc_ui_style.obj: debug\qrc_ui_style.cpp 
 

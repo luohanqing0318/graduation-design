@@ -28,10 +28,10 @@ public:
     {
         if (smallhouselist->objectName().isEmpty())
             smallhouselist->setObjectName(QStringLiteral("smallhouselist"));
-        smallhouselist->resize(464, 467);
+        smallhouselist->resize(604, 573);
         listWidget = new QListWidget(smallhouselist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(20, 30, 421, 411));
+        listWidget->setGeometry(QRect(20, 30, 561, 471));
 
         retranslateUi(smallhouselist);
 

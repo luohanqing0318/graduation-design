@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">MainWindow{border:1px; background:white; border-radius:5px;}</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
@@ -200,6 +203,9 @@
       <width>241</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">pushButton_8{border:1px; background:white; border-radius:5px;}</string>
     </property>
     <property name="text">
      <string>所有LIGHTHOUSES</string>
