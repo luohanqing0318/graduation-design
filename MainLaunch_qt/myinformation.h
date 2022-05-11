@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "changepersonalinformation.h"
+#include "tenantsbought_information.h"
+#include "landlordsbought_information.h"
 namespace Ui {
 class myinformation;
 }
@@ -18,10 +20,14 @@ public:
 private slots:
     void on_pushButton_2_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::myinformation *ui;
     QString m_name;
     changepersonalinformation *m_changewidiget;
+    tenantsbought_information *m_ptenantswidget;
+    landlordsbought_information *m_plandlordswidget;
 };
 
 #endif // MYINFORMATION_H

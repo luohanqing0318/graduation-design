@@ -2,6 +2,7 @@
 #include "ui_myinformation.h"
 #include "common_data.h"
 #include <QDebug>
+#include "common_data.h"
 myinformation::myinformation(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::myinformation)
@@ -36,5 +37,18 @@ void myinformation::on_pushButton_2_clicked()
 {
 
     m_changewidiget->show();
+
+}
+
+void myinformation::on_pushButton_clicked()
+{
+    if(SingletonMan::GetMobileDataInstance()->getWho())
+    {
+        m_ptenantswidget = new tenantsbought_information();
+        m_ptenantswidget->show();
+    }else{
+        m_plandlordswidget = new landlordsbought_information();
+        m_plandlordswidget->show();
+    }
 
 }

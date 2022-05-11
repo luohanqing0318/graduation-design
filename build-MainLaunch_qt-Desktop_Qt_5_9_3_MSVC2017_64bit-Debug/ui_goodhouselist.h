@@ -28,10 +28,10 @@ public:
     {
         if (goodhouselist->objectName().isEmpty())
             goodhouselist->setObjectName(QStringLiteral("goodhouselist"));
-        goodhouselist->resize(451, 444);
+        goodhouselist->resize(608, 572);
         listWidget = new QListWidget(goodhouselist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(10, 10, 431, 421));
+        listWidget->setGeometry(QRect(10, 10, 581, 501));
 
         retranslateUi(goodhouselist);
 

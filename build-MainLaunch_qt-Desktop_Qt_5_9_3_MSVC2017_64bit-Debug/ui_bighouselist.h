@@ -28,10 +28,10 @@ public:
     {
         if (bighouselist->objectName().isEmpty())
             bighouselist->setObjectName(QStringLiteral("bighouselist"));
-        bighouselist->resize(462, 468);
+        bighouselist->resize(606, 572);
         listWidget = new QListWidget(bighouselist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(20, 20, 421, 411));
+        listWidget->setGeometry(QRect(20, 20, 561, 491));
 
         retranslateUi(bighouselist);
 

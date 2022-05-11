@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">MainWindow{border:1px; background:white; border-radius:5px;}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
@@ -41,12 +41,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;
- background-color: #f5f6fa;
-    border-color: #2f3640;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 5px;
+
 </string>
     </property>
     <property name="text">
@@ -226,12 +221,7 @@ background-color: #f5f6fa;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 25 9pt &quot;Microsoft YaHei&quot;;
- background-color: #f5f6fa;
-    border-color: #2f3640;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 5px;
+
 </string>
     </property>
     <property name="text">
@@ -258,13 +248,7 @@ background-color: #f5f6fa;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 25 9pt &quot;Microsoft YaHei&quot;;
- background-color: #f5f6fa;
-    border-color: #2f3640;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 5px;
+     <string notr="true">
 </string>
     </property>
     <property name="text">
@@ -292,14 +276,7 @@ background-color: #f5f6fa;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 25 9pt &quot;Microsoft YaHei&quot;;
- background-color: #f5f6fa;
-    border-color: #2f3640;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 5px;
-</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>浏览记录</string>
@@ -316,12 +293,6 @@ background-color: #f5f6fa;
     </property>
     <property name="styleSheet">
      <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;
- background-color: #f5f6fa;
-    border-color: #2f3640;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 5px;
 </string>
     </property>
     <property name="text">

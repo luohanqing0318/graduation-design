@@ -139,7 +139,7 @@ QPushButton{
 	border-top-color: rgb(180,180,180);
 	border-style: solid;
 	padding: 4px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(220, 220, 220, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: #f5f6fa;
 }
 QPushButton:hover{
 	color:rgb(17,17,17);
@@ -151,7 +151,7 @@ QPushButton:hover{
 	border-bottom-color: rgb(200,70,20);
 	border-style: solid;
 	padding: 2px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(220, 220, 220, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: #f5f6fa;
 }
 QPushButton:default{
 	color:rgb(17,17,17);

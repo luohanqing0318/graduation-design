@@ -64,6 +64,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
              if(query.value(7).toInt())
              {
+
                  m_create_item->setIcon(QIcon(":/hasbought.png"));
              }else{
                  QPixmap picture;
