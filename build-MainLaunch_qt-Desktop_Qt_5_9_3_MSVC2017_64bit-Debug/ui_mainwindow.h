@@ -132,7 +132,7 @@ public:
         pushButton_9->setGeometry(QRect(650, 360, 221, 51));
         pushButton_10 = new QPushButton(centralWidget);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        pushButton_10->setGeometry(QRect(20, 750, 181, 71));
+        pushButton_10->setGeometry(QRect(20, 760, 181, 71));
         pushButton_11 = new newitem_btn(centralWidget);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
         pushButton_11->setGeometry(QRect(230, 770, 93, 28));

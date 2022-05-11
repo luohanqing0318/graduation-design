@@ -8,5 +8,6 @@
         <file>personalinfo.png</file>
         <file>bill.png</file>
         <file>landlordshead.png</file>
+        <file>hasbought.png</file>
     </qresource>
 </RCC>

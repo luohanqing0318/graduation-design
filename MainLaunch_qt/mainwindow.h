@@ -19,6 +19,7 @@
 #include "smallhouselist.h"
 #include "bighouselist.h"
 #include "goodhouselist.h"
+#include "tenants_buylist.h"
 #include <QSqlQuery>
 namespace Ui {
 class MainWindow;
@@ -53,6 +54,8 @@ private slots:
 
 
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -71,6 +74,7 @@ private:
     smallhouselist *m_psmallhouselist;
     bighouselist *m_pbighouselist;
     goodhouselist *m_pgoodehouselist;
+    tenants_buylist * m_ptenants_buylist;
 };
 
 #endif // MAINWINDOW_H

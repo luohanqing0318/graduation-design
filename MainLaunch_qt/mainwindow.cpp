@@ -62,9 +62,17 @@ MainWindow::MainWindow(QWidget *parent) :
              m_create_item->setSizeHint(QSize(100,100));
              ui->listWidget->addItem(m_create_item);
 
-             QPixmap picture;
-             picture.loadFromData(query.value(3).toByteArray(),"JPG");
-             m_create_item->setIcon(QIcon(picture));
+             if(query.value(7).toInt())
+             {
+                 m_create_item->setIcon(QIcon(":/hasbought.png"));
+             }else{
+                 QPixmap picture;
+                 picture.loadFromData(query.value(3).toByteArray(),"JPG");
+                 m_create_item->setIcon(QIcon(picture));
+             }
+
+
+
 
 
              QString prices = query.value(4).toString();
@@ -113,7 +121,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_psmallhouselist = new smallhouselist();
     m_pbighouselist = new bighouselist();
     m_pgoodehouselist = new goodhouselist();
-
+    m_ptenants_buylist = new tenants_buylist();
     ui->pushButton_3->hide();
     ui->pushButton_11->hide();
 
@@ -201,3 +209,22 @@ void MainWindow::on_pushButton_5_clicked()
 }
 
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    m_ptenants_buylist->setTenantsusername(SingletonMan::GetMobileDataInstance()->username());
+    QString sql_select_id = "SELECT id FROM `tenants_buy` WHERE buy_tenants = :a1;";
+    QSqlQuery query_select_id;
+    query_select_id.prepare(sql_select_id);
+    query_select_id.bindValue(":a1", SingletonMan::GetMobileDataInstance()->username());
+    if(query_select_id.exec())
+    {
+        while(query_select_id.next())
+        {
+            m_ptenants_buylist->addHouseid_list(query_select_id.value(0).toInt());
+        }
+    }
+    m_ptenants_buylist->UpdateList();
+    m_ptenants_buylist->show();
+
+}
