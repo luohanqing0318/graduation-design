@@ -78,9 +78,9 @@ void LightHouseDemo::on_actionLoadModel_triggered()
 void LightHouseDemo::On_actionChooseSeason1_triggered()
 {
     qDebug()<<"choose_season1";
-    COMMON_LIGHT_DIRECTION_X = 2.0f;
+
     COMMON_LIGHT_DIRECTION_Y = 2.0f;
-    COMMON_LIGHT_DIRECTION_Z = 1.3f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.5f;
     COMMON_AMBIENT_LIGHT_G = 0.5f;
@@ -100,9 +100,9 @@ void LightHouseDemo::On_actionChooseSeason1_triggered()
 void LightHouseDemo::On_actionChooseSeason2_triggered()
 {
     qDebug()<<"choose_season2";
-    COMMON_LIGHT_DIRECTION_X = 1.0f;
+
     COMMON_LIGHT_DIRECTION_Y = 1.0f;
-    COMMON_LIGHT_DIRECTION_Z = 0.8f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.6f;
     COMMON_AMBIENT_LIGHT_G = 0.6f;
@@ -122,9 +122,9 @@ void LightHouseDemo::On_actionChooseSeason2_triggered()
 void LightHouseDemo::On_actionChooseSeason3_triggered()
 {
     qDebug()<<"choose_season3";
-    COMMON_LIGHT_DIRECTION_X = 2.0f;
+
     COMMON_LIGHT_DIRECTION_Y = 2.0f;
-    COMMON_LIGHT_DIRECTION_Z = 1.3f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.5f;
     COMMON_AMBIENT_LIGHT_G = 0.5f;
@@ -144,9 +144,9 @@ void LightHouseDemo::On_actionChooseSeason3_triggered()
 void LightHouseDemo::On_actionChooseSeason4_triggered()
 {
     qDebug()<<"choose_season4";
-    COMMON_LIGHT_DIRECTION_X = 0.5f;
-    COMMON_LIGHT_DIRECTION_Y = 0.4f;
-    COMMON_LIGHT_DIRECTION_Z = 0.3f;
+
+    COMMON_LIGHT_DIRECTION_Y = 0.7f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.4f;
     COMMON_AMBIENT_LIGHT_G = 0.4f;

@@ -207,7 +207,7 @@ void OpenGL_Widget::paintGL()
 
        QVector3D temp_position2(time, 0.0f, 0.0f);
 
-       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, 1.0f, tempz + 4.0f);
+       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, COMMON_LIGHT_DIRECTION_Y, tempz + 4.0f);
 
        m_shaderprogram.setUniformValue("light.constant", 1.0f);
        m_shaderprogram.setUniformValue("light.linear", 0.09f);
