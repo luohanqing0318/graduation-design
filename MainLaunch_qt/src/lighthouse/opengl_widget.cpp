@@ -144,13 +144,11 @@ void OpenGL_Widget::paintGL()
        projection.setToIdentity();
 
        float time = m_time.elapsed() / 6000.0f *30 ;
-//       if(time > 20)
-//      {
-//           m_time.restart();
+       if(time > 240)
+      {
+           m_time.restart();
 
-//       }
-
-//       QTime time = m_time.currentTime();
+       }
        qDebug() << time;
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
