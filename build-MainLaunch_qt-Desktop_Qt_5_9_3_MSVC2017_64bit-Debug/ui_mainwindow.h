@@ -51,6 +51,8 @@ public:
     QVBoxLayout *verticalLayout_2;
     QPushButton *pushButton_9;
     QPushButton *pushButton_10;
+    QLabel *label_4;
+    QPushButton *pushButton_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -162,6 +164,14 @@ public:
         icon3.addFile(QString::fromUtf8(":/\345\220\210\345\220\214 (1).png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_10->setIcon(icon3);
         pushButton_10->setIconSize(QSize(70, 70));
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(160, -10, 141, 91));
+        label_4->setStyleSheet(QString::fromUtf8("image: url(:/\346\220\234\347\264\242.png);"));
+        pushButton_3 = new QPushButton(centralWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(760, 30, 61, 31));
+        pushButton_3->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -199,6 +209,8 @@ public:
         pushButton_8->setText(QApplication::translate("MainWindow", "\346\211\200\346\234\211LIGHTHOUSES", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainWindow", "\346\265\217\350\247\210\350\256\260\345\275\225", Q_NULLPTR));
         pushButton_10->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240\345\220\210\345\220\214", Q_NULLPTR));
+        label_4->setText(QString());
+        pushButton_3->setText(QApplication::translate("MainWindow", "\346\220\234\347\264\242", Q_NULLPTR));
     } // retranslateUi
 
 };

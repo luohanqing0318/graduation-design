@@ -62,12 +62,14 @@ public:
         comboBox_2 = new QComboBox(verticalLayoutWidget);
         comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
         comboBox_2->setMinimumSize(QSize(0, 30));
+        comboBox_2->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
 
         horizontalLayout_5->addWidget(comboBox_2);
 
         comboBox = new QComboBox(verticalLayoutWidget);
         comboBox->setObjectName(QStringLiteral("comboBox"));
         comboBox->setMinimumSize(QSize(0, 30));
+        comboBox->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
 
         horizontalLayout_5->addWidget(comboBox);
 
@@ -118,7 +120,8 @@ public:
         label->setObjectName(QStringLiteral("label"));
         label->setMinimumSize(QSize(185, 80));
         label->setMaximumSize(QSize(185, 16777215));
-        label->setStyleSheet(QString::fromUtf8("image: url(:/\346\232\202\346\227\240\344\270\212\344\274\240\350\256\260\345\275\225.png);"));
+        label->setStyleSheet(QString::fromUtf8("image: url(:/\346\232\202\346\227\240\344\270\212\344\274\240\350\256\260\345\275\225.png);\n"
+"border-width: 1px;border-style: solid;border-color: rgb(255, 170, 0);"));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(label);
@@ -181,7 +184,7 @@ public:
 
     void retranslateUi(QWidget *addHouse)
     {
-        addHouse->setWindowTitle(QApplication::translate("addHouse", "Form", Q_NULLPTR));
+        addHouse->setWindowTitle(QApplication::translate("addHouse", "\344\270\212\344\274\240\346\210\277\345\261\213\345\220\210\345\220\214", Q_NULLPTR));
         label_3->setText(QApplication::translate("addHouse", "\346\210\277\345\261\213\345\220\215", Q_NULLPTR));
         label_2->setText(QApplication::translate("addHouse", "\344\273\267\346\240\274", Q_NULLPTR));
         label->setText(QString());

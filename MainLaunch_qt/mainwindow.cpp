@@ -310,3 +310,18 @@ void MainWindow::on_pushButton_clicked()
     m_ptentantswishlist->show();
 
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    QString search = "";
+    search += ui->lineEdit->text();
+    if(search == "")
+    {
+        ui->lineEdit->setText(QStringLiteral("请输入文字"));
+        return;
+    }else if(ui->lineEdit->text() == "请输入文字")
+    {
+        ui->lineEdit->setText(QStringLiteral("请输入文字"));
+        return;
+    }
+}
