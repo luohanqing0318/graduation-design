@@ -202,7 +202,7 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("light.diffuse", 0.4f, 0.4f, 0.4f);
 
        m_shaderprogram.setUniformValue("change_spec", change_spec);
-       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, rgb_g);
+       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
 
        QVector3D temp_position2(time, 0.0f, 0.0f);
