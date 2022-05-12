@@ -21,6 +21,7 @@
 #include "goodhouselist.h"
 #include "tentantswishlist.h"
 #include "searchlist.h"
+#include "watchhistorylist.h"
 #include <QSqlQuery>
 namespace Ui {
 class MainWindow;
@@ -61,6 +62,10 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_9_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -84,6 +89,7 @@ private:
     goodhouselist *m_pgoodehouselist;
     tentantswishlist *m_ptentantswishlist;
     searchlist *m_psearchlist;
+    watchhistorylist *m_pwatchhistorylist;
 
 };
 

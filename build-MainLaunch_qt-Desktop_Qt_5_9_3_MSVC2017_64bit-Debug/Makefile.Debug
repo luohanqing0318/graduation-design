@@ -70,7 +70,8 @@ SOURCES       = ..\MainLaunch_qt\main.cpp \
 		..\MainLaunch_qt\tentantswishlist.cpp \
 		..\MainLaunch_qt\tenantsbought_information.cpp \
 		..\MainLaunch_qt\landlordsbought_information.cpp \
-		..\MainLaunch_qt\searchlist.cpp debug\qrc_ui_style.cpp \
+		..\MainLaunch_qt\searchlist.cpp \
+		..\MainLaunch_qt\watchhistorylist.cpp debug\qrc_ui_style.cpp \
 		debug\qrc_glsl_file.cpp \
 		debug\qrc_other_resources.cpp \
 		debug\qrc_obj_resources.cpp \
@@ -96,7 +97,8 @@ SOURCES       = ..\MainLaunch_qt\main.cpp \
 		debug\moc_tentantswishlist.cpp \
 		debug\moc_tenantsbought_information.cpp \
 		debug\moc_landlordsbought_information.cpp \
-		debug\moc_searchlist.cpp
+		debug\moc_searchlist.cpp \
+		debug\moc_watchhistorylist.cpp
 OBJECTS       = debug\main.obj \
 		debug\mainwindow.obj \
 		debug\logindialog.obj \
@@ -123,6 +125,7 @@ OBJECTS       = debug\main.obj \
 		debug\tenantsbought_information.obj \
 		debug\landlordsbought_information.obj \
 		debug\searchlist.obj \
+		debug\watchhistorylist.obj \
 		debug\qrc_ui_style.obj \
 		debug\qrc_glsl_file.obj \
 		debug\qrc_other_resources.obj \
@@ -149,7 +152,8 @@ OBJECTS       = debug\main.obj \
 		debug\moc_tentantswishlist.obj \
 		debug\moc_tenantsbought_information.obj \
 		debug\moc_landlordsbought_information.obj \
-		debug\moc_searchlist.obj
+		debug\moc_searchlist.obj \
+		debug\moc_watchhistorylist.obj
 
 DIST          =  ..\MainLaunch_qt\mainwindow.h \
 		..\MainLaunch_qt\src\login\logindialog.h \
@@ -176,7 +180,8 @@ DIST          =  ..\MainLaunch_qt\mainwindow.h \
 		..\MainLaunch_qt\tentantswishlist.h \
 		..\MainLaunch_qt\tenantsbought_information.h \
 		..\MainLaunch_qt\landlordsbought_information.h \
-		..\MainLaunch_qt\searchlist.h ..\MainLaunch_qt\main.cpp \
+		..\MainLaunch_qt\searchlist.h \
+		..\MainLaunch_qt\watchhistorylist.h ..\MainLaunch_qt\main.cpp \
 		..\MainLaunch_qt\mainwindow.cpp \
 		..\MainLaunch_qt\src\login\logindialog.cpp \
 		..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp \
@@ -201,7 +206,8 @@ DIST          =  ..\MainLaunch_qt\mainwindow.h \
 		..\MainLaunch_qt\tentantswishlist.cpp \
 		..\MainLaunch_qt\tenantsbought_information.cpp \
 		..\MainLaunch_qt\landlordsbought_information.cpp \
-		..\MainLaunch_qt\searchlist.cpp
+		..\MainLaunch_qt\searchlist.cpp \
+		..\MainLaunch_qt\watchhistorylist.cpp
 QMAKE_TARGET  = MainLaunch_qt
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = MainLaunch_qt.exe
@@ -376,10 +382,10 @@ DESTDIR_TARGET = debug\MainLaunch_qt.exe
 first: all
 all: Makefile.Debug  $(DESTDIR_TARGET)
 
-$(DESTDIR_TARGET): ui_mainwindow.h ui_logindialog.h ui_lighthousedemo.h ui_signdialog.h ui_picturewidget.h ui_myinformation.h ui_changepersonalinformation.h ui_addhouse.h ui_houseinfor.h ui_smallhouselist.h ui_bighouselist.h ui_goodhouselist.h ui_tentantswishlist.h ui_tenantsbought_information.h ui_landlordsbought_information.h ui_searchlist.h $(OBJECTS) 
+$(DESTDIR_TARGET): ui_mainwindow.h ui_logindialog.h ui_lighthousedemo.h ui_signdialog.h ui_picturewidget.h ui_myinformation.h ui_changepersonalinformation.h ui_addhouse.h ui_houseinfor.h ui_smallhouselist.h ui_bighouselist.h ui_goodhouselist.h ui_tentantswishlist.h ui_tenantsbought_information.h ui_landlordsbought_information.h ui_searchlist.h ui_watchhistorylist.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-debug\main.obj debug\mainwindow.obj debug\logindialog.obj debug\lighthousedemo.obj debug\opengl_widget.obj debug\mesh.obj debug\model.obj debug\mobiledata.obj debug\signdialog.obj debug\picturewidget.obj debug\myinformation.obj debug\common_data.obj debug\changepersonalinformation.obj debug\newitem_btn.obj debug\newitem_label.obj debug\addhouse.obj debug\houseinfor.obj debug\newiteminfo_btn.obj debug\houseinfor_btn.obj debug\smallhouselist.obj debug\bighouselist.obj debug\goodhouselist.obj debug\tentantswishlist.obj debug\tenantsbought_information.obj debug\landlordsbought_information.obj debug\searchlist.obj debug\qrc_ui_style.obj debug\qrc_glsl_file.obj debug\qrc_other_resources.obj debug\qrc_obj_resources.obj debug\qrc_icons.obj debug\qrc_picturewall.obj debug\moc_mainwindow.obj debug\moc_logindialog.obj debug\moc_lighthousedemo.obj debug\moc_opengl_widget.obj debug\moc_signdialog.obj debug\moc_picturewidget.obj debug\moc_myinformation.obj debug\moc_changepersonalinformation.obj
-debug\moc_newitem_btn.obj debug\moc_newitem_label.obj debug\moc_addhouse.obj debug\moc_houseinfor.obj debug\moc_newiteminfo_btn.obj debug\moc_houseinfor_btn.obj debug\moc_smallhouselist.obj debug\moc_bighouselist.obj debug\moc_goodhouselist.obj debug\moc_tentantswishlist.obj debug\moc_tenantsbought_information.obj debug\moc_landlordsbought_information.obj debug\moc_searchlist.obj
+debug\main.obj debug\mainwindow.obj debug\logindialog.obj debug\lighthousedemo.obj debug\opengl_widget.obj debug\mesh.obj debug\model.obj debug\mobiledata.obj debug\signdialog.obj debug\picturewidget.obj debug\myinformation.obj debug\common_data.obj debug\changepersonalinformation.obj debug\newitem_btn.obj debug\newitem_label.obj debug\addhouse.obj debug\houseinfor.obj debug\newiteminfo_btn.obj debug\houseinfor_btn.obj debug\smallhouselist.obj debug\bighouselist.obj debug\goodhouselist.obj debug\tentantswishlist.obj debug\tenantsbought_information.obj debug\landlordsbought_information.obj debug\searchlist.obj debug\watchhistorylist.obj debug\qrc_ui_style.obj debug\qrc_glsl_file.obj debug\qrc_other_resources.obj debug\qrc_obj_resources.obj debug\qrc_icons.obj debug\qrc_picturewall.obj debug\moc_mainwindow.obj debug\moc_logindialog.obj debug\moc_lighthousedemo.obj debug\moc_opengl_widget.obj debug\moc_signdialog.obj debug\moc_picturewidget.obj debug\moc_myinformation.obj
+debug\moc_changepersonalinformation.obj debug\moc_newitem_btn.obj debug\moc_newitem_label.obj debug\moc_addhouse.obj debug\moc_houseinfor.obj debug\moc_newiteminfo_btn.obj debug\moc_houseinfor_btn.obj debug\moc_smallhouselist.obj debug\moc_bighouselist.obj debug\moc_goodhouselist.obj debug\moc_tentantswishlist.obj debug\moc_tenantsbought_information.obj debug\moc_landlordsbought_information.obj debug\moc_searchlist.obj debug\moc_watchhistorylist.obj
 $(LIBS)
 <<
 
@@ -389,10 +395,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) MainLaunch_qt.zip $(SOURCES) $(DIST) ..\MainLaunch_qt\MainLaunch_qt.pro ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\common\angle.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\qconfig.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qt.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\resources.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\moc.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\uic.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\lex.prf ..\MainLaunch_qt\MainLaunch_qt.pro ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\MainLaunch_qt\obj\obj_resources.qrc ..\MainLaunch_qt\icon\icons.qrc ..\MainLaunch_qt\images\picturewall\picturewall.qrc ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\qtmaind.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Widgetsd.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Guid.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Sqld.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Cored.prl   ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\MainLaunch_qt\obj\obj_resources.qrc ..\MainLaunch_qt\icon\icons.qrc ..\MainLaunch_qt\images\picturewall\picturewall.qrc ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\data\dummy.cpp ..\MainLaunch_qt\mainwindow.h ..\MainLaunch_qt\src\login\logindialog.h ..\MainLaunch_qt\src\lighthouse\lighthousedemo.h ..\MainLaunch_qt\src\lighthouse\opengl_widget.h ..\MainLaunch_qt\src\camera\camera.h ..\MainLaunch_qt\src\mesh\mesh.h ..\MainLaunch_qt\src\model\model.h ..\MainLaunch_qt\common_data.h ..\MainLaunch_qt\mobiledata.h ..\MainLaunch_qt\src\sign\signdialog.h ..\MainLaunch_qt\picturewidget.h ..\MainLaunch_qt\myinformation.h ..\MainLaunch_qt\changepersonalinformation.h ..\MainLaunch_qt\newitem_btn.h ..\MainLaunch_qt\newitem_label.h ..\MainLaunch_qt\addhouse.h ..\MainLaunch_qt\houseinfor.h ..\MainLaunch_qt\newiteminfo_btn.h ..\MainLaunch_qt\houseinfor_btn.h ..\MainLaunch_qt\smallhouselist.h ..\MainLaunch_qt\bighouselist.h ..\MainLaunch_qt\goodhouselist.h ..\MainLaunch_qt\tentantswishlist.h ..\MainLaunch_qt\tenantsbought_information.h ..\MainLaunch_qt\landlordsbought_information.h ..\MainLaunch_qt\searchlist.h ..\MainLaunch_qt\main.cpp ..\MainLaunch_qt\mainwindow.cpp ..\MainLaunch_qt\src\login\logindialog.cpp ..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp ..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp ..\MainLaunch_qt\src\mesh\mesh.cpp ..\MainLaunch_qt\src\model\model.cpp ..\MainLaunch_qt\mobiledata.cpp ..\MainLaunch_qt\src\sign\signdialog.cpp ..\MainLaunch_qt\picturewidget.cpp ..\MainLaunch_qt\myinformation.cpp ..\MainLaunch_qt\common_data.cpp ..\MainLaunch_qt\changepersonalinformation.cpp ..\MainLaunch_qt\newitem_btn.cpp ..\MainLaunch_qt\newitem_label.cpp ..\MainLaunch_qt\addhouse.cpp ..\MainLaunch_qt\houseinfor.cpp ..\MainLaunch_qt\newiteminfo_btn.cpp ..\MainLaunch_qt\houseinfor_btn.cpp ..\MainLaunch_qt\smallhouselist.cpp ..\MainLaunch_qt\bighouselist.cpp ..\MainLaunch_qt\goodhouselist.cpp ..\MainLaunch_qt\tentantswishlist.cpp ..\MainLaunch_qt\tenantsbought_information.cpp ..\MainLaunch_qt\landlordsbought_information.cpp ..\MainLaunch_qt\searchlist.cpp ..\MainLaunch_qt\mainwindow.ui ..\MainLaunch_qt\src\login\logindialog.ui ..\MainLaunch_qt\src\lighthouse\lighthousedemo.ui ..\MainLaunch_qt\src\sign\signdialog.ui ..\MainLaunch_qt\picturewidget.ui ..\MainLaunch_qt\myinformation.ui ..\MainLaunch_qt\changepersonalinformation.ui ..\MainLaunch_qt\addhouse.ui ..\MainLaunch_qt\houseinfor.ui ..\MainLaunch_qt\smallhouselist.ui ..\MainLaunch_qt\bighouselist.ui ..\MainLaunch_qt\goodhouselist.ui ..\MainLaunch_qt\tentantswishlist.ui ..\MainLaunch_qt\tenantsbought_information.ui ..\MainLaunch_qt\landlordsbought_information.ui ..\MainLaunch_qt\searchlist.ui    
+	$(ZIP) MainLaunch_qt.zip $(SOURCES) $(DIST) ..\MainLaunch_qt\MainLaunch_qt.pro ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\common\angle.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\qconfig.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qt.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\resources.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\moc.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\uic.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\lex.prf ..\MainLaunch_qt\MainLaunch_qt.pro ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\MainLaunch_qt\obj\obj_resources.qrc ..\MainLaunch_qt\icon\icons.qrc ..\MainLaunch_qt\images\picturewall\picturewall.qrc ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\qtmaind.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Widgetsd.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Guid.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Sqld.prl ..\..\..\qt5.9.3\5.9.3\msvc2017_64\lib\Qt5Cored.prl   ..\MainLaunch_qt\ui_style.qrc ..\MainLaunch_qt\glsl_file.qrc ..\MainLaunch_qt\other_resources.qrc ..\MainLaunch_qt\obj\obj_resources.qrc ..\MainLaunch_qt\icon\icons.qrc ..\MainLaunch_qt\images\picturewall\picturewall.qrc ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\data\dummy.cpp ..\MainLaunch_qt\mainwindow.h ..\MainLaunch_qt\src\login\logindialog.h ..\MainLaunch_qt\src\lighthouse\lighthousedemo.h ..\MainLaunch_qt\src\lighthouse\opengl_widget.h ..\MainLaunch_qt\src\camera\camera.h ..\MainLaunch_qt\src\mesh\mesh.h ..\MainLaunch_qt\src\model\model.h ..\MainLaunch_qt\common_data.h ..\MainLaunch_qt\mobiledata.h ..\MainLaunch_qt\src\sign\signdialog.h ..\MainLaunch_qt\picturewidget.h ..\MainLaunch_qt\myinformation.h ..\MainLaunch_qt\changepersonalinformation.h ..\MainLaunch_qt\newitem_btn.h ..\MainLaunch_qt\newitem_label.h ..\MainLaunch_qt\addhouse.h ..\MainLaunch_qt\houseinfor.h ..\MainLaunch_qt\newiteminfo_btn.h ..\MainLaunch_qt\houseinfor_btn.h ..\MainLaunch_qt\smallhouselist.h ..\MainLaunch_qt\bighouselist.h ..\MainLaunch_qt\goodhouselist.h ..\MainLaunch_qt\tentantswishlist.h ..\MainLaunch_qt\tenantsbought_information.h ..\MainLaunch_qt\landlordsbought_information.h ..\MainLaunch_qt\searchlist.h ..\MainLaunch_qt\watchhistorylist.h ..\MainLaunch_qt\main.cpp ..\MainLaunch_qt\mainwindow.cpp ..\MainLaunch_qt\src\login\logindialog.cpp ..\MainLaunch_qt\src\lighthouse\lighthousedemo.cpp ..\MainLaunch_qt\src\lighthouse\opengl_widget.cpp ..\MainLaunch_qt\src\mesh\mesh.cpp ..\MainLaunch_qt\src\model\model.cpp ..\MainLaunch_qt\mobiledata.cpp ..\MainLaunch_qt\src\sign\signdialog.cpp ..\MainLaunch_qt\picturewidget.cpp ..\MainLaunch_qt\myinformation.cpp ..\MainLaunch_qt\common_data.cpp ..\MainLaunch_qt\changepersonalinformation.cpp ..\MainLaunch_qt\newitem_btn.cpp ..\MainLaunch_qt\newitem_label.cpp ..\MainLaunch_qt\addhouse.cpp ..\MainLaunch_qt\houseinfor.cpp ..\MainLaunch_qt\newiteminfo_btn.cpp ..\MainLaunch_qt\houseinfor_btn.cpp ..\MainLaunch_qt\smallhouselist.cpp ..\MainLaunch_qt\bighouselist.cpp ..\MainLaunch_qt\goodhouselist.cpp ..\MainLaunch_qt\tentantswishlist.cpp ..\MainLaunch_qt\tenantsbought_information.cpp ..\MainLaunch_qt\landlordsbought_information.cpp ..\MainLaunch_qt\searchlist.cpp ..\MainLaunch_qt\watchhistorylist.cpp ..\MainLaunch_qt\mainwindow.ui ..\MainLaunch_qt\src\login\logindialog.ui ..\MainLaunch_qt\src\lighthouse\lighthousedemo.ui ..\MainLaunch_qt\src\sign\signdialog.ui ..\MainLaunch_qt\picturewidget.ui ..\MainLaunch_qt\myinformation.ui ..\MainLaunch_qt\changepersonalinformation.ui ..\MainLaunch_qt\addhouse.ui ..\MainLaunch_qt\houseinfor.ui ..\MainLaunch_qt\smallhouselist.ui ..\MainLaunch_qt\bighouselist.ui ..\MainLaunch_qt\goodhouselist.ui ..\MainLaunch_qt\tentantswishlist.ui ..\MainLaunch_qt\tenantsbought_information.ui ..\MainLaunch_qt\landlordsbought_information.ui ..\MainLaunch_qt\searchlist.ui ..\MainLaunch_qt\watchhistorylist.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.obj debug\mainwindow.obj debug\logindialog.obj debug\lighthousedemo.obj debug\opengl_widget.obj debug\mesh.obj debug\model.obj debug\mobiledata.obj debug\signdialog.obj debug\picturewidget.obj debug\myinformation.obj debug\common_data.obj debug\changepersonalinformation.obj debug\newitem_btn.obj debug\newitem_label.obj debug\addhouse.obj debug\houseinfor.obj debug\newiteminfo_btn.obj debug\houseinfor_btn.obj debug\smallhouselist.obj debug\bighouselist.obj debug\goodhouselist.obj debug\tentantswishlist.obj debug\tenantsbought_information.obj debug\landlordsbought_information.obj debug\searchlist.obj debug\qrc_ui_style.obj debug\qrc_glsl_file.obj debug\qrc_other_resources.obj debug\qrc_obj_resources.obj debug\qrc_icons.obj debug\qrc_picturewall.obj debug\moc_mainwindow.obj debug\moc_logindialog.obj debug\moc_lighthousedemo.obj debug\moc_opengl_widget.obj debug\moc_signdialog.obj debug\moc_picturewidget.obj debug\moc_myinformation.obj debug\moc_changepersonalinformation.obj debug\moc_newitem_btn.obj debug\moc_newitem_label.obj debug\moc_addhouse.obj debug\moc_houseinfor.obj debug\moc_newiteminfo_btn.obj debug\moc_houseinfor_btn.obj debug\moc_smallhouselist.obj debug\moc_bighouselist.obj debug\moc_goodhouselist.obj debug\moc_tentantswishlist.obj debug\moc_tenantsbought_information.obj debug\moc_landlordsbought_information.obj debug\moc_searchlist.obj
+	-$(DEL_FILE) debug\main.obj debug\mainwindow.obj debug\logindialog.obj debug\lighthousedemo.obj debug\opengl_widget.obj debug\mesh.obj debug\model.obj debug\mobiledata.obj debug\signdialog.obj debug\picturewidget.obj debug\myinformation.obj debug\common_data.obj debug\changepersonalinformation.obj debug\newitem_btn.obj debug\newitem_label.obj debug\addhouse.obj debug\houseinfor.obj debug\newiteminfo_btn.obj debug\houseinfor_btn.obj debug\smallhouselist.obj debug\bighouselist.obj debug\goodhouselist.obj debug\tentantswishlist.obj debug\tenantsbought_information.obj debug\landlordsbought_information.obj debug\searchlist.obj debug\watchhistorylist.obj debug\qrc_ui_style.obj debug\qrc_glsl_file.obj debug\qrc_other_resources.obj debug\qrc_obj_resources.obj debug\qrc_icons.obj debug\qrc_picturewall.obj debug\moc_mainwindow.obj debug\moc_logindialog.obj debug\moc_lighthousedemo.obj debug\moc_opengl_widget.obj debug\moc_signdialog.obj debug\moc_picturewidget.obj debug\moc_myinformation.obj debug\moc_changepersonalinformation.obj debug\moc_newitem_btn.obj debug\moc_newitem_label.obj debug\moc_addhouse.obj debug\moc_houseinfor.obj debug\moc_newiteminfo_btn.obj debug\moc_houseinfor_btn.obj debug\moc_smallhouselist.obj debug\moc_bighouselist.obj debug\moc_goodhouselist.obj debug\moc_tentantswishlist.obj debug\moc_tenantsbought_information.obj debug\moc_landlordsbought_information.obj debug\moc_searchlist.obj debug\moc_watchhistorylist.obj
 	-$(DEL_FILE) debug\MainLaunch_qt.exp debug\MainLaunch_qt.vc.pdb debug\MainLaunch_qt.ilk debug\MainLaunch_qt.idb
 
 distclean: clean 
@@ -476,9 +482,9 @@ compiler_moc_predefs_clean:
 debug\moc_predefs.h: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\data\dummy.cpp
 	cl -BxF:\qt5.9.3\5.9.3\msvc2017_64\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\qt5.9.3\5.9.3\msvc2017_64\mkspecs\features\data\dummy.cpp 2>NUL >debug\moc_predefs.h
 
-compiler_moc_header_make_all: debug\moc_mainwindow.cpp debug\moc_logindialog.cpp debug\moc_lighthousedemo.cpp debug\moc_opengl_widget.cpp debug\moc_signdialog.cpp debug\moc_picturewidget.cpp debug\moc_myinformation.cpp debug\moc_changepersonalinformation.cpp debug\moc_newitem_btn.cpp debug\moc_newitem_label.cpp debug\moc_addhouse.cpp debug\moc_houseinfor.cpp debug\moc_newiteminfo_btn.cpp debug\moc_houseinfor_btn.cpp debug\moc_smallhouselist.cpp debug\moc_bighouselist.cpp debug\moc_goodhouselist.cpp debug\moc_tentantswishlist.cpp debug\moc_tenantsbought_information.cpp debug\moc_landlordsbought_information.cpp debug\moc_searchlist.cpp
+compiler_moc_header_make_all: debug\moc_mainwindow.cpp debug\moc_logindialog.cpp debug\moc_lighthousedemo.cpp debug\moc_opengl_widget.cpp debug\moc_signdialog.cpp debug\moc_picturewidget.cpp debug\moc_myinformation.cpp debug\moc_changepersonalinformation.cpp debug\moc_newitem_btn.cpp debug\moc_newitem_label.cpp debug\moc_addhouse.cpp debug\moc_houseinfor.cpp debug\moc_newiteminfo_btn.cpp debug\moc_houseinfor_btn.cpp debug\moc_smallhouselist.cpp debug\moc_bighouselist.cpp debug\moc_goodhouselist.cpp debug\moc_tentantswishlist.cpp debug\moc_tenantsbought_information.cpp debug\moc_landlordsbought_information.cpp debug\moc_searchlist.cpp debug\moc_watchhistorylist.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug\moc_mainwindow.cpp debug\moc_logindialog.cpp debug\moc_lighthousedemo.cpp debug\moc_opengl_widget.cpp debug\moc_signdialog.cpp debug\moc_picturewidget.cpp debug\moc_myinformation.cpp debug\moc_changepersonalinformation.cpp debug\moc_newitem_btn.cpp debug\moc_newitem_label.cpp debug\moc_addhouse.cpp debug\moc_houseinfor.cpp debug\moc_newiteminfo_btn.cpp debug\moc_houseinfor_btn.cpp debug\moc_smallhouselist.cpp debug\moc_bighouselist.cpp debug\moc_goodhouselist.cpp debug\moc_tentantswishlist.cpp debug\moc_tenantsbought_information.cpp debug\moc_landlordsbought_information.cpp debug\moc_searchlist.cpp
+	-$(DEL_FILE) debug\moc_mainwindow.cpp debug\moc_logindialog.cpp debug\moc_lighthousedemo.cpp debug\moc_opengl_widget.cpp debug\moc_signdialog.cpp debug\moc_picturewidget.cpp debug\moc_myinformation.cpp debug\moc_changepersonalinformation.cpp debug\moc_newitem_btn.cpp debug\moc_newitem_label.cpp debug\moc_addhouse.cpp debug\moc_houseinfor.cpp debug\moc_newiteminfo_btn.cpp debug\moc_houseinfor_btn.cpp debug\moc_smallhouselist.cpp debug\moc_bighouselist.cpp debug\moc_goodhouselist.cpp debug\moc_tentantswishlist.cpp debug\moc_tenantsbought_information.cpp debug\moc_landlordsbought_information.cpp debug\moc_searchlist.cpp debug\moc_watchhistorylist.cpp
 debug\moc_mainwindow.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMainWindow \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmainwindow.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
@@ -658,6 +664,7 @@ debug\moc_mainwindow.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\Q
 		..\MainLaunch_qt\goodhouselist.h \
 		..\MainLaunch_qt\tentantswishlist.h \
 		..\MainLaunch_qt\searchlist.h \
+		..\MainLaunch_qt\watchhistorylist.h \
 		..\MainLaunch_qt\mainwindow.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -844,6 +851,7 @@ debug\moc_logindialog.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\
 		..\MainLaunch_qt\goodhouselist.h \
 		..\MainLaunch_qt\tentantswishlist.h \
 		..\MainLaunch_qt\searchlist.h \
+		..\MainLaunch_qt\watchhistorylist.h \
 		..\MainLaunch_qt\src\login\logindialog.h \
 		debug\moc_predefs.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
@@ -3358,11 +3366,164 @@ debug\moc_searchlist.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\Q
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
 	F:\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include debug/moc_predefs.h -IF:/qt5.9.3/5.9.3/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -I"F:/GitHub Desktop/third-lib/assimp-5.0.1/include" -IF:/qt5.9.3/5.9.3/msvc2017_64/include -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtWidgets -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtGui -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtANGLE -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtSql -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\searchlist.h -o debug\moc_searchlist.cpp
 
+debug\moc_watchhistorylist.cpp: ..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QListWidgetItem \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtguiglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qconfig.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qtcore-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsystemdetection.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qprocessordetection.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qtypeinfo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsysinfo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qlogging.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qflags.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qbasicatomic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qgenericatomic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qglobalstatic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmutex.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qnumeric.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qversiontagging.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtgui-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qwindowdefs.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobjectdefs.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qnamespace.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobject.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstring.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qchar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qbytearray.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qrefcount.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qarraydata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstringbuilder.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qalgorithms.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qiterator.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qhashfunctions.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qpair.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qbytearraylist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstringlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qregexp.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstringmatcher.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcoreevent.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qscopedpointer.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmetatype.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobject_impl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmargins.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpaintdevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qrect.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsize.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qpoint.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpalette.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qcolor.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qrgb.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qrgba64.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qbrush.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qvector.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qmatrix.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpolygon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qregion.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatastream.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qiodevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qline.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtransform.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpainterpath.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qimage.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpixelformat.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpixmap.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsharedpointer.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qshareddata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qhash.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qfont.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qfontmetrics.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qfontinfo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qsizepolicy.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qcursor.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qkeysequence.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qevent.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qvariant.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmap.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdebug.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qtextstream.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qlocale.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qset.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qurl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qurlquery.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfile.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfiledevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvector2d.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QPushButton \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
+		..\MainLaunch_qt\newitem_btn.h \
+		..\MainLaunch_qt\src\lighthouse\lighthousedemo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenu.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		..\MainLaunch_qt\houseinfor_btn.h \
+		..\MainLaunch_qt\houseinfor.h \
+		..\MainLaunch_qt\watchhistorylist.h \
+		debug\moc_predefs.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe
+	F:\qt5.9.3\5.9.3\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include debug/moc_predefs.h -IF:/qt5.9.3/5.9.3/msvc2017_64/mkspecs/win32-msvc -I"F:/GitHub Desktop/graduation-design/MainLaunch_qt" -I"F:/GitHub Desktop/third-lib/assimp-5.0.1/include" -IF:/qt5.9.3/5.9.3/msvc2017_64/include -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtWidgets -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtGui -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtANGLE -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtSql -IF:/qt5.9.3/5.9.3/msvc2017_64/include/QtCore -I. -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\ATLMFC\include -ID:\VisualStudio2017IDE\VC\Tools\MSVC\14.16.27023\include -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\cppwinrt" ..\MainLaunch_qt\watchhistorylist.h -o debug\moc_watchhistorylist.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_logindialog.h ui_lighthousedemo.h ui_signdialog.h ui_picturewidget.h ui_myinformation.h ui_changepersonalinformation.h ui_addhouse.h ui_houseinfor.h ui_smallhouselist.h ui_bighouselist.h ui_goodhouselist.h ui_tentantswishlist.h ui_tenantsbought_information.h ui_landlordsbought_information.h ui_searchlist.h
+compiler_uic_make_all: ui_mainwindow.h ui_logindialog.h ui_lighthousedemo.h ui_signdialog.h ui_picturewidget.h ui_myinformation.h ui_changepersonalinformation.h ui_addhouse.h ui_houseinfor.h ui_smallhouselist.h ui_bighouselist.h ui_goodhouselist.h ui_tentantswishlist.h ui_tenantsbought_information.h ui_landlordsbought_information.h ui_searchlist.h ui_watchhistorylist.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_logindialog.h ui_lighthousedemo.h ui_signdialog.h ui_picturewidget.h ui_myinformation.h ui_changepersonalinformation.h ui_addhouse.h ui_houseinfor.h ui_smallhouselist.h ui_bighouselist.h ui_goodhouselist.h ui_tentantswishlist.h ui_tenantsbought_information.h ui_landlordsbought_information.h ui_searchlist.h
+	-$(DEL_FILE) ui_mainwindow.h ui_logindialog.h ui_lighthousedemo.h ui_signdialog.h ui_picturewidget.h ui_myinformation.h ui_changepersonalinformation.h ui_addhouse.h ui_houseinfor.h ui_smallhouselist.h ui_bighouselist.h ui_goodhouselist.h ui_tentantswishlist.h ui_tenantsbought_information.h ui_landlordsbought_information.h ui_searchlist.h ui_watchhistorylist.h
 ui_mainwindow.h: ..\MainLaunch_qt\mainwindow.ui \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\uic.exe
 	F:\qt5.9.3\5.9.3\msvc2017_64\bin\uic.exe ..\MainLaunch_qt\mainwindow.ui -o ui_mainwindow.h
@@ -3426,6 +3587,10 @@ ui_landlordsbought_information.h: ..\MainLaunch_qt\landlordsbought_information.u
 ui_searchlist.h: ..\MainLaunch_qt\searchlist.ui \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\uic.exe
 	F:\qt5.9.3\5.9.3\msvc2017_64\bin\uic.exe ..\MainLaunch_qt\searchlist.ui -o ui_searchlist.h
+
+ui_watchhistorylist.h: ..\MainLaunch_qt\watchhistorylist.ui \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\bin\uic.exe
+	F:\qt5.9.3\5.9.3\msvc2017_64\bin\uic.exe ..\MainLaunch_qt\watchhistorylist.ui -o ui_watchhistorylist.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -3619,6 +3784,7 @@ debug\main.obj: ..\MainLaunch_qt\main.cpp ../MainLaunch_qt/mainwindow.h \
 		../MainLaunch_qt/goodhouselist.h \
 		../MainLaunch_qt/tentantswishlist.h \
 		../MainLaunch_qt/searchlist.h \
+		../MainLaunch_qt/watchhistorylist.h \
 		../MainLaunch_qt/src/login/logindialog.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QDialog \
 		../MainLaunch_qt/src/sign/signdialog.h \
@@ -3812,6 +3978,7 @@ debug\mainwindow.obj: ..\MainLaunch_qt\mainwindow.cpp ../MainLaunch_qt/mainwindo
 		../MainLaunch_qt/goodhouselist.h \
 		../MainLaunch_qt/tentantswishlist.h \
 		../MainLaunch_qt/searchlist.h \
+		../MainLaunch_qt/watchhistorylist.h \
 		ui_mainwindow.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
@@ -4025,6 +4192,7 @@ debug\logindialog.obj: ..\MainLaunch_qt\src\login\logindialog.cpp ../MainLaunch_
 		../MainLaunch_qt/goodhouselist.h \
 		../MainLaunch_qt/tentantswishlist.h \
 		../MainLaunch_qt/searchlist.h \
+		../MainLaunch_qt/watchhistorylist.h \
 		ui_logindialog.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
@@ -5563,7 +5731,11 @@ debug\newitem_btn.obj: ..\MainLaunch_qt\newitem_btn.cpp ../MainLaunch_qt/newitem
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\QSqlQuery \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlquery.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qtsqlglobal.h \
-		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqldatabase.h
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqldatabase.h \
+		../MainLaunch_qt/common_data.h \
+		../MainLaunch_qt/mobiledata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QString \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList
 
 debug\newitem_label.obj: ..\MainLaunch_qt\newitem_label.cpp ../MainLaunch_qt/newitem_label.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QLabel \
@@ -7370,6 +7542,20 @@ debug\searchlist.obj: ..\MainLaunch_qt\searchlist.cpp ../MainLaunch_qt/searchlis
 		../MainLaunch_qt/houseinfor_btn.h \
 		../MainLaunch_qt/houseinfor.h \
 		ui_searchlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QVariant \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QAction \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QApplication \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcoreapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qeventloop.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qguiapplication.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QButtonGroup \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qbuttongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHeaderView \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qheaderview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QListWidget \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qDebug \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\QSqlQuery \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlquery.h \
@@ -7379,6 +7565,165 @@ debug\searchlist.obj: ..\MainLaunch_qt\searchlist.cpp ../MainLaunch_qt/searchlis
 		../MainLaunch_qt/mobiledata.h \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QString \
 		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList
+
+debug\watchhistorylist.obj: ..\MainLaunch_qt\watchhistorylist.cpp ../MainLaunch_qt/watchhistorylist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QListWidgetItem \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtguiglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qconfig.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qtcore-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsystemdetection.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qprocessordetection.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qtypeinfo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsysinfo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qlogging.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qflags.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qbasicatomic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qgenericatomic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qglobalstatic.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmutex.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qnumeric.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qversiontagging.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtgui-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlistview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qwindowdefs.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobjectdefs.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qnamespace.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qwindowdefs_win.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobject.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstring.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qchar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qbytearray.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qrefcount.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qarraydata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstringbuilder.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qalgorithms.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qiterator.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qhashfunctions.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qpair.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qbytearraylist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstringlist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qregexp.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qstringmatcher.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcoreevent.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qscopedpointer.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmetatype.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qobject_impl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmargins.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpaintdevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qrect.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsize.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qpoint.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpalette.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qcolor.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qrgb.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qrgba64.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qbrush.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qvector.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qmatrix.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpolygon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qregion.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatastream.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qiodevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qline.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtransform.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpainterpath.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qimage.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpixelformat.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qpixmap.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsharedpointer.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qshareddata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qhash.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qfont.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qfontmetrics.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qfontinfo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qsizepolicy.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qcursor.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qkeysequence.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qevent.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qvariant.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qmap.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdebug.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qtextstream.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qlocale.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qset.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qurl.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qurlquery.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfile.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qfiledevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvector2d.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qvalidator.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qregularexpression.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qstyle.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabbar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qrubberband.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QPushButton \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QCheckBox \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qcheckbox.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtGui\QList \
+		../MainLaunch_qt/newitem_btn.h \
+		../MainLaunch_qt/src/lighthouse/lighthousedemo.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenuBar \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenubar.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qmenu.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qaction.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QTime \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qdatetime.h \
+		../MainLaunch_qt/houseinfor_btn.h \
+		../MainLaunch_qt/houseinfor.h \
+		ui_watchhistorylist.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\qDebug \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\QSqlQuery \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqlquery.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qtsqlglobal.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtSql\qsqldatabase.h \
+		../MainLaunch_qt/common_data.h \
+		../MainLaunch_qt/mobiledata.h \
+		..\..\..\qt5.9.3\5.9.3\msvc2017_64\include\QtCore\QString
 
 debug\qrc_ui_style.obj: debug\qrc_ui_style.cpp 
 
@@ -7433,6 +7778,8 @@ debug\moc_tenantsbought_information.obj: debug\moc_tenantsbought_information.cpp
 debug\moc_landlordsbought_information.obj: debug\moc_landlordsbought_information.cpp 
 
 debug\moc_searchlist.obj: debug\moc_searchlist.cpp 
+
+debug\moc_watchhistorylist.obj: debug\moc_watchhistorylist.cpp 
 
 ####### Install
 

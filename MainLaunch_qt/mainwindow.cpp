@@ -329,3 +329,18 @@ void MainWindow::on_pushButton_3_clicked()
     m_psearchlist = new searchlist();
     m_psearchlist->show();
 }
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    QList<int> temp = SingletonMan::GetMobileDataInstance()->getWatchlist();
+    for(int i = 0; i < temp.size(); i++)
+    {
+        qDebug()<<temp[i];
+    }
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    m_pwatchhistorylist = new watchhistorylist();
+    m_pwatchhistorylist->show();
+}

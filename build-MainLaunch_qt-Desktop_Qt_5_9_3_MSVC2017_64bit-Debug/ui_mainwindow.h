@@ -53,6 +53,7 @@ public:
     QPushButton *pushButton_10;
     QLabel *label_4;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_11;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -172,6 +173,9 @@ public:
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(760, 30, 61, 31));
         pushButton_3->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
+        pushButton_11 = new QPushButton(centralWidget);
+        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
+        pushButton_11->setGeometry(QRect(350, 760, 93, 28));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -211,6 +215,7 @@ public:
         pushButton_10->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240\345\220\210\345\220\214", Q_NULLPTR));
         label_4->setText(QString());
         pushButton_3->setText(QApplication::translate("MainWindow", "\346\220\234\347\264\242", Q_NULLPTR));
+        pushButton_11->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };

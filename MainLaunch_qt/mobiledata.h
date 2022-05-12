@@ -33,6 +33,7 @@ public:
 
     QList<int> getWatchlist() const;
     void AddWatchlist(int value);
+    bool HaveHouseId(int value);
 
     QString getSearch() const;
     void setSearch(const QString &search);
