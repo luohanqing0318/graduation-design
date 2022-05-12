@@ -108,3 +108,8 @@ QString smallhouselist::GetFindKind(int kind)
      }
     return thekind;
 }
+
+void smallhouselist::on_pushButton_clicked()
+{
+    this->~smallhouselist();
+}

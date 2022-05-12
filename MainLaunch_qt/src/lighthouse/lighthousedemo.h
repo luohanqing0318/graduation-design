@@ -5,9 +5,9 @@
 #include <QMenuBar>
 #include <QMenu>
 #include <QTime>
-extern float  COMMON_LIGHT_DIRECTION_X;
+
 extern float  COMMON_LIGHT_DIRECTION_Y;
-extern float  COMMON_LIGHT_DIRECTION_Z;
+
 
 extern float  COMMON_AMBIENT_LIGHT_R;
 extern float  COMMON_AMBIENT_LIGHT_G;
@@ -63,6 +63,8 @@ private slots:
 private:
     Ui::LightHouseDemo *ui;
     QString m_objname;
+    int hours = 0;
+
 
 };
 

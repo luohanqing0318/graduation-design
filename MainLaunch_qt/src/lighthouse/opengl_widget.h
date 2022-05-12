@@ -1,4 +1,4 @@
-#ifndef OPENGL_WIDGET_H
+﻿#ifndef OPENGL_WIDGET_H
 #define OPENGL_WIDGET_H
 
 #include <QOpenGLWidget>
@@ -20,6 +20,7 @@ public:
     explicit OpenGL_Widget(QWidget *parent = nullptr);
     ~OpenGL_Widget();
 
+     void SetTime(QTime time);
      void LoadModel(string path);
 
 signals:
@@ -42,6 +43,9 @@ private:
 private:
     QTime m_time;
     QTimer m_timer;
+    float rgb_g = 0.0f;
+
+
     QOpenGLShaderProgram m_shaderprogram;
     QOpenGLShaderProgram m_light_shaderProgram;
 

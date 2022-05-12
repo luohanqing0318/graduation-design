@@ -46,7 +46,14 @@ SOURCES += \
     houseinfor_btn.cpp \
     smallhouselist.cpp \
     bighouselist.cpp \
-    goodhouselist.cpp
+    goodhouselist.cpp \
+    tentantswishlist.cpp \
+    tenantsbought_information.cpp \
+    landlordsbought_information.cpp \
+    searchlist.cpp \
+    watchhistorylist.cpp \
+    allhouselist.cpp \
+    deleteitem_btn.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -70,7 +77,14 @@ HEADERS += \
     houseinfor_btn.h \
     smallhouselist.h \
     bighouselist.h \
-    goodhouselist.h
+    goodhouselist.h \
+    tentantswishlist.h \
+    tenantsbought_information.h \
+    landlordsbought_information.h \
+    searchlist.h \
+    watchhistorylist.h \
+    allhouselist.h \
+    deleteitem_btn.h
 
 FORMS += \
         mainwindow.ui \
@@ -84,7 +98,13 @@ FORMS += \
     houseinfor.ui \
     smallhouselist.ui \
     bighouselist.ui \
-    goodhouselist.ui
+    goodhouselist.ui \
+    tentantswishlist.ui \
+    tenantsbought_information.ui \
+    landlordsbought_information.ui \
+    searchlist.ui \
+    watchhistorylist.ui \
+    allhouselist.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

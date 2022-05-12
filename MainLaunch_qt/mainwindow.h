@@ -19,6 +19,10 @@
 #include "smallhouselist.h"
 #include "bighouselist.h"
 #include "goodhouselist.h"
+#include "tentantswishlist.h"
+#include "searchlist.h"
+#include "watchhistorylist.h"
+#include "allhouselist.h"
 #include <QSqlQuery>
 namespace Ui {
 class MainWindow;
@@ -33,6 +37,8 @@ public:
     ~MainWindow();
     void GetNewrooms();
     QString GetFindKind(int kind);
+    void childrecText(QString str);
+    void RecHuseid(int house_id);
 private slots:
     void On_list_Button_clicked();//动态创建QPushButton按钮信号槽函数
 
@@ -53,6 +59,16 @@ private slots:
 
 
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_8_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -61,6 +77,9 @@ private:
     addHouse *m_paddhouse;
 
     int m_newrooms;
+    int m_once_addhouseid;
+
+
     QList<QListWidgetItem*> m_itemlist;
     QListWidgetItem * m_create_item;
     QList<newitem_btn*> m_btnList;
@@ -71,6 +90,11 @@ private:
     smallhouselist *m_psmallhouselist;
     bighouselist *m_pbighouselist;
     goodhouselist *m_pgoodehouselist;
+    tentantswishlist *m_ptentantswishlist;
+    searchlist *m_psearchlist;
+    watchhistorylist *m_pwatchhistorylist;
+    allhouselist *m_pallhouselist;
+
 };
 
 #endif // MAINWINDOW_H

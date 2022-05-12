@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>主界面</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
@@ -23,8 +26,21 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;</string>
+    </property>
     <property name="text">
      <string>看房单</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icon/icons.qrc">
+      <normaloff>:/暂无清单.png</normaloff>:/暂无清单.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -36,21 +52,23 @@
       <height>71</height>
      </rect>
     </property>
-    <property name="text">
-     <string>我的</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>750</y>
-      <width>181</width>
-      <height>71</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;
+
+</string>
     </property>
     <property name="text">
-     <string>房屋列表</string>
+     <string>  我的</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images/picturewall/picturewall.qrc">
+      <normaloff>:/我的借带证.png</normaloff>:/我的借带证.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>120</width>
+      <height>120</height>
+     </size>
     </property>
    </widget>
    <widget class="QTabWidget" name="tabWidget">
@@ -58,7 +76,7 @@
      <rect>
       <x>20</x>
       <y>410</y>
-      <width>871</width>
+      <width>865</width>
       <height>321</height>
      </rect>
     </property>
@@ -82,7 +100,7 @@
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>精选</string>
      </attribute>
     </widget>
    </widget>
@@ -96,7 +114,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/smallhouse.png);</string>
+     <string notr="true">background-color: #f5f6fa;
+image: url(:/房子12.png);</string>
     </property>
     <property name="text">
      <string/>
@@ -108,11 +127,14 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>220</y>
-      <width>72</width>
-      <height>15</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;</string>
     </property>
     <property name="text">
      <string>整租列表</string>
@@ -128,7 +150,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/bighouse.png);</string>
+     <string notr="true">background-color: #f5f6fa;
+image: url(:/房子10.png);</string>
     </property>
     <property name="text">
      <string/>
@@ -140,11 +163,14 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>100</y>
-      <width>72</width>
-      <height>15</height>
+      <width>81</width>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;</string>
     </property>
     <property name="text">
      <string>合租列表</string>
@@ -153,11 +179,14 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>360</y>
-      <width>72</width>
-      <height>15</height>
+      <x>40</x>
+      <y>350</y>
+      <width>81</width>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;</string>
     </property>
     <property name="text">
      <string>房东直租</string>
@@ -173,7 +202,9 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/goodhouse.png);</string>
+     <string notr="true">image: url(:/房子14.png);
+background-color: #f5f6fa;
+    </string>
     </property>
     <property name="text">
      <string/>
@@ -201,8 +232,23 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 9pt &quot;Microsoft YaHei&quot;;
+
+</string>
+    </property>
     <property name="text">
      <string>所有房屋</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images/picturewall/picturewall.qrc">
+      <normaloff>:/楼房.png</normaloff>:/楼房.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_8">
@@ -214,8 +260,21 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string>所有LIGHTHOUSES</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icon/icons.qrc">
+      <normaloff>:/阳光.png</normaloff>:/阳光.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
     </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
@@ -238,8 +297,21 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string>浏览记录</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icon/icons.qrc">
+      <normaloff>:/暂无记录.png</normaloff>:/暂无记录.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
@@ -251,21 +323,54 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;
+</string>
+    </property>
     <property name="text">
      <string>上传合同</string>
     </property>
+    <property name="icon">
+     <iconset resource="images/picturewall/picturewall.qrc">
+      <normaloff>:/合同 (1).png</normaloff>:/合同 (1).png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
+    </property>
    </widget>
-   <widget class="newitem_btn" name="pushButton_11">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>770</y>
-      <width>93</width>
-      <height>28</height>
+      <x>160</x>
+      <y>-10</y>
+      <width>141</width>
+      <height>91</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/搜索.png);</string>
+    </property>
     <property name="text">
-     <string>diyButton</string>
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>30</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 9pt &quot;Microsoft YaHei&quot;;</string>
+    </property>
+    <property name="text">
+     <string>搜索</string>
     </property>
    </widget>
   </widget>
@@ -290,13 +395,9 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>newitem_btn</class>
-   <extends>QPushButton</extends>
-   <header location="global">newitem_btn.h</header>
-  </customwidget>
- </customwidgets>
- <resources/>
+ <resources>
+  <include location="images/picturewall/picturewall.qrc"/>
+  <include location="icon/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

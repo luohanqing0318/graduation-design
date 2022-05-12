@@ -64,7 +64,7 @@ OpenGL_Widget::OpenGL_Widget(QWidget *parent) : QOpenGLWidget(parent)
 {
     connect(&m_timer,SIGNAL(timeout()),this,SLOT(OnTimeout()));
     m_timer.start(TIMEOUTSECOND);
-    m_time.start();
+//    m_time.start();
     m_camera.Position = view_auto_positon;
     setFocusPolicy(Qt::StrongFocus);
 
@@ -78,6 +78,12 @@ OpenGL_Widget::~OpenGL_Widget()
       glDeleteVertexArrays(1,&VAO);
       glDeleteVertexArrays(1,&lightVAO);
       doneCurrent();
+}
+
+void OpenGL_Widget::SetTime(QTime time)
+{
+    m_time = time;
+    m_time.start();
 }
 
 void OpenGL_Widget::LoadModel(string path)
@@ -137,26 +143,32 @@ void OpenGL_Widget::paintGL()
        view.setToIdentity();
        projection.setToIdentity();
 
-       float time = m_time.elapsed() / 100.0f;
-       if(m_time.elapsed()/1000.0 > 20)
+       float time = m_time.elapsed() / 6000.0f *30 ;
+       if(time > 240)
       {
            m_time.restart();
 
        }
 
-//       QTime time = m_time.currentTime();
-       qDebug() << time;
+      if(time < 120)
+      {
+           rgb_g += 0.003f;
+      }else{
+          rgb_g -= 0.003;
+      }
+       qDebug() << rgb_g;
+       QVector3D change_spec(1.0, 1.0f, rgb_g);
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
-       glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+       glClearColor(rgb_g, rgb_g, rgb_g, 1.0f);
        glEnable(GL_DEPTH_TEST);
        glDepthFunc(GL_LESS);
        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        model.scale(0.2);
 
-       m_light_shaderProgram.bind();
-       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
-       m_light_shaderProgram.setUniformValue("view_matrix", view);
+//       m_light_shaderProgram.bind();
+//       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
+//       m_light_shaderProgram.setUniformValue("view_matrix", view);
        model.setToIdentity();
 
        model.rotate(time, 0.0f, 1.0f, 0.0f);
@@ -167,11 +179,11 @@ void OpenGL_Widget::paintGL()
        float tempz = temp4d3.z();
 
        model.scale(0.2);
-       m_light_shaderProgram.setUniformValue("model_matrix", model);
-       m_light_shaderProgram.setUniformValue("light_color",light_color);
+//       m_light_shaderProgram.setUniformValue("model_matrix", model);
+//       m_light_shaderProgram.setUniformValue("light_color",light_color);
 
-       m_light_mesh->Draw(m_light_shaderProgram);
-       m_light_shaderProgram.release();
+//       m_light_mesh->Draw(m_light_shaderProgram);
+//       m_light_shaderProgram.release();
 
 
 
@@ -187,15 +199,15 @@ void OpenGL_Widget::paintGL()
 
 
        m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
-       m_shaderprogram.setUniformValue("light.diffuse", 0.8f, 0.7f, 0.3f);
+       m_shaderprogram.setUniformValue("light.diffuse", rgb_g, rgb_g, rgb_g);
 
-
-       m_shaderprogram.setUniformValue("light.specular", 0.8f, 0.7f, 0.3f);
-       m_shaderprogram.setUniformValue("material.shininess", 4.0f);
+       m_shaderprogram.setUniformValue("change_spec", change_spec);
+       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
+       m_shaderprogram.setUniformValue("material.shininess", 32.0f);
 
        QVector3D temp_position2(time, 0.0f, 0.0f);
 
-       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, 0.0f, tempz + 4.0f);
+       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, COMMON_LIGHT_DIRECTION_Y, tempz + 4.0f);
 
        m_shaderprogram.setUniformValue("light.constant", 1.0f);
        m_shaderprogram.setUniformValue("light.linear", 0.09f);

@@ -75,4 +75,35 @@ void MobileData::setWho(bool value)
     who = value;
 }
 
+QList<int> MobileData::getWatchlist() const
+{
+    return m_watchlist;
+}
+
+
+
+void MobileData::AddWatchlist(int value)
+{
+    m_watchlist.append(value);
+}
+
+bool MobileData::HaveHouseId(int value)
+{
+    if(m_watchlist.count(value) == 0)
+    {
+        return true;
+    }
+    return false;
+}
+
+QString MobileData::getSearch() const
+{
+    return m_search;
+}
+
+void MobileData::setSearch(const QString &search)
+{
+    m_search = search;
+}
+
 

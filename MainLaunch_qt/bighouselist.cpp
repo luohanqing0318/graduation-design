@@ -108,3 +108,8 @@ QString bighouselist::GetFindKind(int kind)
      }
     return thekind;
 }
+
+void bighouselist::on_pushButton_clicked()
+{
+    this->~bighouselist();
+}

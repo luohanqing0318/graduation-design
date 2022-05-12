@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'myinformation.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.1
+** Created by: Qt User Interface Compiler version 5.9.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -39,7 +39,7 @@ public:
     {
         if (myinformation->objectName().isEmpty())
             myinformation->setObjectName(QStringLiteral("myinformation"));
-        myinformation->resize(400, 495);
+        myinformation->resize(400, 197);
         label = new QLabel(myinformation);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 20, 72, 61));

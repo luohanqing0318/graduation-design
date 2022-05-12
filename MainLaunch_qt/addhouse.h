@@ -17,6 +17,10 @@ public:
 
     QString objname() const;
     void setObjname(const QString &objname);
+signals:
+    void childsendText(QString str);
+    void SendAddOneNewHouse(int house_id);
+
 
 private slots:
     void on_pushButton_4_clicked();
@@ -26,6 +30,8 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::addHouse *ui;

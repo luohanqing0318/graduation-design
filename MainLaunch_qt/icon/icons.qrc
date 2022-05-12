@@ -8,5 +8,22 @@
         <file>personalinfo.png</file>
         <file>bill.png</file>
         <file>landlordshead.png</file>
+        <file>hasbought.png</file>
+        <file>../images/其他，zjark登录背景.png</file>
+        <file>200用户_用户.png</file>
+        <file>业主.png</file>
+        <file>暂无清单.png</file>
+        <file>播放视频.png</file>
+        <file>上传 (1).png</file>
+        <file>上传数据.png</file>
+        <file>提交.png</file>
+        <file>图片.png</file>
+        <file>图片加载成功.png</file>
+        <file>下载数据.png</file>
+        <file>数据查看.png</file>
+        <file>暂无上传记录.png</file>
+        <file>搜索.png</file>
+        <file>阳光.png</file>
+        <file>暂无记录.png</file>
     </qresource>
 </RCC>

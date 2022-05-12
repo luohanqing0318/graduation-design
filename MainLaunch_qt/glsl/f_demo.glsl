@@ -27,6 +27,7 @@ in vec3 out_normal;
 in vec3 out_frag_position;
 in vec2 out_texcoords;
 
+uniform vec3 change_spec;
 
 uniform vec3 view_position;
 
@@ -51,14 +52,21 @@ void main() {
 
     vec3 viewDir = normalize(view_position - out_frag_position);
     vec3 reflectDir = reflect(-lightDir, norm);
-    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-    vec3 specular =  spec*specularTexColor*light.specular;
+
+
+    float specular = 0.0f;
+    vec3 halfwayDir = normalize(lightDir + viewDir);
+    specular = pow(max(dot(out_normal, halfwayDir), 0.0), 32.0);
+
+
+//    pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+//    vec3 specular =  spec*specularTexColor*light.specular;
 
     ambient *= attenuation;
     diffuse *= attenuation;
     specular *= attenuation;
 
-    vec3 result = (ambient + diffuse + specular);
+    vec3 result = (ambient + diffuse + specular * change_spec);
 
     frag_color = vec4(result, 1.0);
 }

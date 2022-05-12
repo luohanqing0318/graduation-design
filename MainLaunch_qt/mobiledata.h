@@ -2,6 +2,7 @@
 #define MOBILEDATA_H
 #include <iostream>
 #include <QString>
+#include <QList>
 class MobileData
 {
 public:
@@ -30,6 +31,13 @@ public:
     bool getWho() const;
     void setWho(bool value);
 
+    QList<int> getWatchlist() const;
+    void AddWatchlist(int value);
+    bool HaveHouseId(int value);
+
+    QString getSearch() const;
+    void setSearch(const QString &search);
+
 private:
     QString m_username;
     QString m_password;
@@ -37,6 +45,11 @@ private:
     int m_age;
     QString m_phone;
     bool who;
+
+    QString m_search;
+    QList<int> m_watchlist;
+
+
 };
 
 

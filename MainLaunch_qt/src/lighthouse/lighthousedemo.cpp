@@ -27,6 +27,7 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
     connect(timer, SIGNAL(timeout()), this, SLOT(timer()));
     timer->start(1);
     m_time.start();
+    ui->openGLWidget->SetTime(m_time);
 #ifdef USE_DEFAULT_MENU_BAR
     pMenuBar = this->menuBar();
 #else
@@ -77,9 +78,9 @@ void LightHouseDemo::on_actionLoadModel_triggered()
 void LightHouseDemo::On_actionChooseSeason1_triggered()
 {
     qDebug()<<"choose_season1";
-    COMMON_LIGHT_DIRECTION_X = 2.0f;
+
     COMMON_LIGHT_DIRECTION_Y = 2.0f;
-    COMMON_LIGHT_DIRECTION_Z = 1.3f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.5f;
     COMMON_AMBIENT_LIGHT_G = 0.5f;
@@ -99,9 +100,9 @@ void LightHouseDemo::On_actionChooseSeason1_triggered()
 void LightHouseDemo::On_actionChooseSeason2_triggered()
 {
     qDebug()<<"choose_season2";
-    COMMON_LIGHT_DIRECTION_X = 1.0f;
+
     COMMON_LIGHT_DIRECTION_Y = 1.0f;
-    COMMON_LIGHT_DIRECTION_Z = 0.8f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.6f;
     COMMON_AMBIENT_LIGHT_G = 0.6f;
@@ -121,9 +122,9 @@ void LightHouseDemo::On_actionChooseSeason2_triggered()
 void LightHouseDemo::On_actionChooseSeason3_triggered()
 {
     qDebug()<<"choose_season3";
-    COMMON_LIGHT_DIRECTION_X = 2.0f;
+
     COMMON_LIGHT_DIRECTION_Y = 2.0f;
-    COMMON_LIGHT_DIRECTION_Z = 1.3f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.5f;
     COMMON_AMBIENT_LIGHT_G = 0.5f;
@@ -143,9 +144,9 @@ void LightHouseDemo::On_actionChooseSeason3_triggered()
 void LightHouseDemo::On_actionChooseSeason4_triggered()
 {
     qDebug()<<"choose_season4";
-    COMMON_LIGHT_DIRECTION_X = 0.5f;
-    COMMON_LIGHT_DIRECTION_Y = 0.4f;
-    COMMON_LIGHT_DIRECTION_Z = 0.3f;
+
+    COMMON_LIGHT_DIRECTION_Y = 0.7f;
+
 
     COMMON_AMBIENT_LIGHT_R = 0.4f;
     COMMON_AMBIENT_LIGHT_G = 0.4f;
@@ -164,14 +165,24 @@ void LightHouseDemo::On_actionChooseSeason4_triggered()
 
 void LightHouseDemo::timer()
 {
-    float time = m_time.elapsed()/1000.0f;
-    if(time > 24)
+    if(hours >= 24)
     {
-m_time.restart();
+        hours = 0;
     }
+    float time = (m_time.elapsed()/1000.0f * 30);
+
+    if(time > 59.0f)
+    {
+       hours += 1;
+       m_time.restart();
+    }
+//    if(time > 24)
+//    {
+//m_time.restart();
+//    }
     QDateTime sysTime = QDateTime::currentDateTime();
 
-    ui->statusbar->showMessage(QStringLiteral("时间") + QString("%1").arg(time)/*sysTime.toString()*/);
+    ui->statusbar->showMessage(QStringLiteral("时间") + QString::number(hours) + ":" + QString("%1").arg(time)/*sysTime.toString()*/);
 }
 
 QString LightHouseDemo::objname() const

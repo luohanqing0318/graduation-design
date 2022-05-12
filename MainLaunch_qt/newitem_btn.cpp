@@ -1,6 +1,7 @@
 ﻿#include "newitem_btn.h"
 #include <QDebug>
 #include <QSqlQuery>
+#include "common_data.h"
 newitem_btn::newitem_btn(QWidget *parent) : QPushButton(parent)
 {
     m_plighthouse = new LightHouseDemo();
@@ -9,6 +10,11 @@ newitem_btn::newitem_btn(QWidget *parent) : QPushButton(parent)
 void newitem_btn::mousePressEvent(QMouseEvent *e)
 {
     m_plighthouse->setObjname(m_objname);
+    if(SingletonMan::GetMobileDataInstance()->HaveHouseId(house_id))
+    {
+        SingletonMan::GetMobileDataInstance()->AddWatchlist(house_id);
+    }
+
     m_plighthouse->show();
 
 }
