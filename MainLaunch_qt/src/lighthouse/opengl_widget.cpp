@@ -149,7 +149,14 @@ void OpenGL_Widget::paintGL()
            m_time.restart();
 
        }
-//       qDebug() << time;
+
+      if(time < 120)
+      {
+           rgb_g += 0.003f;
+      }else{
+          rgb_g -= 0.003;
+      }
+       qDebug() << rgb_g;
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -194,7 +201,7 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("light.diffuse", 0.4f, 0.4f, 0.4f);
 
 
-       m_shaderprogram.setUniformValue("light.specular", 0.8f, 0.7f, 0.3f);
+       m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, rgb_g);
        m_shaderprogram.setUniformValue("material.shininess", 4.0f);
 
        QVector3D temp_position2(time, 0.0f, 0.0f);

@@ -65,6 +65,7 @@ private:
     QString m_objname;
     int hours = 0;
 
+
 };
 
 #endif // LIGHTHOUSEDEMO_H

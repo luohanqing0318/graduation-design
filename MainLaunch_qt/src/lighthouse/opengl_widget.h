@@ -43,6 +43,9 @@ private:
 private:
     QTime m_time;
     QTimer m_timer;
+    float rgb_g = 0.0f;
+
+
     QOpenGLShaderProgram m_shaderprogram;
     QOpenGLShaderProgram m_light_shaderProgram;
 
