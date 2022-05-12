@@ -20,6 +20,7 @@
 #include "bighouselist.h"
 #include "goodhouselist.h"
 #include "tentantswishlist.h"
+#include "searchlist.h"
 #include <QSqlQuery>
 namespace Ui {
 class MainWindow;
@@ -82,6 +83,7 @@ private:
     bighouselist *m_pbighouselist;
     goodhouselist *m_pgoodehouselist;
     tentantswishlist *m_ptentantswishlist;
+    searchlist *m_psearchlist;
 
 };
 

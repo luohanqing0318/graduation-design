@@ -2,15 +2,17 @@
 #include "ui_searchlist.h"
 #include <qDebug>
 #include <QSqlQuery>
+#include "common_data.h"
 searchlist::searchlist(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::searchlist)
 {
     ui->setupUi(this);
-    QString sql = "SELECT * FROM `rooms` where kind = 0;";
+    QString search = SingletonMan::GetMobileDataInstance()->getSearch();
+    QString sql = "SELECT * FROM `rooms` where name = :a1;";
     QSqlQuery query;
     query.prepare(sql);
-
+    query.bindValue(":a1", search);
     if(query.exec())
     {
         qDebug()<<"searchlist : sql select success";

@@ -315,6 +315,8 @@ void MainWindow::on_pushButton_3_clicked()
 {
     QString search = "";
     search += ui->lineEdit->text();
+    SingletonMan::GetMobileDataInstance()->setSearch(search);
+    qDebug()<<SingletonMan::GetMobileDataInstance()->getSearch();
     if(search == "")
     {
         ui->lineEdit->setText(QStringLiteral("请输入文字"));
@@ -324,4 +326,6 @@ void MainWindow::on_pushButton_3_clicked()
         ui->lineEdit->setText(QStringLiteral("请输入文字"));
         return;
     }
+    m_psearchlist = new searchlist();
+    m_psearchlist->show();
 }
