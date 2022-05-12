@@ -20,7 +20,7 @@ public:
     explicit OpenGL_Widget(QWidget *parent = nullptr);
     ~OpenGL_Widget();
 
-
+     void SetTime(QTime time);
      void LoadModel(string path);
 
 signals:

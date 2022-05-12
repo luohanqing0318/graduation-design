@@ -64,7 +64,7 @@ OpenGL_Widget::OpenGL_Widget(QWidget *parent) : QOpenGLWidget(parent)
 {
     connect(&m_timer,SIGNAL(timeout()),this,SLOT(OnTimeout()));
     m_timer.start(TIMEOUTSECOND);
-    m_time.start();
+//    m_time.start();
     m_camera.Position = view_auto_positon;
     setFocusPolicy(Qt::StrongFocus);
 
@@ -78,6 +78,12 @@ OpenGL_Widget::~OpenGL_Widget()
       glDeleteVertexArrays(1,&VAO);
       glDeleteVertexArrays(1,&lightVAO);
       doneCurrent();
+}
+
+void OpenGL_Widget::SetTime(QTime time)
+{
+    m_time = time;
+    m_time.start();
 }
 
 void OpenGL_Widget::LoadModel(string path)
@@ -137,8 +143,8 @@ void OpenGL_Widget::paintGL()
        view.setToIdentity();
        projection.setToIdentity();
 
-       float time = m_time.elapsed() / 100.0f;
-//       if(m_time.elapsed()/1000.0 > 20)
+       float time = m_time.elapsed() / 6000.0f *30 ;
+//       if(time > 20)
 //      {
 //           m_time.restart();
 

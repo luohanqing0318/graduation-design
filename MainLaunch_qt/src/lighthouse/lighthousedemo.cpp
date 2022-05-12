@@ -27,6 +27,7 @@ LightHouseDemo::LightHouseDemo(QWidget *parent) :
     connect(timer, SIGNAL(timeout()), this, SLOT(timer()));
     timer->start(1);
     m_time.start();
+    ui->openGLWidget->SetTime(m_time);
 #ifdef USE_DEFAULT_MENU_BAR
     pMenuBar = this->menuBar();
 #else
