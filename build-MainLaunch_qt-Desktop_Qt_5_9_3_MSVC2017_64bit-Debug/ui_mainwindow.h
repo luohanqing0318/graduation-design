@@ -53,6 +53,7 @@ public:
     QPushButton *pushButton_10;
     QLabel *label_4;
     QPushButton *pushButton_3;
+    QLabel *label_5;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -61,13 +62,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(927, 885);
+        MainWindow->resize(927, 911);
         MainWindow->setStyleSheet(QStringLiteral(""));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(20, 750, 181, 71));
+        pushButton->setGeometry(QRect(20, 760, 181, 71));
         pushButton->setStyleSheet(QStringLiteral("font: 25 12pt \"Microsoft YaHei\";"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/\346\232\202\346\227\240\346\270\205\345\215\225.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -75,7 +76,7 @@ public:
         pushButton->setIconSize(QSize(70, 70));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(700, 750, 191, 71));
+        pushButton_2->setGeometry(QRect(690, 760, 191, 71));
         pushButton_2->setStyleSheet(QLatin1String("font: 25 12pt \"Microsoft YaHei\";\n"
 "\n"
 ""));
@@ -165,7 +166,7 @@ public:
         pushButton_9->setIconSize(QSize(50, 50));
         pushButton_10 = new QPushButton(centralWidget);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        pushButton_10->setGeometry(QRect(20, 750, 181, 71));
+        pushButton_10->setGeometry(QRect(20, 760, 181, 71));
         pushButton_10->setStyleSheet(QLatin1String("font: 25 12pt \"Microsoft YaHei\";\n"
 ""));
         QIcon icon5;
@@ -174,12 +175,16 @@ public:
         pushButton_10->setIconSize(QSize(70, 70));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(160, -10, 141, 91));
+        label_4->setGeometry(QRect(130, -40, 201, 131));
         label_4->setStyleSheet(QString::fromUtf8("image: url(:/\346\220\234\347\264\242.png);"));
         pushButton_3 = new QPushButton(centralWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(760, 30, 61, 31));
         pushButton_3->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
+        label_5 = new QLabel(centralWidget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(320, 740, 241, 131));
+        label_5->setStyleSheet(QString::fromUtf8("image: url(:/icon/\345\274\200\345\217\221.png);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -219,6 +224,7 @@ public:
         pushButton_10->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240\345\220\210\345\220\214", Q_NULLPTR));
         label_4->setText(QString());
         pushButton_3->setText(QApplication::translate("MainWindow", "\346\220\234\347\264\242", Q_NULLPTR));
+        label_5->setText(QString());
     } // retranslateUi
 
 };

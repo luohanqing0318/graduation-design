@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>927</width>
-    <height>885</height>
+    <height>911</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>750</y>
+      <y>760</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -46,8 +46,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>750</y>
+      <x>690</x>
+      <y>760</y>
       <width>191</width>
       <height>71</height>
      </rect>
@@ -318,7 +318,7 @@ background-color: #f5f6fa;
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>750</y>
+      <y>760</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -344,10 +344,10 @@ background-color: #f5f6fa;
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>-10</y>
-      <width>141</width>
-      <height>91</height>
+      <x>130</x>
+      <y>-40</y>
+      <width>201</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -371,6 +371,22 @@ background-color: #f5f6fa;
     </property>
     <property name="text">
      <string>搜索</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>740</y>
+      <width>241</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon/开发.png);</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
