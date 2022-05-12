@@ -345,3 +345,9 @@ void MainWindow::on_pushButton_9_clicked()
     m_pwatchhistorylist = new watchhistorylist();
     m_pwatchhistorylist->show();
 }
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    m_pallhouselist = new allhouselist();
+    m_pallhouselist->show();
+}

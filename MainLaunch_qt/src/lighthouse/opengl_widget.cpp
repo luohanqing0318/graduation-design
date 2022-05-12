@@ -160,7 +160,7 @@ void OpenGL_Widget::paintGL()
        QVector3D change_spec(1.0, 1.0f, rgb_g);
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
-       glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+       glClearColor(rgb_g, rgb_g, rgb_g, 1.0f);
        glEnable(GL_DEPTH_TEST);
        glDepthFunc(GL_LESS);
        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
