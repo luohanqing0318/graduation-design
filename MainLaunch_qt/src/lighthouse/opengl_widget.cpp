@@ -149,7 +149,7 @@ void OpenGL_Widget::paintGL()
            m_time.restart();
 
        }
-       qDebug() << time;
+//       qDebug() << time;
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -191,7 +191,7 @@ void OpenGL_Widget::paintGL()
 
 
        m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
-       m_shaderprogram.setUniformValue("light.diffuse", 0.8f, 0.7f, 0.3f);
+       m_shaderprogram.setUniformValue("light.diffuse", 0.4f, 0.4f, 0.4f);
 
 
        m_shaderprogram.setUniformValue("light.specular", 0.8f, 0.7f, 0.3f);
