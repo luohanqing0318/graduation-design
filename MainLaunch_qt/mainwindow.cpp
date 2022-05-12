@@ -284,7 +284,8 @@ void MainWindow::on_pushButton_10_clicked()
 
 void MainWindow::on_pushButton_7_clicked()
 {
-
+    m_pallhouselist = new allhouselist();
+    m_pallhouselist->show();
 }
 
 void MainWindow::on_pushButton_6_clicked()

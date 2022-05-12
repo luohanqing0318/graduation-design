@@ -266,6 +266,16 @@ background-color: #f5f6fa;
     <property name="text">
      <string>所有LIGHTHOUSES</string>
     </property>
+    <property name="icon">
+     <iconset resource="icon/icons.qrc">
+      <normaloff>:/阳光.png</normaloff>:/阳光.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -292,6 +302,16 @@ background-color: #f5f6fa;
     </property>
     <property name="text">
      <string>浏览记录</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icon/icons.qrc">
+      <normaloff>:/暂无记录.png</normaloff>:/暂无记录.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
@@ -351,19 +371,6 @@ background-color: #f5f6fa;
     </property>
     <property name="text">
      <string>搜索</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_11">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>760</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
     </property>
    </widget>
   </widget>

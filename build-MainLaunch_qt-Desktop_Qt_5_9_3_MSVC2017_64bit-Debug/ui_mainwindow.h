@@ -144,6 +144,10 @@ public:
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setGeometry(QRect(400, 360, 241, 51));
         pushButton_8->setStyleSheet(QStringLiteral(""));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/\351\230\263\345\205\211.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_8->setIcon(icon3);
+        pushButton_8->setIconSize(QSize(50, 50));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(170, 80, 701, 251));
@@ -156,14 +160,18 @@ public:
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         pushButton_9->setGeometry(QRect(650, 360, 221, 51));
         pushButton_9->setStyleSheet(QStringLiteral(""));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/\346\232\202\346\227\240\350\256\260\345\275\225.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_9->setIcon(icon4);
+        pushButton_9->setIconSize(QSize(50, 50));
         pushButton_10 = new QPushButton(centralWidget);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
         pushButton_10->setGeometry(QRect(20, 750, 181, 71));
         pushButton_10->setStyleSheet(QLatin1String("font: 25 12pt \"Microsoft YaHei\";\n"
 ""));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/\345\220\210\345\220\214 (1).png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_10->setIcon(icon3);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/\345\220\210\345\220\214 (1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_10->setIcon(icon5);
         pushButton_10->setIconSize(QSize(70, 70));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
