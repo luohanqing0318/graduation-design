@@ -174,7 +174,7 @@ QString MainWindow::GetFindKind(int kind)
 
 void MainWindow::childrecText(QString str)
 {
-    ui->label_4->setText(str);
+
 }
 
 void MainWindow::RecHuseid(int house_id)
@@ -260,7 +260,7 @@ void MainWindow::RecHuseid(int house_id)
 
         }
 
-    ui->label_4->setText(QString::number(house_id));
+
     }
 
 }

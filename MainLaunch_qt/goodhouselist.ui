@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>房东直租</string>
   </property>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
@@ -19,8 +19,24 @@
      <x>10</x>
      <y>10</y>
      <width>581</width>
-     <height>501</height>
+     <height>491</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>510</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 14pt &quot;Microsoft YaHei&quot;;</string>
+   </property>
+   <property name="text">
+    <string>返回</string>
    </property>
   </widget>
  </widget>

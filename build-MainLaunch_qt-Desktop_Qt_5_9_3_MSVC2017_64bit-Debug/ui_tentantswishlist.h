@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,7 @@ class Ui_tentantswishlist
 {
 public:
     QListWidget *listWidget;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *tentantswishlist)
     {
@@ -32,6 +34,10 @@ public:
         listWidget = new QListWidget(tentantswishlist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(10, 10, 531, 511));
+        pushButton = new QPushButton(tentantswishlist);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(210, 530, 141, 51));
+        pushButton->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
 
         retranslateUi(tentantswishlist);
 
@@ -40,7 +46,8 @@ public:
 
     void retranslateUi(QWidget *tentantswishlist)
     {
-        tentantswishlist->setWindowTitle(QApplication::translate("tentantswishlist", "Form", Q_NULLPTR));
+        tentantswishlist->setWindowTitle(QApplication::translate("tentantswishlist", "\347\234\213\346\210\277\345\215\225", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("tentantswishlist", "\350\277\224\345\233\236", Q_NULLPTR));
     } // retranslateUi
 
 };

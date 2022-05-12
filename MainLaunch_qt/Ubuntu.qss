@@ -133,10 +133,10 @@ QPushButton{
 	color:rgb(17,17,17);
 	border-width: 1px;
 	border-radius: 6px;
-	border-bottom-color: rgb(150,150,150);
-	border-right-color: rgb(165,165,165);
-	border-left-color: rgb(165,165,165);
-	border-top-color: rgb(180,180,180);
+	border-bottom-color: rgb(17,17,17);
+	border-right-color: rgb(17,17,17);
+	border-left-color: rgb(17,17,17);
+	border-top-color: rgb(17,17,17);
 	border-style: solid;
 	padding: 4px;
 	background-color: #f5f6fa;

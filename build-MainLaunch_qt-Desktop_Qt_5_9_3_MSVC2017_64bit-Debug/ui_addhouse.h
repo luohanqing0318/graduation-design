@@ -45,16 +45,15 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton;
     QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
 
     void setupUi(QWidget *addHouse)
     {
         if (addHouse->objectName().isEmpty())
             addHouse->setObjectName(QStringLiteral("addHouse"));
-        addHouse->resize(530, 541);
+        addHouse->resize(530, 456);
         verticalLayoutWidget = new QWidget(addHouse);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(80, 30, 383, 351));
+        verticalLayoutWidget->setGeometry(QRect(60, 20, 383, 351));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -119,6 +118,7 @@ public:
         label->setObjectName(QStringLiteral("label"));
         label->setMinimumSize(QSize(185, 80));
         label->setMaximumSize(QSize(185, 16777215));
+        label->setStyleSheet(QString::fromUtf8("image: url(:/\346\232\202\346\227\240\344\270\212\344\274\240\350\256\260\345\275\225.png);"));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_4->addWidget(label);
@@ -126,7 +126,11 @@ public:
         pushButton_3 = new QPushButton(verticalLayoutWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setMinimumSize(QSize(0, 50));
-        pushButton_3->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
+        pushButton_3->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/\345\233\276\347\211\207\345\212\240\350\275\275\346\210\220\345\212\237.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_3->setIcon(icon);
+        pushButton_3->setIconSize(QSize(50, 50));
 
         horizontalLayout_4->addWidget(pushButton_3);
 
@@ -138,30 +142,37 @@ public:
         pushButton_2 = new QPushButton(verticalLayoutWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setMinimumSize(QSize(0, 50));
-        pushButton_2->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
+        pushButton_2->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/\346\225\260\346\215\256\346\237\245\347\234\213.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon1);
+        pushButton_2->setIconSize(QSize(50, 50));
 
         horizontalLayout_2->addWidget(pushButton_2);
 
         pushButton = new QPushButton(verticalLayoutWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setMinimumSize(QSize(0, 50));
-        pushButton->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
+        pushButton->setStyleSheet(QStringLiteral("font: 25 9pt \"Microsoft YaHei\";"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/\346\222\255\346\224\276\350\247\206\351\242\221.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon2);
+        pushButton->setIconSize(QSize(50, 50));
 
         horizontalLayout_2->addWidget(pushButton);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        pushButton_4 = new QPushButton(verticalLayoutWidget);
+        pushButton_4 = new QPushButton(addHouse);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(0, 50));
+        pushButton_4->setGeometry(QRect(160, 380, 171, 60));
+        pushButton_4->setMinimumSize(QSize(0, 60));
         pushButton_4->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
-
-        verticalLayout->addWidget(pushButton_4);
-
-        pushButton_5 = new QPushButton(addHouse);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(150, 420, 93, 28));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/\344\270\212\344\274\240\346\225\260\346\215\256.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_4->setIcon(icon3);
+        pushButton_4->setIconSize(QSize(50, 50));
 
         retranslateUi(addHouse);
 
@@ -173,12 +184,11 @@ public:
         addHouse->setWindowTitle(QApplication::translate("addHouse", "Form", Q_NULLPTR));
         label_3->setText(QApplication::translate("addHouse", "\346\210\277\345\261\213\345\220\215", Q_NULLPTR));
         label_2->setText(QApplication::translate("addHouse", "\344\273\267\346\240\274", Q_NULLPTR));
-        label->setText(QApplication::translate("addHouse", "\346\227\240\345\233\276\347\211\207", Q_NULLPTR));
+        label->setText(QString());
         pushButton_3->setText(QApplication::translate("addHouse", "\344\270\212\344\274\240\345\233\276\347\211\207", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("addHouse", "\344\270\212\344\274\240\351\207\207\345\205\211\345\212\250\347\224\273", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("addHouse", "\351\242\204\350\247\210\351\207\207\345\205\211\345\212\250\347\224\273", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("addHouse", "\344\270\212\344\274\240\351\207\207\345\205\211\345\261\225\347\244\272", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("addHouse", "\351\242\204\350\247\210\351\207\207\345\205\211\345\261\225\347\244\272", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("addHouse", "\346\217\220\344\272\244", Q_NULLPTR));
-        pushButton_5->setText(QApplication::translate("addHouse", "test", Q_NULLPTR));
     } // retranslateUi
 
 };

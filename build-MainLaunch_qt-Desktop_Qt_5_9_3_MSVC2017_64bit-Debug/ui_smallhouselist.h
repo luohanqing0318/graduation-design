@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,7 @@ class Ui_smallhouselist
 {
 public:
     QListWidget *listWidget;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *smallhouselist)
     {
@@ -32,6 +34,10 @@ public:
         listWidget = new QListWidget(smallhouselist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(20, 30, 561, 471));
+        pushButton = new QPushButton(smallhouselist);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(240, 510, 121, 51));
+        pushButton->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
 
         retranslateUi(smallhouselist);
 
@@ -40,7 +46,8 @@ public:
 
     void retranslateUi(QWidget *smallhouselist)
     {
-        smallhouselist->setWindowTitle(QApplication::translate("smallhouselist", "Form", Q_NULLPTR));
+        smallhouselist->setWindowTitle(QApplication::translate("smallhouselist", "\345\220\210\347\247\237", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("smallhouselist", "\350\277\224\345\233\236", Q_NULLPTR));
     } // retranslateUi
 
 };

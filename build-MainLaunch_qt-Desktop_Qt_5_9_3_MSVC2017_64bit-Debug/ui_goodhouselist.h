@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,7 @@ class Ui_goodhouselist
 {
 public:
     QListWidget *listWidget;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *goodhouselist)
     {
@@ -31,7 +33,11 @@ public:
         goodhouselist->resize(608, 572);
         listWidget = new QListWidget(goodhouselist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(10, 10, 581, 501));
+        listWidget->setGeometry(QRect(10, 10, 581, 491));
+        pushButton = new QPushButton(goodhouselist);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(240, 510, 121, 51));
+        pushButton->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
 
         retranslateUi(goodhouselist);
 
@@ -40,7 +46,8 @@ public:
 
     void retranslateUi(QWidget *goodhouselist)
     {
-        goodhouselist->setWindowTitle(QApplication::translate("goodhouselist", "Form", Q_NULLPTR));
+        goodhouselist->setWindowTitle(QApplication::translate("goodhouselist", "\346\210\277\344\270\234\347\233\264\347\247\237", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("goodhouselist", "\350\277\224\345\233\236", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>主界面</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -26,8 +26,21 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 12pt &quot;Microsoft YaHei&quot;;</string>
+    </property>
     <property name="text">
      <string>看房单</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icon/icons.qrc">
+      <normaloff>:/暂无清单.png</normaloff>:/暂无清单.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -248,8 +261,7 @@ background-color: #f5f6fa;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>所有LIGHTHOUSES</string>
@@ -286,7 +298,7 @@ background-color: #f5f6fa;
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>760</y>
+      <y>750</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -307,19 +319,6 @@ background-color: #f5f6fa;
       <width>70</width>
       <height>70</height>
      </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>770</y>
-      <width>72</width>
-      <height>15</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>NULL</string>
     </property>
    </widget>
   </widget>
@@ -346,6 +345,7 @@ background-color: #f5f6fa;
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="images/picturewall/picturewall.qrc"/>
+  <include location="icon/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

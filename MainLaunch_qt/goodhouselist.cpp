@@ -108,3 +108,8 @@ QString goodhouselist::GetFindKind(int kind)
      }
     return thekind;
 }
+
+void goodhouselist::on_pushButton_clicked()
+{
+    this->~goodhouselist();
+}

@@ -25,6 +25,9 @@ public:
     ~tentantswishlist();
     QString GetFindKind(int kind);
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::tentantswishlist *ui;
     QListWidgetItem* m_create_item;

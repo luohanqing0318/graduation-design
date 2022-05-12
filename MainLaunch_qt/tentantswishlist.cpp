@@ -124,3 +124,8 @@ QString tentantswishlist::GetFindKind(int kind)
      }
     return thekind;
 }
+
+void tentantswishlist::on_pushButton_clicked()
+{
+    this->~tentantswishlist();
+}

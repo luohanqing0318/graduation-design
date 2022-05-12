@@ -24,6 +24,9 @@ public:
     ~bighouselist();
     QString GetFindKind(int kind);
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::bighouselist *ui;
     QListWidgetItem* m_create_item;

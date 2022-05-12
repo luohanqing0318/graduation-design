@@ -24,6 +24,9 @@ public:
     ~goodhouselist();
     QString GetFindKind(int kind);
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::goodhouselist *ui;
     QListWidgetItem* m_create_item;

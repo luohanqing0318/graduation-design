@@ -51,7 +51,6 @@ public:
     QVBoxLayout *verticalLayout_2;
     QPushButton *pushButton_9;
     QPushButton *pushButton_10;
-    QLabel *label_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -67,15 +66,20 @@ public:
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(20, 750, 181, 71));
+        pushButton->setStyleSheet(QStringLiteral("font: 25 12pt \"Microsoft YaHei\";"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/\346\232\202\346\227\240\346\270\205\345\215\225.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon);
+        pushButton->setIconSize(QSize(70, 70));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(700, 750, 191, 71));
         pushButton_2->setStyleSheet(QLatin1String("font: 25 12pt \"Microsoft YaHei\";\n"
 "\n"
 ""));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/\346\210\221\347\232\204\345\200\237\345\270\246\350\257\201.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_2->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/\346\210\221\347\232\204\345\200\237\345\270\246\350\257\201.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon1);
         pushButton_2->setIconSize(QSize(120, 120));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
@@ -129,9 +133,9 @@ public:
         pushButton_7->setStyleSheet(QLatin1String("font: 25 9pt \"Microsoft YaHei\";\n"
 "\n"
 ""));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/\346\245\274\346\210\277.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_7->setIcon(icon1);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/\346\245\274\346\210\277.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_7->setIcon(icon2);
         pushButton_7->setIconSize(QSize(60, 60));
         pushButton_8 = new QPushButton(centralWidget);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
@@ -151,16 +155,13 @@ public:
         pushButton_9->setStyleSheet(QStringLiteral(""));
         pushButton_10 = new QPushButton(centralWidget);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        pushButton_10->setGeometry(QRect(20, 760, 181, 71));
+        pushButton_10->setGeometry(QRect(20, 750, 181, 71));
         pushButton_10->setStyleSheet(QLatin1String("font: 25 12pt \"Microsoft YaHei\";\n"
 ""));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/\345\220\210\345\220\214 (1).png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_10->setIcon(icon2);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/\345\220\210\345\220\214 (1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_10->setIcon(icon3);
         pushButton_10->setIconSize(QSize(70, 70));
-        label_4 = new QLabel(centralWidget);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(370, 770, 72, 15));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -183,7 +184,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\344\270\273\347\225\214\351\235\242", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "\347\234\213\346\210\277\345\215\225", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "  \346\210\221\347\232\204", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\346\234\200\346\226\260", Q_NULLPTR));
@@ -198,7 +199,6 @@ public:
         pushButton_8->setText(QApplication::translate("MainWindow", "\346\211\200\346\234\211LIGHTHOUSES", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainWindow", "\346\265\217\350\247\210\350\256\260\345\275\225", Q_NULLPTR));
         pushButton_10->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240\345\220\210\345\220\214", Q_NULLPTR));
-        label_4->setText(QApplication::translate("MainWindow", "NULL", Q_NULLPTR));
     } // retranslateUi
 
 };

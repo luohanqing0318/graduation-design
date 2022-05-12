@@ -24,6 +24,9 @@ public:
     ~smallhouselist();
     QString GetFindKind(int kind);
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::smallhouselist *ui;
     QListWidgetItem* m_create_item;

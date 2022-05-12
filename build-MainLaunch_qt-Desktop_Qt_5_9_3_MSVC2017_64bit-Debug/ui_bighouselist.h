@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,7 @@ class Ui_bighouselist
 {
 public:
     QListWidget *listWidget;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *bighouselist)
     {
@@ -31,7 +33,11 @@ public:
         bighouselist->resize(606, 572);
         listWidget = new QListWidget(bighouselist);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(20, 20, 561, 491));
+        listWidget->setGeometry(QRect(20, 20, 561, 481));
+        pushButton = new QPushButton(bighouselist);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(240, 510, 121, 51));
+        pushButton->setStyleSheet(QStringLiteral("font: 25 14pt \"Microsoft YaHei\";"));
 
         retranslateUi(bighouselist);
 
@@ -40,7 +46,8 @@ public:
 
     void retranslateUi(QWidget *bighouselist)
     {
-        bighouselist->setWindowTitle(QApplication::translate("bighouselist", "Form", Q_NULLPTR));
+        bighouselist->setWindowTitle(QApplication::translate("bighouselist", "\346\225\264\347\247\237", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("bighouselist", "\350\277\224\345\233\236", Q_NULLPTR));
     } // retranslateUi
 
 };
