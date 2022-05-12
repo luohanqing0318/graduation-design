@@ -5,7 +5,7 @@ Picturewidget::Picturewidget(QWidget *parent) :
     QWidget(parent),m_currentDrawImageIndx(0),
     ui(new Ui::Picturewidget)
 {
-    // 添加ImageOpacity属性;
+        // 添加ImageOpacity属性;
         this->setProperty("ImageOpacity", 1.0);
 
         // 动画切换类;
@@ -62,7 +62,7 @@ void Picturewidget::startPlay()
 
 void Picturewidget::initChangeImageButton()
 {
-    // 注意图片过多按钮可能放置不下;
+
         QButtonGroup* changeButtonGroup = new QButtonGroup;
         QHBoxLayout* hLayout = new QHBoxLayout();
         hLayout->addStretch();
@@ -147,7 +147,7 @@ void Picturewidget::onImageChangeTimeout()
 
 void Picturewidget::onImageSwitchButtonClicked(int buttonId)
 {
-    m_currentDrawImageIndx = buttonId - 1;
+       m_currentDrawImageIndx = buttonId - 1;
        if (m_currentDrawImageIndx == -1)
        {
            m_currentDrawImageIndx = m_imageFileNameList.count() - 1;

@@ -199,7 +199,7 @@ void OpenGL_Widget::paintGL()
 
 
        m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
-       m_shaderprogram.setUniformValue("light.diffuse", 0.4f, 0.4f, 0.4f);
+       m_shaderprogram.setUniformValue("light.diffuse", rgb_g, rgb_g, rgb_g);
 
        m_shaderprogram.setUniformValue("change_spec", change_spec);
        m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, 1.0f);
