@@ -27,6 +27,7 @@ in vec3 out_normal;
 in vec3 out_frag_position;
 in vec2 out_texcoords;
 
+uniform vec3 change_spec;
 
 uniform vec3 view_position;
 
@@ -65,7 +66,7 @@ void main() {
     diffuse *= attenuation;
     specular *= attenuation;
 
-    vec3 result = (ambient + diffuse + specular);
+    vec3 result = (ambient + diffuse + specular * change_spec);
 
     frag_color = vec4(result, 1.0);
 }

@@ -157,6 +157,7 @@ void OpenGL_Widget::paintGL()
           rgb_g -= 0.003;
       }
        qDebug() << rgb_g;
+       QVector3D change_spec(1.0, 1.0f, rgb_g);
        projection.perspective(m_camera.Zoom,(float)width()/height(),0.1,100);
        view=m_camera.GetViewMatrix();
        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -200,7 +201,7 @@ void OpenGL_Widget::paintGL()
        m_shaderprogram.setUniformValue("light.ambient", COMMON_AMBIENT_LIGHT_R, COMMON_AMBIENT_LIGHT_G, COMMON_AMBIENT_LIGHT_B);
        m_shaderprogram.setUniformValue("light.diffuse", 0.4f, 0.4f, 0.4f);
 
-
+       m_shaderprogram.setUniformValue("change_spec", change_spec);
        m_shaderprogram.setUniformValue("light.specular", 1.0f, 1.0f, rgb_g);
        m_shaderprogram.setUniformValue("material.shininess", 32.0f);
 
