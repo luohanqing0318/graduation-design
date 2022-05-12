@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include "mainwindow.h"
+#include "src/sign/signdialog.h"
 namespace Ui {
 class LoginDialog;
 }
@@ -27,6 +28,7 @@ private slots:
 
 private:
     Ui::LoginDialog *ui;
+    SignDialog *m_psigndlag;
 };
 
 #endif // LOGINDIALOG_H

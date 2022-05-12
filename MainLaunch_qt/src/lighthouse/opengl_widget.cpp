@@ -165,9 +165,9 @@ void OpenGL_Widget::paintGL()
        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        model.scale(0.2);
 
-       m_light_shaderProgram.bind();
-       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
-       m_light_shaderProgram.setUniformValue("view_matrix", view);
+//       m_light_shaderProgram.bind();
+//       m_light_shaderProgram.setUniformValue("projection_matrix", projection);
+//       m_light_shaderProgram.setUniformValue("view_matrix", view);
        model.setToIdentity();
 
        model.rotate(time, 0.0f, 1.0f, 0.0f);
@@ -178,11 +178,11 @@ void OpenGL_Widget::paintGL()
        float tempz = temp4d3.z();
 
        model.scale(0.2);
-       m_light_shaderProgram.setUniformValue("model_matrix", model);
-       m_light_shaderProgram.setUniformValue("light_color",light_color);
+//       m_light_shaderProgram.setUniformValue("model_matrix", model);
+//       m_light_shaderProgram.setUniformValue("light_color",light_color);
 
-       m_light_mesh->Draw(m_light_shaderProgram);
-       m_light_shaderProgram.release();
+//       m_light_mesh->Draw(m_light_shaderProgram);
+//       m_light_shaderProgram.release();
 
 
 
@@ -206,7 +206,7 @@ void OpenGL_Widget::paintGL()
 
        QVector3D temp_position2(time, 0.0f, 0.0f);
 
-       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, 0.0f, tempz + 4.0f);
+       m_shaderprogram.setUniformValue("light.position", tempx + 8.0f, 1.0f, tempz + 4.0f);
 
        m_shaderprogram.setUniformValue("light.constant", 1.0f);
        m_shaderprogram.setUniformValue("light.linear", 0.09f);

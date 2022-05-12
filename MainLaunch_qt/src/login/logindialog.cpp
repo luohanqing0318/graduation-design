@@ -78,5 +78,6 @@ void LoginDialog::on_pushButton_clicked()
 
 void LoginDialog::on_pushButton_2_clicked()
 {
-    accept();
+    m_psigndlag = new SignDialog();
+    m_psigndlag->show();
 }
