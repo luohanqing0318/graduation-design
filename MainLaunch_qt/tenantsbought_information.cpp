@@ -64,6 +64,12 @@ tenantsbought_information::tenantsbought_information(QWidget *parent) :
         m_pnewitembtn1->setObjectName("m_pnewitembtn1"+QString::number(m_house_id_list[i]));
         m_pnewitembtn1->setHouse_id(m_house_id_list[i]);
 
+        m_pdeleteitembtn = new deleteitem_btn(w);
+        m_pdeleteitembtn->setText(QStringLiteral("采光展示"));
+
+        m_pdeleteitembtn->setObjectName("m_pdeleteitembtn"+QString::number(m_house_id_list[i]));
+        m_pdeleteitembtn->setHouse_id(m_house_id_list[i]);
+        m_pdeleteitembtn->setText(QStringLiteral("退租"));
 
 
 
@@ -76,7 +82,7 @@ tenantsbought_information::tenantsbought_information(QWidget *parent) :
         vlayout1->addWidget(label3);
 
         vlayout2->addWidget(m_pnewitembtn1);
-
+        vlayout2->addWidget(m_pdeleteitembtn);
 
         w->setLayout(hlayout);
         ui->listWidget->setIconSize(QSize(180,180));

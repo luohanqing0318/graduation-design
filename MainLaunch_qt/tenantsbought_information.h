@@ -12,6 +12,7 @@
 #include "newitem_btn.h"
 #include "houseinfor_btn.h"
 #include "houseinfor.h"
+#include "deleteitem_btn.h"
 namespace Ui {
 class tenantsbought_information;
 }
@@ -35,6 +36,7 @@ private:
     newitem_btn *m_pnewitembtn2;
     houseinfor_btn *m_phouseinfobtn;
     houseinfor *m_houseinfor_wdiget;
+    deleteitem_btn *m_pdeleteitembtn;
 
     QList<int> m_house_id_list;
     QList<QString> m_bought_time_list;

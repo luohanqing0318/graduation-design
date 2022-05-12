@@ -52,7 +52,8 @@ SOURCES += \
     landlordsbought_information.cpp \
     searchlist.cpp \
     watchhistorylist.cpp \
-    allhouselist.cpp
+    allhouselist.cpp \
+    deleteitem_btn.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -82,7 +83,8 @@ HEADERS += \
     landlordsbought_information.h \
     searchlist.h \
     watchhistorylist.h \
-    allhouselist.h
+    allhouselist.h \
+    deleteitem_btn.h
 
 FORMS += \
         mainwindow.ui \
