@@ -1,4 +1,4 @@
-#ifndef OPENGL_WIDGET_H
+﻿#ifndef OPENGL_WIDGET_H
 #define OPENGL_WIDGET_H
 
 #include <QOpenGLWidget>
@@ -19,6 +19,7 @@ class OpenGL_Widget : public  QOpenGLWidget,QOpenGLFunctions_3_3_Core
 public:
     explicit OpenGL_Widget(QWidget *parent = nullptr);
     ~OpenGL_Widget();
+
 
      void LoadModel(string path);
 

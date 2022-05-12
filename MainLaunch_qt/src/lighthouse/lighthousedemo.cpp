@@ -164,14 +164,24 @@ void LightHouseDemo::On_actionChooseSeason4_triggered()
 
 void LightHouseDemo::timer()
 {
-    float time = m_time.elapsed()/1000.0f;
-    if(time > 24)
+    if(hours >= 24)
     {
-m_time.restart();
+        hours = 0;
     }
+    float time = (m_time.elapsed()/1000.0f * 30);
+
+    if(time > 59.0f)
+    {
+       hours += 1;
+       m_time.restart();
+    }
+//    if(time > 24)
+//    {
+//m_time.restart();
+//    }
     QDateTime sysTime = QDateTime::currentDateTime();
 
-    ui->statusbar->showMessage(QStringLiteral("时间") + QString("%1").arg(time)/*sysTime.toString()*/);
+    ui->statusbar->showMessage(QStringLiteral("时间") + QString::number(hours) + ":" + QString("%1").arg(time)/*sysTime.toString()*/);
 }
 
 QString LightHouseDemo::objname() const

@@ -63,6 +63,7 @@ private slots:
 private:
     Ui::LightHouseDemo *ui;
     QString m_objname;
+    int hours = 0;
 
 };
 
