@@ -204,22 +204,22 @@ border-width: 1px;border-style: solid;border-color: rgb(255, 170, 0);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButton_4">
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>50</height>
+          <height>60</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 25 9pt &quot;Microsoft YaHei&quot;;</string>
+         <string notr="true">font: 25 14pt &quot;Microsoft YaHei&quot;;</string>
         </property>
         <property name="text">
-         <string>预览采光展示</string>
+         <string>提交</string>
         </property>
         <property name="icon">
          <iconset resource="icon/icons.qrc">
-          <normaloff>:/播放视频.png</normaloff>:/播放视频.png</iconset>
+          <normaloff>:/上传数据.png</normaloff>:/上传数据.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -232,38 +232,6 @@ border-width: 1px;border-style: solid;border-color: rgb(255, 170, 0);</string>
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>380</y>
-     <width>171</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>60</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 25 14pt &quot;Microsoft YaHei&quot;;</string>
-   </property>
-   <property name="text">
-    <string>提交</string>
-   </property>
-   <property name="icon">
-    <iconset resource="icon/icons.qrc">
-     <normaloff>:/上传数据.png</normaloff>:/上传数据.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>50</width>
-     <height>50</height>
-    </size>
-   </property>
   </widget>
  </widget>
  <resources>

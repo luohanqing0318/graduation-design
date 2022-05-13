@@ -11,6 +11,7 @@ addHouse::addHouse(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::addHouse)
 {
+    m_pligghthousedemo = new LightHouseDemo();
     ui->setupUi(this);
     ui->comboBox_2->addItem(QStringLiteral("月付"));
     ui->comboBox_2->addItem(QStringLiteral("季付"));
@@ -22,7 +23,7 @@ addHouse::addHouse(QWidget *parent) :
     ui->comboBox->setCurrentIndex(0);
 
 
-    m_pligghthousedemo = new LightHouseDemo();
+
 
 }
 
@@ -138,10 +139,6 @@ void addHouse::on_pushButton_2_clicked()
     m_objname = str;
 }
 
-void addHouse::on_pushButton_clicked()
-{
-    m_pligghthousedemo->show();
-}
 
 QString addHouse::objname() const
 {
