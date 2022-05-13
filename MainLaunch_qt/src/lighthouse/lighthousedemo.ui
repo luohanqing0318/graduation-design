@@ -48,10 +48,16 @@ QMenuBar{
     <bool>false</bool>
    </attribute>
    <addaction name="actionLoadModel"/>
+   <addaction name="exitaction"/>
   </widget>
   <action name="actionLoadModel">
    <property name="text">
     <string>载入模型</string>
+   </property>
+  </action>
+  <action name="exitaction">
+   <property name="text">
+    <string>关闭窗口</string>
    </property>
   </action>
  </widget>

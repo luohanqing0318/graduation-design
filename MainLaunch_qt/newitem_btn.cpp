@@ -4,11 +4,12 @@
 #include "common_data.h"
 newitem_btn::newitem_btn(QWidget *parent) : QPushButton(parent)
 {
-    m_plighthouse = new LightHouseDemo();
+
 }
 
 void newitem_btn::mousePressEvent(QMouseEvent *e)
 {
+    m_plighthouse = new LightHouseDemo();
     m_plighthouse->setObjname(m_objname);
     if(SingletonMan::GetMobileDataInstance()->HaveHouseId(house_id))
     {
