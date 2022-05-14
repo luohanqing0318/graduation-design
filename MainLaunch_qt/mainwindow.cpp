@@ -120,9 +120,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-    m_paddhouse = new addHouse();
-    connect(m_paddhouse, &addHouse::childsendText, this, &MainWindow::childrecText);
-    connect(m_paddhouse, &addHouse::SendAddOneNewHouse, this, &MainWindow::RecHuseid);
+
 
 }
 
@@ -276,7 +274,9 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_10_clicked()
 {
-
+    m_paddhouse = new addHouse();
+    connect(m_paddhouse, &addHouse::childsendText, this, &MainWindow::childrecText);
+    connect(m_paddhouse, &addHouse::SendAddOneNewHouse, this, &MainWindow::RecHuseid);
     m_paddhouse->show();
 }
 

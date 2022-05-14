@@ -26,7 +26,6 @@ class Ui_LightHouseDemo
 {
 public:
     QAction *actionLoadModel;
-    QAction *exitaction;
     QWidget *centralwidget;
     OpenGL_Widget *openGLWidget;
     QStatusBar *statusbar;
@@ -48,8 +47,6 @@ public:
 "}"));
         actionLoadModel = new QAction(LightHouseDemo);
         actionLoadModel->setObjectName(QStringLiteral("actionLoadModel"));
-        exitaction = new QAction(LightHouseDemo);
-        exitaction->setObjectName(QStringLiteral("exitaction"));
         centralwidget = new QWidget(LightHouseDemo);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         openGLWidget = new OpenGL_Widget(centralwidget);
@@ -64,7 +61,6 @@ public:
         LightHouseDemo->addToolBar(Qt::TopToolBarArea, toolBar);
 
         toolBar->addAction(actionLoadModel);
-        toolBar->addAction(exitaction);
 
         retranslateUi(LightHouseDemo);
 
@@ -75,7 +71,6 @@ public:
     {
         LightHouseDemo->setWindowTitle(QApplication::translate("LightHouseDemo", "LightHouseDemo", Q_NULLPTR));
         actionLoadModel->setText(QApplication::translate("LightHouseDemo", "\350\275\275\345\205\245\346\250\241\345\236\213", Q_NULLPTR));
-        exitaction->setText(QApplication::translate("LightHouseDemo", "\345\205\263\351\227\255\347\252\227\345\217\243", Q_NULLPTR));
         toolBar->setWindowTitle(QApplication::translate("LightHouseDemo", "toolBar", Q_NULLPTR));
     } // retranslateUi
 
