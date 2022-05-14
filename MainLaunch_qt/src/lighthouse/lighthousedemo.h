@@ -60,7 +60,7 @@ private slots:
 
     void timer();
 
-    void on_exitaction_triggered();
+
 
 private:
     Ui::LightHouseDemo *ui;

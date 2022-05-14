@@ -9,6 +9,7 @@ newitem_btn::newitem_btn(QWidget *parent) : QPushButton(parent)
 
 void newitem_btn::mousePressEvent(QMouseEvent *e)
 {
+    LightHouseDemo *m_plighthouse;
     m_plighthouse = new LightHouseDemo();
     m_plighthouse->setObjname(m_objname);
     if(SingletonMan::GetMobileDataInstance()->HaveHouseId(house_id))

@@ -7,8 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    m_myinformation = new myinformation();
-    m_paddhouse = new addHouse();
+
         GetNewrooms();
 
         if(SingletonMan::GetMobileDataInstance()->getWho())
@@ -119,11 +118,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
          }
 
-    m_psmallhouselist = new smallhouselist();
-    m_pbighouselist = new bighouselist();
-    m_pgoodehouselist = new goodhouselist();
 
 
+    m_paddhouse = new addHouse();
     connect(m_paddhouse, &addHouse::childsendText, this, &MainWindow::childrecText);
     connect(m_paddhouse, &addHouse::SendAddOneNewHouse, this, &MainWindow::RecHuseid);
 
@@ -272,13 +269,14 @@ void MainWindow::On_list_Button_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
 
-
+    m_myinformation = new myinformation();
     m_myinformation->show();
 }
 
 
 void MainWindow::on_pushButton_10_clicked()
 {
+
     m_paddhouse->show();
 }
 
@@ -290,16 +288,19 @@ void MainWindow::on_pushButton_7_clicked()
 
 void MainWindow::on_pushButton_6_clicked()
 {
+    m_psmallhouselist = new smallhouselist();
     m_psmallhouselist->show();
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
+    m_pbighouselist = new bighouselist();
     m_pbighouselist->show();
 }
 
 void MainWindow::on_pushButton_5_clicked()
 {
+    m_pgoodehouselist = new goodhouselist();
     m_pgoodehouselist->show();
 }
 

@@ -24,7 +24,7 @@ public:
 private:
     QString m_objname;
     int house_id;
-    LightHouseDemo *m_plighthouse;
+
 
 signals:
 

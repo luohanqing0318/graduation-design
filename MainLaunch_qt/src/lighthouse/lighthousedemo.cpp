@@ -72,7 +72,7 @@ void LightHouseDemo::on_actionLoadModel_triggered()
 //    QString str = QFileDialog::getOpenFileName(this, "选择文件", "" , "OBJ(*.obj);;FBX(*.fbx);;ALL FILES(*.*)");
 //    QString str = "F:/House_blender/house02.obj";
     qDebug()<<"load obj:"<<m_objname;
-    m_time.restart();
+
     ui->openGLWidget->LoadModel(m_objname.toStdString());
 }
 
@@ -197,8 +197,4 @@ void LightHouseDemo::setObjname(const QString &objname)
 }
 
 
-void LightHouseDemo::on_exitaction_triggered()
-{
-    close();
-    this->~LightHouseDemo();
-}
+
