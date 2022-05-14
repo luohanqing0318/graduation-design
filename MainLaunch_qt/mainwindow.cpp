@@ -349,6 +349,6 @@ void MainWindow::on_pushButton_9_clicked()
 
 void MainWindow::on_pushButton_8_clicked()
 {
-    m_pallhouselist = new allhouselist();
-    m_pallhouselist->show();
+    m_palllighthouselist = new alllighthouselist();
+    m_palllighthouselist->show();
 }

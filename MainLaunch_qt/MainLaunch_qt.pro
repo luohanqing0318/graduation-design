@@ -53,7 +53,8 @@ SOURCES += \
     searchlist.cpp \
     watchhistorylist.cpp \
     allhouselist.cpp \
-    deleteitem_btn.cpp
+    deleteitem_btn.cpp \
+    alllighthouselist.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -84,7 +85,8 @@ HEADERS += \
     searchlist.h \
     watchhistorylist.h \
     allhouselist.h \
-    deleteitem_btn.h
+    deleteitem_btn.h \
+    alllighthouselist.h
 
 FORMS += \
         mainwindow.ui \
@@ -104,7 +106,8 @@ FORMS += \
     landlordsbought_information.ui \
     searchlist.ui \
     watchhistorylist.ui \
-    allhouselist.ui
+    allhouselist.ui \
+    alllighthouselist.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
