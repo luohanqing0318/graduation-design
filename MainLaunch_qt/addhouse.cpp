@@ -38,7 +38,7 @@ void addHouse::on_pushButton_4_clicked()
     int buy_flag = ui->comboBox_2->currentIndex();
     QByteArray data;
     QString path = m_picturename;
-    QFile* file=new QFile(path); //fileName为二进制数据文件名
+    QFile* file=new QFile(path);
     file->open(QIODevice::ReadOnly);
     data = file->readAll();
     file->close();
@@ -68,8 +68,6 @@ void addHouse::on_pushButton_4_clicked()
        QMessageBox::about(NULL, QStringLiteral("错误"), QStringLiteral("必须填写完整合同信息"));
        return;
     }
-
-
     if(query.exec())
     {
         qDebug()<<"addhouse : sql insert success";
@@ -89,9 +87,6 @@ void addHouse::on_pushButton_4_clicked()
            int value = query.value(0).toInt();
            emit SendAddOneNewHouse(value);
         }
-
-
-
 
     }
 

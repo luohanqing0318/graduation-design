@@ -37,7 +37,6 @@ public:
     QTabWidget *tabWidget;
     QWidget *tab;
     QListWidget *listWidget;
-    QWidget *tab_2;
     QPushButton *pushButton_4;
     QLabel *label;
     QPushButton *pushButton_6;
@@ -93,9 +92,6 @@ public:
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(10, 10, 841, 271));
         tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget->addTab(tab_2, QString());
         pushButton_4 = new QPushButton(centralWidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(40, 130, 81, 81));
@@ -211,7 +207,6 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "\347\234\213\346\210\277\345\215\225", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "  \346\210\221\347\232\204", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\346\234\200\346\226\260", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "\347\262\276\351\200\211", Q_NULLPTR));
         pushButton_4->setText(QString());
         label->setText(QApplication::translate("MainWindow", "\346\225\264\347\247\237\345\210\227\350\241\250", Q_NULLPTR));
         pushButton_6->setText(QString());

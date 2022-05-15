@@ -98,11 +98,6 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>精选</string>
-     </attribute>
-    </widget>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
