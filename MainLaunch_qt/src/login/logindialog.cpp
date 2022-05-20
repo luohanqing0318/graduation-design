@@ -6,6 +6,7 @@ LoginDialog::LoginDialog(QWidget *parent) :
     ui(new Ui::LoginDialog)
 {
     ui->setupUi(this);
+    ui->password_lineEdit->setEchoMode(QLineEdit::Password);
     ui->buttonGroup->setId(ui->radioButton_1, 0);
     ui->buttonGroup->setId(ui->radioButton_2, 1);
 }

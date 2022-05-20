@@ -23,6 +23,7 @@
 #include "searchlist.h"
 #include "watchhistorylist.h"
 #include "allhouselist.h"
+#include "alllighthouselist.h"
 #include <QSqlQuery>
 namespace Ui {
 class MainWindow;
@@ -94,6 +95,7 @@ private:
     searchlist *m_psearchlist;
     watchhistorylist *m_pwatchhistorylist;
     allhouselist *m_pallhouselist;
+    alllighthouselist *m_palllighthouselist;
 
 };
 

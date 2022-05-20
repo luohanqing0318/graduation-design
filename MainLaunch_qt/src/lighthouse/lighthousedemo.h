@@ -60,6 +60,8 @@ private slots:
 
     void timer();
 
+
+
 private:
     Ui::LightHouseDemo *ui;
     QString m_objname;

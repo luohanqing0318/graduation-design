@@ -36,6 +36,9 @@ smallhouselist::smallhouselist(QWidget *parent) :
          m_create_item->setSizeHint(QSize(100,100));
          ui->listWidget->addItem(m_create_item);
 
+
+
+
          QPixmap picture;
          picture.loadFromData(query.value(3).toByteArray(),"JPG");
          m_create_item->setIcon(QIcon(picture));

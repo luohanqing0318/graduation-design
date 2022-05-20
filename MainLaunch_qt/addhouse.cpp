@@ -11,6 +11,7 @@ addHouse::addHouse(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::addHouse)
 {
+    m_pligghthousedemo = new LightHouseDemo();
     ui->setupUi(this);
     ui->comboBox_2->addItem(QStringLiteral("月付"));
     ui->comboBox_2->addItem(QStringLiteral("季付"));
@@ -22,7 +23,7 @@ addHouse::addHouse(QWidget *parent) :
     ui->comboBox->setCurrentIndex(0);
 
 
-    m_pligghthousedemo = new LightHouseDemo();
+
 
 }
 
@@ -37,7 +38,7 @@ void addHouse::on_pushButton_4_clicked()
     int buy_flag = ui->comboBox_2->currentIndex();
     QByteArray data;
     QString path = m_picturename;
-    QFile* file=new QFile(path); //fileName为二进制数据文件名
+    QFile* file=new QFile(path);
     file->open(QIODevice::ReadOnly);
     data = file->readAll();
     file->close();
@@ -67,8 +68,6 @@ void addHouse::on_pushButton_4_clicked()
        QMessageBox::about(NULL, QStringLiteral("错误"), QStringLiteral("必须填写完整合同信息"));
        return;
     }
-
-
     if(query.exec())
     {
         qDebug()<<"addhouse : sql insert success";
@@ -88,9 +87,6 @@ void addHouse::on_pushButton_4_clicked()
            int value = query.value(0).toInt();
            emit SendAddOneNewHouse(value);
         }
-
-
-
 
     }
 
@@ -138,10 +134,6 @@ void addHouse::on_pushButton_2_clicked()
     m_objname = str;
 }
 
-void addHouse::on_pushButton_clicked()
-{
-    m_pligghthousedemo->show();
-}
 
 QString addHouse::objname() const
 {
